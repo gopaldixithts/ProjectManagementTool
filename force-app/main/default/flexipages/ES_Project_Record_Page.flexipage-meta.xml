@@ -224,7 +224,7 @@
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentName>ESGanttview</componentName>
-                <identifier>inov8_ESGanttview</identifier>
+                <identifier>ESGanttview</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-87af7f2e-191c-4509-a8a3-6730f2d2b613</name>
