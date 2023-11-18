@@ -9,7 +9,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import fetchGanttFilters from '@salesforce/apex/ES_GanttCtrl.getGanttFilters';
 const ALL_CONST = 'All';
 
-export default class ES_GanttView extends LightningElement {
+export default class ESGanttView extends LightningElement {
     @api height; // design attribute to specify height for chart
     @api withfilters; //design attribute to identify filters are applied or not
     @api recordId; //design attribute to store project record id
