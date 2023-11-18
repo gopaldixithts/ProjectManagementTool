@@ -223,8 +223,8 @@
                     <name>withfilters</name>
                     <value>false</value>
                 </componentInstanceProperties>
-                <componentName>ES_Gantt_View</componentName>
-                <identifier>ESGanttview</identifier>
+                <componentName>esGanttview</componentName>
+                <identifier>inov8_ESGanttview</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-87af7f2e-191c-4509-a8a3-6730f2d2b613</name>

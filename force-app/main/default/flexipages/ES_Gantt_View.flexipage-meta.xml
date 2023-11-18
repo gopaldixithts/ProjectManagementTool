@@ -11,8 +11,8 @@
                     <name>withfilters</name>
                     <value>true</value>
                 </componentInstanceProperties>
-                <componentName>ES_Gantt_View</componentName>
-                <identifier>ESGanttview</identifier>
+                <componentName>esGanttview</componentName>
+                <identifier>esGanttview</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>
