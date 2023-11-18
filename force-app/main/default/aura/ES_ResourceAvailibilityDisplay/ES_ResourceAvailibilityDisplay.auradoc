@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>ES Resource Availability Display</aura:description>
+	<aura:example name="ES Resource Availability Display" ref="ES Resource Availability Display" label="ES Resource Availability Display">
+		Display Resource capacity, availability and allocations on Resource availability record page as well as the list where the resource is allocated using ES Resource Availability Datatable child component.
+	</aura:example>
+</aura:documentation>

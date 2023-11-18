@@ -59,7 +59,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>PMT_Phase__c.Id</value>
+                    <value>ES_Phase__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
@@ -139,7 +139,7 @@
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>Phase Page (FY20-Q1)</masterLabel>
-    <sobjectType>PMT_Phase__c</sobjectType>
+    <sobjectType>ES_Phase__c</sobjectType>
     <template>
         <name>flexipage:recordHomeSingleColNoHeaderTemplateDesktop</name>
     </template>

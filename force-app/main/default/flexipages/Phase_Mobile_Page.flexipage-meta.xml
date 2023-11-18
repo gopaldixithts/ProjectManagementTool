@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>E-00456 : PMT Mobile</description>
+    <description>E-00456 : ES Mobile</description>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
@@ -34,7 +34,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>PMT_Phase__c.Id</value>
+                    <value>ES_Phase__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
@@ -60,7 +60,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>PMT_Phase__c.Id</value>
+                    <value>ES_Phase__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
@@ -148,7 +148,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>PMT_Phase__c.Id</value>
+                    <value>ES_Phase__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
@@ -190,7 +190,7 @@
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>Phase Mobile Page</masterLabel>
-    <sobjectType>PMT_Phase__c</sobjectType>
+    <sobjectType>ES_Phase__c</sobjectType>
     <template>
         <name>flexipage:recordHomeSingleColNoHeaderTemplateDesktop</name>
     </template>

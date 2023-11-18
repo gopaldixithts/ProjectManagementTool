@@ -1,5 +1,0 @@
-<design:component label="PMT Resource Availability DataTable">
-	<sfdc:objects>
-        <sfdc:object>PMT_Resource_Availability__c</sfdc:object>
-    </sfdc:objects>
-</design:component>

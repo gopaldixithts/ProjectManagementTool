@@ -1,0 +1,5 @@
+<design:component label="ES Resource Availability Display">
+    <sfdc:objects>
+        <sfdc:object>ES_Resource_Availability__c</sfdc:object>
+    </sfdc:objects>
+</design:component>

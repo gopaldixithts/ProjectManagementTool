@@ -1,0 +1,10 @@
+<design:component label="ES Project Summary">
+	<sfdc:objects>
+        <sfdc:object>ES_Project__c</sfdc:object>
+    </sfdc:objects>
+    <design:supportedFormFactors>
+        <design:supportedFormFactor type="Large"/>
+        <design:supportedFormFactor type="Small"/>
+    </design:supportedFormFactors>
+    
+</design:component>

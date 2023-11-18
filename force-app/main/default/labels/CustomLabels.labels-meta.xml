@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
-        <fullName>PMT_ActivateReourceAllocationTrigger</fullName>
+        <fullName>ES_ActivateReourceAllocationTrigger</fullName>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>Activate PMT Resource Allocation trigger</shortDescription>
+        <shortDescription>Activate ES Resource Allocation trigger</shortDescription>
         <value>true</value>
     </labels>
     <labels>
-        <fullName>PMT_DefaultProgramSelected</fullName>
+        <fullName>ES_DefaultProgramSelected</fullName>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>PMT_DefaultProgramSelected</shortDescription>
+        <shortDescription>ES_DefaultProgramSelected</shortDescription>
         <value>All</value>
     </labels>
     <labels>
-        <fullName>PMT_DefaultProjectProgressSelected</fullName>
+        <fullName>ES_DefaultProjectProgressSelected</fullName>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>PMT_DefaultProjectProgressSelected</shortDescription>
+        <shortDescription>ES_DefaultProjectProgressSelected</shortDescription>
         <value>Execute</value>
     </labels>
     <labels>
-        <fullName>PMT_Default_Resource_Availability</fullName>
+        <fullName>ES_Default_Resource_Availability</fullName>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>Default PMT resource availability</shortDescription>
+        <shortDescription>Default ES resource availability</shortDescription>
         <value>100</value>
     </labels>
     <labels>
-        <fullName>PMT_FiscalYearStartMonth</fullName>
+        <fullName>ES_FiscalYearStartMonth</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Fiscal year starting month</shortDescription>
         <value>2</value>
     </labels>
     <labels>
-        <fullName>PMT_NumberOfYearsAvailabilityToBeCreated</fullName>
+        <fullName>ES_NumberOfYearsAvailabilityToBeCreated</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Number of year resource availability need be created</shortDescription>
         <value>2</value>
     </labels>
     <labels>
-        <fullName>PMT_Project_Record_Type_on_Case</fullName>
+        <fullName>ES_Project_Record_Type_on_Case</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>PMT Project Record Type on Case</shortDescription>
-        <value>PMT_Project</value>
+        <shortDescription>ES Project Record Type on Case</shortDescription>
+        <value>ES_Project</value>
     </labels>
 </CustomLabels>

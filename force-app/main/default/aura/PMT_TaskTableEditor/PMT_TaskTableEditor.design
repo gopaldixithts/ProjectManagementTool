@@ -1,5 +1,0 @@
-<design:component label="PMT Task Table Editor">
-	<sfdc:objects>
-    	<sfdc:object>PMT_Project__c</sfdc:object>
-    </sfdc:objects>
-</design:component>

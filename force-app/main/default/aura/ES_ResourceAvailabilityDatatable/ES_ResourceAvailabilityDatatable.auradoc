@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>ES Resource Availability DataTable</aura:description>
+	<aura:example name="ES Resource Availability DataTable" ref="ES Resource Availability DataTable" label="ES Resource Availability DataTable">
+		Display resource allocations by project in a dataTable component format.
+	</aura:example>
+</aura:documentation>

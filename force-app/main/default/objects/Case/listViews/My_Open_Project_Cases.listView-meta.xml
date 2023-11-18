@@ -10,7 +10,7 @@
     <filters>
         <field>CASES.RECORDTYPE</field>
         <operation>equals</operation>
-        <value>Case.PMT_Project</value>
+        <value>Case.ES_Project</value>
     </filters>
     <filters>
         <field>CASES.STATUS</field>

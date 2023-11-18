@@ -75,7 +75,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>PMT_Program__c.Id</value>
+                    <value>ES_Program__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
@@ -151,7 +151,7 @@
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>Program Page</masterLabel>
-    <sobjectType>PMT_Program__c</sobjectType>
+    <sobjectType>ES_Program__c</sobjectType>
     <template>
         <name>flexipage:recordHomeSingleColNoHeaderTemplateDesktop</name>
     </template>

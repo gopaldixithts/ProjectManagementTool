@@ -41,8 +41,8 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentName>PMT_ResourceAvailibilityDisplay</componentName>
-                <identifier>PMT_ResourceAvailibilityDisplay</identifier>
+                <componentName>ES_ResourceAvailibilityDisplay</componentName>
+                <identifier>ES_ResourceAvailibilityDisplay</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-33e94ac6-5d97-41d7-85d2-80cf05e56334</name>
@@ -103,7 +103,7 @@
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>Resource Availability Record Page</masterLabel>
-    <sobjectType>PMT_Resource_Availability__c</sobjectType>
+    <sobjectType>ES_Resource_Availability__c</sobjectType>
     <template>
         <name>flexipage:recordHomeSingleColTemplateDesktop</name>
     </template>
