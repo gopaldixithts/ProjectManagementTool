@@ -223,7 +223,7 @@
                     <name>withfilters</name>
                     <value>false</value>
                 </componentInstanceProperties>
-                <componentName>ESGanttview</componentName>
+                <componentName>ES_Gantt_View</componentName>
                 <identifier>ESGanttview</identifier>
             </componentInstance>
         </itemInstances>

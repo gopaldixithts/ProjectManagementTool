@@ -3,7 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>ESResourceManagementTab</componentName>
+                <componentName>ES_Resource_Management</componentName>
                 <identifier>ESResourceManagementTab</identifier>
             </componentInstance>
         </itemInstances>
