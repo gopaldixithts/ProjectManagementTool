@@ -294,7 +294,7 @@
     </platformActionList>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>ES_Project__c.NAME</fields>
+        <fields>Inspection__c.NAME</fields>
         <relatedList>ES_Resource_Allocation__c.Resource_Availability__c</relatedList>
     </relatedLists>
     <relatedLists>

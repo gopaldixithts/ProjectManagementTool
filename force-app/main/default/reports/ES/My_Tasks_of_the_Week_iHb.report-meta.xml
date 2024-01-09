@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Name</field>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Name</field>
     </columns>
     <columns>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Due_Date__c</field>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Due_Date__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c$Name</field>
+        <field>Inspection__c$Name</field>
     </columns>
     <columns>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Status__c</field>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Status__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Percentage_Completion__c</field>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Percentage_Completion__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$On_Hold_Reason__c</field>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$On_Hold_Reason__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Alert__c</field>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Alert__c</field>
     </columns>
     <filter>
         <criteriaItems>
-            <column>ES_Project__c.Project_Phases__r.Project_Tasks__r$My_Task__c</column>
+            <column>Inspection__c.Project_Phases__r.Project_Tasks__r$My_Task__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>me</value>
         </criteriaItems>
         <criteriaItems>
-            <column>ES_Project__c.Project_Phases__r.Project_Tasks__r$Status__c</column>
+            <column>Inspection__c.Project_Phases__r.Project_Tasks__r$Status__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
             <value>Completed,&quot;Closed, not Completed&quot;</value>
         </criteriaItems>
         <criteriaItems>
-            <column>ES_Project__c.Project_Phases__r.Project_Tasks__r$Due_Date__c</column>
+            <column>Inspection__c.Project_Phases__r.Project_Tasks__r$Due_Date__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>lessOrEqual</operator>
             <value>THIS_WEEK</value>
         </criteriaItems>
         <criteriaItems>
-            <column>ES_Project__c$IsTemplate__c</column>
+            <column>Inspection__c$IsTemplate__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
@@ -64,7 +64,7 @@
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>ES_Project__c$CreatedDate</dateColumn>
+        <dateColumn>Inspection__c$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

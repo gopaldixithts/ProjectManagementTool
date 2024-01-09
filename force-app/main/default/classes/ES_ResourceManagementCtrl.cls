@@ -33,7 +33,7 @@ public with sharing class ES_ResourceManagementCtrl {
     * Description : Get data using SOQL and transform to wrapper
     * **************************************************************/
     @AuraEnabled
-    public static ResourceDetail getResourceDetailsWrapper(ES_Project__c project)
+    public static ResourceDetail getResourceDetailsWrapper(Inspection__c project)
     {
         try{                
             //Generate wrapper
@@ -49,7 +49,7 @@ public with sharing class ES_ResourceManagementCtrl {
                             if(ES_Utility.validateCRUD('ES_Resource_Allocation__c', lstOfAllocationFields, 'isAccessible') && 
                                ES_Utility.validateCRUD('ES_Resource_Availability__c', lstOfAvailabilityFields, 'isAccessible') && 
                                ES_Utility.validateCRUD('User', lstOfUsersFields, 'isAccessible') && 
-                               ES_Utility.validateCRUD('ES_Project__c', lstOfProjectFields, 'isAccessible')){
+                               ES_Utility.validateCRUD('Inspection__c', lstOfProjectFields, 'isAccessible')){
                                    
                                    resource.ResourceAllocations = getResourceAllocation(project.Id);
                                    
@@ -89,7 +89,7 @@ public with sharing class ES_ResourceManagementCtrl {
     * Description : upsert/delete the allocation records
     * **************************************************************/
     @AuraEnabled
-    public static void upsertDeleteAllocation(List<SObject> allocationsToSave, List<SObject> allocationsToDelete, ES_Project__c project){
+    public static void upsertDeleteAllocation(List<SObject> allocationsToSave, List<SObject> allocationsToDelete, Inspection__c project){
         //Calling util method to check CRUD
         if(ES_Utility.validateCRUD('ES_Resource_Allocation__c', null, 'isCreateable') && ES_Utility.validateCRUD('ES_Resource_Allocation__c', null, 'isUpdateable')){   
             //check if anything to upsert
@@ -159,7 +159,7 @@ public with sharing class ES_ResourceManagementCtrl {
     * Retrun : list of reousrce availability
     * Description : Get availabilities using SOQL and transform to wrapper
     * **************************************************************/
-    private static List<ES_Resource_Availability__c> getAvailibility(List<String> years, ES_Project__c project)
+    private static List<ES_Resource_Availability__c> getAvailibility(List<String> years, Inspection__c project)
     {
         List<ES_Resource_Availability__c> ls = new List<ES_Resource_Availability__c>();
         
@@ -179,7 +179,7 @@ public with sharing class ES_ResourceManagementCtrl {
     * Retrun : list of availabilities with no user
     * Description : Get availabilities using SOQL and transform to wrapper
     * **************************************************************/
-    private static List<ES_Resource_Availability__c> getDummyAvailabilities(List<String> years, ES_Project__c project)
+    private static List<ES_Resource_Availability__c> getDummyAvailabilities(List<String> years, Inspection__c project)
     {
         List<ES_Resource_Availability__c> dummyAvailablities = new List<ES_Resource_Availability__c>();
         

@@ -7,7 +7,7 @@
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
-        <pageOrSobjectType>ES_Project__c</pageOrSobjectType>
+        <pageOrSobjectType>Inspection__c</pageOrSobjectType>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
@@ -16,7 +16,7 @@
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
-        <pageOrSobjectType>ES_Project__c</pageOrSobjectType>
+        <pageOrSobjectType>Inspection__c</pageOrSobjectType>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
@@ -40,7 +40,7 @@
     <navType>Standard</navType>
     <setupExperience>all</setupExperience>
     <tabs>Inspection_Home</tabs>
-    <tabs>ES_Project__c</tabs>
+    <tabs>Inspection__c</tabs>
     <tabs>ES_Program__c</tabs>
     <tabs>standard-Case</tabs>
     <tabs>ES_Phase__c</tabs>

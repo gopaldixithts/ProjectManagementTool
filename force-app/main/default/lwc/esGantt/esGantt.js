@@ -569,7 +569,7 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                         for (var counter = 0; counter < cloneData.length; counter++) {
                                 var record = cloneData[counter];
                                 var index = this.findIndexById(record.id, cloneData);
-                                if (record.objAPIName == 'ES_Project__c') {
+                                if (record.objAPIName == 'Inspection__c') {
                                         cloneData = this.expandView(record, index, cloneData, true);
                                 }
 
@@ -620,7 +620,7 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                         var defaultValue, newObjectAPI;
                         var index = this.findIndexById(id, this.dataToShow);
                         var record = this.dataToShow[index];
-                        if (record.objAPIName == 'ES_Project__c') { //add new phase
+                        if (record.objAPIName == 'Inspection__c') { //add new phase
                                 defaultValue = encodeDefaultFieldValues({
                                         Project__c: id
                                 });

@@ -35,7 +35,7 @@ public with sharing class ES_GanttCtrlTest {
             pg1.Program_Health__c = 'On Track';
             INSERT pg1;
 
-            ES_Project__c prj1 = new ES_Project__c();
+            Inspection__c prj1 = new Inspection__c();
             prj1.Name = 'New project 1';
             prj1.Program__c = pg1.Id;
             prj1.Project_Status__c = 'Execute';
@@ -66,7 +66,7 @@ public with sharing class ES_GanttCtrlTest {
             pg2.Program_Health__c = 'On Track';
             INSERT pg2;
 
-            ES_Project__c prj2 = new ES_Project__c();
+            Inspection__c prj2 = new Inspection__c();
             prj2.Name = 'New project 2';
             prj2.Program__c = pg2.Id;
             prj2.Path_to_Green__c = 'Test';
@@ -164,10 +164,10 @@ public with sharing class ES_GanttCtrlTest {
     }
 
     static testmethod void testFilterValues() {
-        Map<String, String> mapOfHealthValues = ES_Utility.getPicklistValues('ES_Project__c', 'Project_Health__c');
-        Map<String, String> mapOfCategoryValues = ES_Utility.getPicklistValues('ES_Project__c', 'Project_Category__c');
-        Map<String, String> mapOfSystemValues = ES_Utility.getPicklistValues('ES_Project__c', 'SystemsImpacted__c');
-        Map<String, String> mapOfProgressValues = ES_Utility.getPicklistValues('ES_Project__c', 'Project_Status__c');
+        Map<String, String> mapOfHealthValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Health__c');
+        Map<String, String> mapOfCategoryValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Category__c');
+        Map<String, String> mapOfSystemValues = ES_Utility.getPicklistValues('Inspection__c', 'SystemsImpacted__c');
+        Map<String, String> mapOfProgressValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Status__c');
 
         User testUser = [SELECT Id FROM User WHERE UserName = 'standarduser@ESgantt.com'];
 

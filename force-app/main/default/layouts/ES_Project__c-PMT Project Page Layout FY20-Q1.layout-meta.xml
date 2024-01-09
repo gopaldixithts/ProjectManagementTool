@@ -269,7 +269,7 @@
             <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>ES_Project__c.Create_Phases</actionName>
+            <actionName>Inspection__c.Create_Phases</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>1</sortOrder>
         </platformActionListItems>
@@ -294,7 +294,7 @@
             <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>ES_Project__c.Create_Tasks</actionName>
+            <actionName>Inspection__c.Create_Tasks</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>2</sortOrder>
         </platformActionListItems>
@@ -327,7 +327,7 @@
         <fields>CASES.SUBJECT</fields>
         <fields>CASES.STATUS</fields>
         <fields>CASES.TYPE</fields>
-        <relatedList>Case.ES_Project__c</relatedList>
+        <relatedList>Case.Inspection__c</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedEntityHistoryList</relatedList>

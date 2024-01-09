@@ -7,12 +7,12 @@
         <chartSummaries>
             <aggregate>Sum</aggregate>
             <axisBinding>y</axisBinding>
-            <column>ES_Project__c.Project_Phases__r.Project_Tasks__r$Percentage_Completion__c</column>
+            <column>Inspection__c.Project_Phases__r.Project_Tasks__r$Percentage_Completion__c</column>
         </chartSummaries>
         <chartType>HorizontalBar</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
-        <groupingColumn>ES_Project__c.Project_Phases__r.Project_Tasks__r$Assigned_To1__c</groupingColumn>
+        <groupingColumn>Inspection__c.Project_Phases__r.Project_Tasks__r$Assigned_To1__c</groupingColumn>
         <location>CHART_BOTTOM</location>
         <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
@@ -26,37 +26,37 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Name</field>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Name</field>
     </columns>
     <columns>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Status__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Percentage_Completion__c</field>
-    </columns>
-    <columns>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Alert__c</field>
-    </columns>
-    <columns>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Start_Date__c</field>
-    </columns>
-    <columns>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Due_Date__c</field>
-    </columns>
-    <columns>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Description__c</field>
-    </columns>
-    <columns>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$On_Hold_Reason__c</field>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Status__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Task_Level__c</field>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Percentage_Completion__c</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Alert__c</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Due_Date__c</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Description__c</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$On_Hold_Reason__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Task_Level__c</field>
     </columns>
     <filter>
         <criteriaItems>
-            <column>ES_Project__c$IsTemplate__c</column>
+            <column>Inspection__c$IsTemplate__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
@@ -66,17 +66,17 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>ES_Project__c$Owner_s_Department__c</field>
+        <field>Inspection__c$Owner_s_Department__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>ES_Project__c.Project_Phases__r.Project_Tasks__r$Assigned_To1__c</field>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Assigned_To1__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>ES_Project__c.Project_Phases__r$Name</field>
+        <field>Inspection__c.Project_Phases__r$Name</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Projects by Member</name>
@@ -90,7 +90,7 @@
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>ES_Project__c$CreatedDate</dateColumn>
+        <dateColumn>Inspection__c$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

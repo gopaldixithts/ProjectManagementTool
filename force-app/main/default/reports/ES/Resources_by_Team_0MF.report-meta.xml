@@ -1,65 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>ES_Project__c$Name</field>
+        <field>Inspection__c$Name</field>
     </columns>
     <columns>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.User_Name__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.User_Name__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c.Resource_Allocations__r$Role__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Feb__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Role__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Mar__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Feb__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Apr__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Mar__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$May__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Apr__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Jun__c</field>
+        <field>Inspection__c.Resource_Allocations__r$May__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Jul__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Jun__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Aug__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Jul__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Sep__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Aug__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Oct__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Sep__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Nov__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Oct__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Dec__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Nov__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Jan__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Dec__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Inspection__c.Resource_Allocations__r$Jan__c</field>
     </columns>
     <filter>
         <criteriaItems>
-            <column>ES_Project__c$IsTemplate__c</column>
+            <column>Inspection__c$IsTemplate__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
@@ -69,17 +69,17 @@
     <format>Matrix</format>
     <groupingsAcross>
         <dateGranularity>Day</dateGranularity>
-        <field>ES_Project__c.Resource_Allocations__r$Fiscal_Year__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Fiscal_Year__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsAcross>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.User_Department__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.User_Department__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>ES_Project__c$Project_Category__c</field>
+        <field>Inspection__c$Project_Category__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Resources by Team</name>
@@ -93,7 +93,7 @@
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>ES_Project__c$CreatedDate</dateColumn>
+        <dateColumn>Inspection__c$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

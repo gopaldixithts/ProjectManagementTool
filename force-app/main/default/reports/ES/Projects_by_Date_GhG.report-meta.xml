@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>ES_Project__c$Health_Icon__c</field>
+        <field>Inspection__c$Health_Icon__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c$Name</field>
+        <field>Inspection__c$Name</field>
     </columns>
     <columns>
-        <field>ES_Project__c$Deadline_formula__c</field>
+        <field>Inspection__c$Deadline_formula__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c$Project_Status__c</field>
+        <field>Inspection__c$Project_Status__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c$Percentage_Completion__c</field>
+        <field>Inspection__c$Percentage_Completion__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c$Description__c</field>
+        <field>Inspection__c$Description__c</field>
     </columns>
     <filter>
         <criteriaItems>
-            <column>ES_Project__c$IsTemplate__c</column>
+            <column>Inspection__c$IsTemplate__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
@@ -31,17 +31,17 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>ES_Project__c$End_Fiscal_Year__c</field>
+        <field>Inspection__c$End_Fiscal_Year__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>ES_Project__c$Qtr_of_Completion__c</field>
+        <field>Inspection__c$Qtr_of_Completion__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>ES_Project__c$Project_Owner__c</field>
+        <field>Inspection__c$Project_Owner__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Projects by Date</name>
@@ -55,7 +55,7 @@
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>ES_Project__c$CreatedDate</dateColumn>
+        <dateColumn>Inspection__c$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

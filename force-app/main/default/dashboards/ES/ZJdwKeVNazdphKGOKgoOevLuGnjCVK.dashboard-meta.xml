@@ -62,10 +62,10 @@
                 </chartSummary>
                 <componentType>Donut</componentType>
                 <dashboardFilterColumns>
-                    <column>ES_Project__c$Project_Health__c</column>
+                    <column>Inspection__c$Project_Health__c</column>
                 </dashboardFilterColumns>
                 <dashboardFilterColumns>
-                    <column>ES_Project__c$Project_Category__c</column>
+                    <column>Inspection__c$Project_Category__c</column>
                 </dashboardFilterColumns>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
@@ -73,7 +73,7 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>ES_Project__c$Project_Health__c</groupingColumn>
+                <groupingColumn>Inspection__c$Project_Health__c</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
@@ -101,14 +101,14 @@
                 <chartSummary>
                     <aggregate>Sum</aggregate>
                     <axisBinding>y</axisBinding>
-                    <column>ES_Project__c$Percentage_Completion__c</column>
+                    <column>Inspection__c$Percentage_Completion__c</column>
                 </chartSummary>
                 <componentType>Gauge</componentType>
                 <dashboardFilterColumns>
-                    <column>ES_Project__c$Project_Health__c</column>
+                    <column>Inspection__c$Project_Health__c</column>
                 </dashboardFilterColumns>
                 <dashboardFilterColumns>
-                    <column>ES_Project__c$Project_Category__c</column>
+                    <column>Inspection__c$Project_Category__c</column>
                 </dashboardFilterColumns>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
@@ -142,10 +142,10 @@
                 </chartSummary>
                 <componentType>BarStacked</componentType>
                 <dashboardFilterColumns>
-                    <column>ES_Project__c$Project_Health__c</column>
+                    <column>Inspection__c$Project_Health__c</column>
                 </dashboardFilterColumns>
                 <dashboardFilterColumns>
-                    <column>ES_Project__c$Project_Category__c</column>
+                    <column>Inspection__c$Project_Category__c</column>
                 </dashboardFilterColumns>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
@@ -153,8 +153,8 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>ES_Project__c$Owner_s_Department__c</groupingColumn>
-                <groupingColumn>ES_Project__c.Project_Phases__r.Project_Tasks__r$Assigned_To1__c</groupingColumn>
+                <groupingColumn>Inspection__c$Owner_s_Department__c</groupingColumn>
+                <groupingColumn>Inspection__c.Project_Phases__r.Project_Tasks__r$Assigned_To1__c</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
@@ -183,39 +183,39 @@
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <componentType>FlexTable</componentType>
                 <dashboardFilterColumns>
-                    <column>ES_Project__c$Project_Health__c</column>
+                    <column>Inspection__c$Project_Health__c</column>
                 </dashboardFilterColumns>
                 <dashboardFilterColumns>
-                    <column>ES_Project__c$Project_Category__c</column>
+                    <column>Inspection__c$Project_Category__c</column>
                 </dashboardFilterColumns>
                 <flexComponentProperties>
                     <decimalPrecision>-1</decimalPrecision>
                     <flexTableColumn>
-                        <reportColumn>ES_Project__c.Health_Icon__c</reportColumn>
+                        <reportColumn>Inspection__c.Health_Icon__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>ES_Project__c.Name</reportColumn>
+                        <reportColumn>Inspection__c.Name</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>ES_Project__c.Health_Comment__c</reportColumn>
+                        <reportColumn>Inspection__c.Health_Comment__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>ES_Project__c.Percentage_Completion__c</reportColumn>
+                        <reportColumn>Inspection__c.Percentage_Completion__c</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>ES_Project__c.Health_Icon__c</sortColumn>
+                        <sortColumn>Inspection__c.Health_Icon__c</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
@@ -234,10 +234,10 @@
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <componentType>FlexTable</componentType>
                 <dashboardFilterColumns>
-                    <column>ES_Project__c$Project_Health__c</column>
+                    <column>Inspection__c$Project_Health__c</column>
                 </dashboardFilterColumns>
                 <dashboardFilterColumns>
-                    <column>ES_Project__c$Project_Category__c</column>
+                    <column>Inspection__c$Project_Category__c</column>
                 </dashboardFilterColumns>
                 <flexComponentProperties>
                     <decimalPrecision>-1</decimalPrecision>
@@ -248,7 +248,7 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>ES_Project__c.Name</reportColumn>
+                        <reportColumn>Inspection__c.Name</reportColumn>
                         <showSubTotal>false</showSubTotal>
                         <showTotal>false</showTotal>
                         <type>detail</type>
@@ -272,7 +272,7 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>ES_Project__c.Name</sortColumn>
+                        <sortColumn>Inspection__c.Name</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>

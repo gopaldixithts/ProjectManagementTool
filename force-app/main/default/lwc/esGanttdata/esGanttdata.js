@@ -213,7 +213,7 @@ export default class ESGanttdata extends NavigationMixin(LightningElement) {
             ];
  
             const colorMap = {
-                ES_Project__c: "#c8c8c8", //gray
+                Inspection__c: "#c8c8c8", //gray
                 ES_Phase__c: "#A3A3A3", //dark gray       
                 ES_Task__c: "#3db9d3", //blue           
             };
@@ -384,7 +384,7 @@ export default class ESGanttdata extends NavigationMixin(LightningElement) {
     }
  
     get isESProject() {
-        return this.record.objAPIName == 'ES_Project__c' ? true : false;
+        return this.record.objAPIName == 'Inspection__c' ? true : false;
     }
  
     get isESPhase() {

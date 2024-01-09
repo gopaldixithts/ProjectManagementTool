@@ -7,12 +7,12 @@
         <chartSummaries>
             <aggregate>Sum</aggregate>
             <axisBinding>y</axisBinding>
-            <column>ES_Project__c.Resource_Allocations__r$Feb__c</column>
+            <column>Inspection__c.Resource_Allocations__r$Feb__c</column>
         </chartSummaries>
         <chartType>HorizontalBar</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
-        <groupingColumn>ES_Project__c$Roadmap_Status__c</groupingColumn>
+        <groupingColumn>Inspection__c$Roadmap_Status__c</groupingColumn>
         <location>CHART_BOTTOM</location>
         <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
@@ -26,65 +26,65 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.User_Department__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.User_Department__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.User__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.User__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c$Project_Category__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Feb__c</field>
+        <field>Inspection__c$Project_Category__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Mar__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Feb__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Apr__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Mar__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$May__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Apr__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Jun__c</field>
+        <field>Inspection__c.Resource_Allocations__r$May__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Jul__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Jun__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Aug__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Jul__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Sep__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Aug__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Oct__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Sep__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Nov__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Oct__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Dec__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Nov__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Jan__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Dec__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Inspection__c.Resource_Allocations__r$Jan__c</field>
     </columns>
     <filter>
         <criteriaItems>
-            <column>ES_Project__c$IsTemplate__c</column>
+            <column>Inspection__c$IsTemplate__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
@@ -94,17 +94,17 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>ES_Project__c$Roadmap_Status__c</field>
+        <field>Inspection__c$Roadmap_Status__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>ES_Project__c$Name</field>
+        <field>Inspection__c$Name</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>ES_Project__c.Resource_Allocations__r$Role__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Role__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>FY Projects w/Resource Allocation</name>
@@ -118,7 +118,7 @@
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Start_Date__c</dateColumn>
+        <dateColumn>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Start_Date__c</dateColumn>
         <interval>INTERVAL_CURFY</interval>
     </timeFrameFilter>
 </Report>

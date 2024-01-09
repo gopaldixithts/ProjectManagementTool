@@ -12,7 +12,7 @@
     <label>ES Console</label>
     <navType>Console</navType>
     <tabs>Inspection_Home</tabs> 
-    <tabs>ES_Project__c</tabs>
+    <tabs>Inspection__c</tabs>
     <tabs>ES_Program__c</tabs>
     <tabs>standard-Case</tabs>
     <tabs>ES_Phase__c</tabs>
@@ -46,7 +46,7 @@
             <tab>ES_Program__c</tab>
         </mappings>
         <mappings>
-            <tab>ES_Project__c</tab>
+            <tab>Inspection__c</tab>
         </mappings>
         <mappings>
             <fieldName>Resource_Availability__c</fieldName>

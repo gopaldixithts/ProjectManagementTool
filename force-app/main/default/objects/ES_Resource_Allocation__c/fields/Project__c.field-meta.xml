@@ -3,7 +3,7 @@
     <fullName>Project__c</fullName>
     <externalId>false</externalId>
     <label>Project</label>
-    <referenceTo>ES_Project__c</referenceTo>
+    <referenceTo>Inspection__c</referenceTo>
     <relationshipName>Resource_Allocations</relationshipName>
     <relationshipOrder>1</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>

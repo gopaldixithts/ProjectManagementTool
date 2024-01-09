@@ -130,13 +130,13 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Create_Phases</value>
+                            <value>Inspection__c.Create_Phases</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Create_Tasks</value>
+                            <value>Inspection__c.Create_Tasks</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Clone_Phases_Tasks</value>
+                            <value>Inspection__c.Clone_Phases_Tasks</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.IsTemplate__c}</leftValue>
@@ -146,7 +146,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Use_This_Template</value>
+                            <value>Inspection__c.Use_This_Template</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.IsTemplate__c}</leftValue>
@@ -156,7 +156,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Create_Case</value>
+                            <value>Inspection__c.Create_Case</value>
                         </valueListItems>
                         <valueListItems>
                             <value>ChangeOwnerOne</value>
@@ -276,13 +276,13 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Create_Phases</value>
+                            <value>Inspection__c.Create_Phases</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Create_Tasks</value>
+                            <value>Inspection__c.Create_Tasks</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Clone_Phases_Tasks</value>
+                            <value>Inspection__c.Clone_Phases_Tasks</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.IsTemplate__c}</leftValue>
@@ -292,7 +292,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Use_This_Template</value>
+                            <value>Inspection__c.Use_This_Template</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.IsTemplate__c}</leftValue>
@@ -302,7 +302,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Create_Case</value>
+                            <value>Inspection__c.Create_Case</value>
                         </valueListItems>
                         <valueListItems>
                             <value>ChangeOwnerOne</value>
@@ -362,13 +362,13 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Create_Phases</value>
+                            <value>Inspection__c.Create_Phases</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Create_Tasks</value>
+                            <value>Inspection__c.Create_Tasks</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Clone_Phases_Tasks</value>
+                            <value>Inspection__c.Clone_Phases_Tasks</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.IsTemplate__c}</leftValue>
@@ -378,7 +378,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Use_This_Template</value>
+                            <value>Inspection__c.Use_This_Template</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.IsTemplate__c}</leftValue>
@@ -388,7 +388,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Create_Case</value>
+                            <value>Inspection__c.Create_Case</value>
                         </valueListItems>
                         <valueListItems>
                             <value>ChangeOwnerOne</value>
@@ -444,13 +444,13 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Create_Phases</value>
+                            <value>Inspection__c.Create_Phases</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Create_Tasks</value>
+                            <value>Inspection__c.Create_Tasks</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Clone_Phases_Tasks</value>
+                            <value>Inspection__c.Clone_Phases_Tasks</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.IsTemplate__c}</leftValue>
@@ -460,7 +460,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Use_This_Template</value>
+                            <value>Inspection__c.Use_This_Template</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.IsTemplate__c}</leftValue>
@@ -470,7 +470,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>ES_Project__c.Create_Case</value>
+                            <value>Inspection__c.Create_Case</value>
                         </valueListItems>
                         <valueListItems>
                             <value>ChangeOwnerOne</value>
@@ -521,7 +521,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>ES_Project__c.Id</value>
+                    <value>Inspection__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
@@ -539,7 +539,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>ES_Project__c.Id</value>
+                    <value>Inspection__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
@@ -677,7 +677,7 @@
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>ES Project Record Page</masterLabel>
-    <sobjectType>ES_Project__c</sobjectType>
+    <sobjectType>Inspection__c</sobjectType>
     <template>
         <name>flexipage:recordHomeSingleColNoHeaderTemplateDesktop</name>
     </template>

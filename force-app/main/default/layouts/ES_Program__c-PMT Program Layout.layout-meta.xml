@@ -99,7 +99,7 @@
         <fields>Health_Comment__c</fields>
         <fields>Path_to_Green__c</fields>
         <fields>Project_Owner__c</fields>
-        <relatedList>ES_Project__c.Program__c</relatedList>
+        <relatedList>Inspection__c.Program__c</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedEntityHistoryList</relatedList>
