@@ -78,7 +78,7 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
         Map<Id,Id> mapOfResAllAndResAvail = new Map<Id,Id>();
         Map<Id,Id> mapOfResAllAndInspection = new Map<Id,Id>();
         Map<Id,Id> mapOfResourceAvailAndUser = new Map<Id,Id>();
-        List<ES_Inspection__Share> lstOfShareRecToBeDeleted = new List<ES_Inspection__Share>();
+        List<Inspection__Share> lstOfShareRecToBeDeleted = new List<Inspection__Share>();
         List<ES_Error_Log__c> lstOfErrorLogs = new List<ES_Error_Log__c>();
         try {
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
@@ -90,7 +90,7 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
                 mapOfResourceAvailAndUser.put(availabilityRec.Id, availabilityRec.User__c);
             }
             
-            for(ES_Inspection__Share shareRec : [Select ParentId, UserOrGroupId from ES_Inspection__Share where ParentId IN: mapOfResAllAndInspection.values() and UserOrGroupId IN: mapOfResourceAvailAndUser.values() limit :Limits.getLimitQueries()]){
+            for(Inspection__Share shareRec : [Select ParentId, UserOrGroupId from Inspection__Share where ParentId IN: mapOfResAllAndInspection.values() and UserOrGroupId IN: mapOfResourceAvailAndUser.values() limit :Limits.getLimitQueries()]){
                 for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
                     if(allocationRec.Inspection__c == shareRec.ParentId && mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id)) == shareRec.UserOrGroupId){
                         lstOfShareRecToBeDeleted.add(shareRec);
@@ -132,7 +132,7 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
         Map<Id,Id> mapOfResourceAvailAndUser = new Map<Id,Id>();
         List<ES_Error_Log__c> lstOfErrorLogs = new List<ES_Error_Log__c>();
         try {
-            List<ES_Inspection__Share> lsToInsert = new List<ES_Inspection__Share>();
+            List<Inspection__Share> lsToInsert = new List<Inspection__Share>();
             
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
                 mapOfResAllAndResAvail.put(allocationRec.Id, allocationRec.Resource_Availability__c);
@@ -143,11 +143,11 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
             }
             
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
-                ES_Inspection__Share projShareObj = new ES_Inspection__Share();
+                Inspection__Share projShareObj = new Inspection__Share();
                 projShareObj.ParentId = allocationRec.Inspection__c;
                 projShareObj.UserOrGroupId = mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id));               
                 projShareObj.AccessLevel = 'Edit';
-                projShareObj.RowCause = Schema.ES_Inspection__Share.RowCause.Inspection_Member__c;
+                projShareObj.RowCause = Schema.Inspection__Share.RowCause.Inspection_Member__c;
                 lsToInsert.add(projShareObj);
             }
             
