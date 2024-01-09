@@ -20,6 +20,7 @@
            </lightning-layout>
            <template if:true={searchInspections}>
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <c-ES-gantt inspection-id={recordId} inspection-progress={progressSelected} inspection-health={healthSelected} system-impacted={systemSelected} inspection-category={categorySelected} program-selected={programSelected} myprojflag={showMyProj} mytaskflag={showTskAssignedToMe} followprojflag={showFollowing}></c-ES-gantt>
            </template>
     </lightning-card>
@@ -32,5 +33,12 @@
     <lightning-card if:false={withfilters}>
            <c-ES-gantt Inspection-id={recordId} Inspection-progress={progressSelected} Inspection-health={healthSelected} system-impacted={systemSelected} Inspection-category={categorySelected} program-selected={programSelected} myprojflag={showMyProj} mytaskflag={showTskAssignedToMe} followprojflag={showFollowing}></c-ES-gantt>
 >>>>>>> 3dc5bb9 (change10)
+=======
+                  <c-ES-gantt inspection-id={recordId} inspection-progress={progressSelected} inspection-health={healthSelected} system-impacted={systemSelected} inspection-category={categorySelected} program-selected={programSelected} myprojflag={showMyProj} mytaskflag={showTskAssignedToMe} followprojflag={showFollowing}></c-ES-gantt>
+           </template>
+    </lightning-card>
+    <lightning-card if:false={withfilters}>
+           <c-ES-gantt inspection-id={recordId} inspection-progress={progressSelected} inspection-health={healthSelected} system-impacted={systemSelected} inspection-category={categorySelected} program-selected={programSelected} myprojflag={showMyProj} mytaskflag={showTskAssignedToMe} followprojflag={showFollowing}></c-ES-gantt>
+>>>>>>> 55b6242 (chane17)
     </lightning-card>
 </template>
