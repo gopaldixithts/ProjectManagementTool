@@ -87,10 +87,14 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
         Map<Id,Id> mapOfResAllAndInspection = new Map<Id,Id>();
         Map<Id,Id> mapOfResourceAvailAndUser = new Map<Id,Id>();
 <<<<<<< HEAD
+<<<<<<< HEAD
         List<Inspection__Share> lstOfShareRecToBeDeleted = new List<Inspection__Share>();
 =======
         List<ES_Inspection__Share> lstOfShareRecToBeDeleted = new List<ES_Inspection__Share>();
 >>>>>>> 3dc5bb9 (change10)
+=======
+        List<Inspection__Share> lstOfShareRecToBeDeleted = new List<Inspection__Share>();
+>>>>>>> 7e49b80 (change11)
         List<ES_Error_Log__c> lstOfErrorLogs = new List<ES_Error_Log__c>();
         try {
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
@@ -107,11 +111,15 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
             }
             
 <<<<<<< HEAD
+<<<<<<< HEAD
             for(Inspection__Share shareRec : [Select ParentId, UserOrGroupId from Inspection__Share where ParentId IN: mapOfResAllAndInspection.values() and UserOrGroupId IN: mapOfResourceAvailAndUser.values() limit :Limits.getLimitQueries()]){
                 for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
                     if(allocationRec.ES_Inspection__c == shareRec.ParentId && mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id)) == shareRec.UserOrGroupId){
 =======
             for(ES_Inspection__Share shareRec : [Select ParentId, UserOrGroupId from ES_Inspection__Share where ParentId IN: mapOfResAllAndInspection.values() and UserOrGroupId IN: mapOfResourceAvailAndUser.values() limit :Limits.getLimitQueries()]){
+=======
+            for(Inspection__Share shareRec : [Select ParentId, UserOrGroupId from Inspection__Share where ParentId IN: mapOfResAllAndInspection.values() and UserOrGroupId IN: mapOfResourceAvailAndUser.values() limit :Limits.getLimitQueries()]){
+>>>>>>> 7e49b80 (change11)
                 for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
                     if(allocationRec.Inspection__c == shareRec.ParentId && mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id)) == shareRec.UserOrGroupId){
 >>>>>>> 3dc5bb9 (change10)
@@ -155,10 +163,14 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
         List<ES_Error_Log__c> lstOfErrorLogs = new List<ES_Error_Log__c>();
         try {
 <<<<<<< HEAD
+<<<<<<< HEAD
             List<Inspection__Share> lsToInsert = new List<Inspection__Share>();
 =======
             List<ES_Inspection__Share> lsToInsert = new List<ES_Inspection__Share>();
 >>>>>>> 3dc5bb9 (change10)
+=======
+            List<Inspection__Share> lsToInsert = new List<Inspection__Share>();
+>>>>>>> 7e49b80 (change11)
             
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
                 mapOfResAllAndResAvail.put(allocationRec.Id, allocationRec.Resource_Availability__c);
@@ -169,6 +181,7 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
             }
             
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
+<<<<<<< HEAD
 <<<<<<< HEAD
                 Inspection__Share projShareObj = new Inspection__Share();
                 projShareObj.ParentId = allocationRec.ES_Inspection__c;
@@ -182,6 +195,13 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
                 projShareObj.AccessLevel = 'Edit';
                 projShareObj.RowCause = Schema.ES_Inspection__Share.RowCause.Inspection_Member__c;
 >>>>>>> 3dc5bb9 (change10)
+=======
+                Inspection__Share projShareObj = new Inspection__Share();
+                projShareObj.ParentId = allocationRec.Inspection__c;
+                projShareObj.UserOrGroupId = mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id));               
+                projShareObj.AccessLevel = 'Edit';
+                projShareObj.RowCause = Schema.Inspection__Share.RowCause.Inspection_Member__c;
+>>>>>>> 7e49b80 (change11)
                 lsToInsert.add(projShareObj);
             }
             

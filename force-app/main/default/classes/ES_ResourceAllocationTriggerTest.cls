@@ -73,10 +73,14 @@ public class ES_ResourceAllocationTriggerTest {
                 INSERT resAllocation;
                 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 List<Inspection__Share> ls = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: UserInfo.getUserId()];
 =======
                 List<ES_Inspection__Share> ls = [select Id from ES_Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: UserInfo.getUserId()];
 >>>>>>> 3dc5bb9 (change10)
+=======
+                List<Inspection__Share> ls = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: UserInfo.getUserId()];
+>>>>>>> 7e49b80 (change11)
                 
                 System.assertNotEquals(null, ls, 'Inspection sharing done');
                 Test.stopTest();
@@ -107,10 +111,14 @@ public class ES_ResourceAllocationTriggerTest {
                 Test.startTest();
                     DELETE resAllocation;
 <<<<<<< HEAD
+<<<<<<< HEAD
                     List<Inspection__Share> ls = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: UserInfo.getUserId()];                
 =======
                     List<ES_Inspection__Share> ls = [select Id from ES_Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: UserInfo.getUserId()];                
 >>>>>>> 3dc5bb9 (change10)
+=======
+                    List<Inspection__Share> ls = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: UserInfo.getUserId()];                
+>>>>>>> 7e49b80 (change11)
                     System.assertNotEquals(null, ls, 'Record founding for deletion');
                 Test.stopTest();
             }
@@ -148,10 +156,14 @@ public class ES_ResourceAllocationTriggerTest {
                 try{
                     DELETE resAllocation;
 <<<<<<< HEAD
+<<<<<<< HEAD
                     List<Inspection__Share> ls = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: UserInfo.getUserId()];                
 =======
                     List<ES_Inspection__Share> ls = [select Id from ES_Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: UserInfo.getUserId()];                
 >>>>>>> 3dc5bb9 (change10)
+=======
+                    List<Inspection__Share> ls = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: UserInfo.getUserId()];                
+>>>>>>> 7e49b80 (change11)
                 }catch(Exception e){
                   System.assertNotEquals(null, e.getMessage(),'error should be returned for negative test');  
                 }
@@ -211,12 +223,17 @@ public class ES_ResourceAllocationTriggerTest {
                     UPDATE resAllocation;
                 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 List<Inspection__Share> lsNew = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: ESTempUser.Id];
                 List<Inspection__Share> lsOld = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: usr.Id];
 =======
                 List<ES_Inspection__Share> lsNew = [select Id from ES_Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: ESTempUser.Id];
                 List<ES_Inspection__Share> lsOld = [select Id from ES_Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: usr.Id];
 >>>>>>> 3dc5bb9 (change10)
+=======
+                List<Inspection__Share> lsNew = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: ESTempUser.Id];
+                List<Inspection__Share> lsOld = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: usr.Id];
+>>>>>>> 7e49b80 (change11)
                 
                 System.assertNotEquals(null, lsNew, 'Inspection sharing done for new resource');
                 System.assertNotEquals(null, lsOld, 'Inspection sharing revoked for old resource');
