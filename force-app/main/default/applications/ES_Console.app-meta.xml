@@ -11,7 +11,7 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>ES Console</label>
     <navType>Console</navType>
-    <tabs>ES_Home</tabs>
+    <tabs>Inspection_Home</tabs>
     <tabs>ES_Project__c</tabs>
     <tabs>ES_Program__c</tabs>
     <tabs>standard-Case</tabs>
@@ -36,7 +36,7 @@
             <tab>ES_Gantt_View</tab>
         </mappings>
         <mappings>
-            <tab>ES_Home</tab>
+            <tab>Inspection_Home</tab>
         </mappings>
         <mappings>
             <fieldName>Project__c</fieldName>
