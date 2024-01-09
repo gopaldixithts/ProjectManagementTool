@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:force-app/main/default/objects/ES_Phase__c/fields/Inspection__c.field-meta.xml
+>>>>>>> f6a11f4 (change20)
 <<<<<<< HEAD:force-app/main/default/objects/ES_Phase__c/fields/ES_Inspection__c.field-meta.xml
     <fullName>ES_Inspection__c</fullName>
     <description>The Inspection this phase is assigned to</description>
@@ -11,6 +15,12 @@
 >>>>>>> 01eee72 (Change2):force-app/main/default/objects/ES_Phase__c/fields/Project__c.field-meta.xml
 =======
     <fullName>Inspection__c</fullName>
+<<<<<<< HEAD
+=======
+========
+    <fullName>ES_Inspection__c</fullName>
+>>>>>>>> f6a11f4 (change20):force-app/main/default/objects/ES_Phase__c/fields/ES_Inspection__c.field-meta.xml
+>>>>>>> f6a11f4 (change20)
     <description>The Inspection this phase is assigned to</description>
     <externalId>false</externalId>
     <label>Inspection Name</label>

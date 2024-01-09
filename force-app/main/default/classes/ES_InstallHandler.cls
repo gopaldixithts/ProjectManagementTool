@@ -55,37 +55,53 @@ global with sharing class ES_InstallHandler implements InstallHandler {
                     //Create Phases
                     ES_Phase__c phase1 = new ES_Phase__c( Name = '0. Discovery',
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                            ES_Inspection__c = InspectionId);
 =======
                                                            Inspection__c = InspectionId);
 >>>>>>> 3dc5bb9 (change10)
+=======
+                                                           ES_Inspection__c = InspectionId);
+>>>>>>> f6a11f4 (change20)
                     
                     lstOfPhases.add(phase1);
                     
                     ES_Phase__c phase2 = new ES_Phase__c( Name = '1. Initiate',
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                            ES_Inspection__c = InspectionId);
 =======
                                                            Inspection__c = InspectionId);
 >>>>>>> 3dc5bb9 (change10)
+=======
+                                                           ES_Inspection__c = InspectionId);
+>>>>>>> f6a11f4 (change20)
                     
                     lstOfPhases.add(phase2);
                     
                     ES_Phase__c phase3 = new ES_Phase__c( Name = '2. Execute',
 <<<<<<< HEAD
-                                                           ES_Inspection__c = InspectionId);
-=======
-                                                           Inspection__c = InspectionId);
->>>>>>> 3dc5bb9 (change10)
-                    
-                    lstOfPhases.add(phase3);
-                    
-                    ES_Phase__c phase4 = new ES_Phase__c( Name = '3. Transition',
 <<<<<<< HEAD
                                                            ES_Inspection__c = InspectionId);
 =======
                                                            Inspection__c = InspectionId);
 >>>>>>> 3dc5bb9 (change10)
+=======
+                                                           ES_Inspection__c = InspectionId);
+>>>>>>> f6a11f4 (change20)
+                    
+                    lstOfPhases.add(phase3);
+                    
+                    ES_Phase__c phase4 = new ES_Phase__c( Name = '3. Transition',
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                                           ES_Inspection__c = InspectionId);
+=======
+                                                           Inspection__c = InspectionId);
+>>>>>>> 3dc5bb9 (change10)
+=======
+                                                           ES_Inspection__c = InspectionId);
+>>>>>>> f6a11f4 (change20)
                     
                     lstOfPhases.add(phase4);
                     

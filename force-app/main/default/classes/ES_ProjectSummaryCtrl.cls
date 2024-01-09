@@ -33,10 +33,14 @@ public with sharing class ES_InspectionSummaryCtrl {
         CreateSummaryWrapper summaryWrapper = new CreateSummaryWrapper();
         //Calling util method to check CRUD
 <<<<<<< HEAD
+<<<<<<< HEAD
         List<String> lstOfPhaseFields = new List<String>{'Name', 'Health_Icon__c', 'Phase_Completion__c', 'Phase_Completion_Image__c', 'ES_Inspection__c','Kickoff_formula__c'};
 =======
         List<String> lstOfPhaseFields = new List<String>{'Name', 'Health_Icon__c', 'Phase_Completion__c', 'Phase_Completion_Image__c', 'Inspection__c','Kickoff_formula__c'};
 >>>>>>> 3dc5bb9 (change10)
+=======
+        List<String> lstOfPhaseFields = new List<String>{'Name', 'Health_Icon__c', 'Phase_Completion__c', 'Phase_Completion_Image__c', 'ES_Inspection__c','Kickoff_formula__c'};
+>>>>>>> f6a11f4 (change20)
         if (ES_Utility.validateCRUD('ES_Phase__c', lstOfPhaseFields, 'isAccessible') ){ 
             summaryWrapper.phasesList = getPhasesForInspection(recordId);
         }else{

@@ -82,10 +82,14 @@ public with sharing class ES_GanttCtrl {
 
                 // fetching ES Phases
 <<<<<<< HEAD
+<<<<<<< HEAD
                 List<String> lstOfPhaseFields = new List<String> {'Id', 'Name', 'Kickoff_formula__c', 'Duration__c', 'Deadline_formula__c', 'Health_Icon__c', 'ES_Inspection__c'};
 =======
                 List<String> lstOfPhaseFields = new List<String> {'Id', 'Name', 'Kickoff_formula__c', 'Duration__c', 'Deadline_formula__c', 'Health_Icon__c', 'Inspection__c'};
 >>>>>>> 3dc5bb9 (change10)
+=======
+                List<String> lstOfPhaseFields = new List<String> {'Id', 'Name', 'Kickoff_formula__c', 'Duration__c', 'Deadline_formula__c', 'Health_Icon__c', 'ES_Inspection__c'};
+>>>>>>> f6a11f4 (change20)
 
                 if (ES_Utility.validateCRUD('ES_Phase__c', lstOfPhaseFields, 'isAccessible')) {
                     Map<Id, ES_Phase__c> mapOfPhases = getPhases(projIds);
@@ -117,6 +121,7 @@ public with sharing class ES_GanttCtrl {
 
                     for (ES_Phase__c phs: mapOfPhases.values()) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         if (mapOfMilestoneToPhases.containsKey(phs.ES_Inspection__c)) {
                             List<ES_Phase__c> lstOfPhases = mapOfMilestoneToPhases.get(phs.ES_Inspection__c);
                             lstOfPhases.add(phs);
@@ -126,11 +131,19 @@ public with sharing class ES_GanttCtrl {
 =======
                         if (mapOfMilestoneToPhases.containsKey(phs.Inspection__c)) {
                             List<ES_Phase__c> lstOfPhases = mapOfMilestoneToPhases.get(phs.Inspection__c);
+=======
+                        if (mapOfMilestoneToPhases.containsKey(phs.ES_Inspection__c)) {
+                            List<ES_Phase__c> lstOfPhases = mapOfMilestoneToPhases.get(phs.ES_Inspection__c);
+>>>>>>> f6a11f4 (change20)
                             lstOfPhases.add(phs);
-                            mapOfMilestoneToPhases.put(phs.Inspection__c, lstOfPhases);
+                            mapOfMilestoneToPhases.put(phs.ES_Inspection__c, lstOfPhases);
                         } else {
+<<<<<<< HEAD
                             mapOfMilestoneToPhases.put(phs.Inspection__c, new List<ES_Phase__c>{phs}); 
 >>>>>>> 3dc5bb9 (change10)
+=======
+                            mapOfMilestoneToPhases.put(phs.ES_Inspection__c, new List<ES_Phase__c>{phs}); 
+>>>>>>> f6a11f4 (change20)
                         }
                     }
                 } else {
@@ -158,10 +171,14 @@ public with sharing class ES_GanttCtrl {
 
                         for (ES_Phase__c phs: mapOfMilestoneToPhases.get(prj.Id)) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                             GanttDataWrapper ESPhase = getGanttDataWrapper(slotSize, startDate, phs.Id, phs.Name, phs.Kickoff_formula__c, phs.Deadline_formula__c, phs.Duration__c, phs.ES_Inspection__c, 'ES_Phase__c', phs.Health_Icon__c, (followIds.contains(phs.Inspection__r.Id)) ? true : false, (setOfTasksAssignedToMe.contains(phs.Id)) ? true : false, (setOfProjOwners.contains(loginUserId)) ? true : false, null, false);
 =======
                             GanttDataWrapper ESPhase = getGanttDataWrapper(slotSize, startDate, phs.Id, phs.Name, phs.Kickoff_formula__c, phs.Deadline_formula__c, phs.Duration__c, phs.Inspection__c, 'ES_Phase__c', phs.Health_Icon__c, (followIds.contains(phs.Inspection__r.Id)) ? true : false, (setOfTasksAssignedToMe.contains(phs.Id)) ? true : false, (setOfProjOwners.contains(loginUserId)) ? true : false, null, false);
 >>>>>>> 3dc5bb9 (change10)
+=======
+                            GanttDataWrapper ESPhase = getGanttDataWrapper(slotSize, startDate, phs.Id, phs.Name, phs.Kickoff_formula__c, phs.Deadline_formula__c, phs.Duration__c, phs.ES_Inspection__c, 'ES_Phase__c', phs.Health_Icon__c, (followIds.contains(phs.Inspection__r.Id)) ? true : false, (setOfTasksAssignedToMe.contains(phs.Id)) ? true : false, (setOfProjOwners.contains(loginUserId)) ? true : false, null, false);
+>>>>>>> f6a11f4 (change20)
 
                             if (mapOfPhaseToTasks.containsKey(phs.Id)) {
                                 List<GanttDataWrapper> lstOfTasks = new List<GanttDataWrapper>();
@@ -418,10 +435,14 @@ public with sharing class ES_GanttCtrl {
         Map<Id, ES_Phase__c> mapOfPhases = new Map<Id, ES_Phase__c>();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         for (ES_Phase__c phaseRec: [SELECT Id, Name, Kickoff_formula__c, Duration__c, ES_Inspection__c, Deadline_formula__c, Health_Icon__c, Inspection__r.Id FROM ES_Phase__c WHERE ES_Inspection__c IN: lstOfProjIds limit: limits.getLimitQueryRows()]) {
 =======
         for (ES_Phase__c phaseRec: [SELECT Id, Name, Kickoff_formula__c, Duration__c, Inspection__c, Deadline_formula__c, Health_Icon__c, Inspection__r.Id FROM ES_Phase__c WHERE Inspection__c IN: lstOfProjIds limit: limits.getLimitQueryRows()]) {
 >>>>>>> 3dc5bb9 (change10)
+=======
+        for (ES_Phase__c phaseRec: [SELECT Id, Name, Kickoff_formula__c, Duration__c, ES_Inspection__c, Deadline_formula__c, Health_Icon__c, Inspection__r.Id FROM ES_Phase__c WHERE ES_Inspection__c IN: lstOfProjIds limit: limits.getLimitQueryRows()]) {
+>>>>>>> f6a11f4 (change20)
             mapOfPhases.put(phaseRec.Id, phaseRec);
         }
 

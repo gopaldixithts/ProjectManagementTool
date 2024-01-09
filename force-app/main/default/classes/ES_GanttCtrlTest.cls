@@ -55,19 +55,27 @@ public with sharing class ES_GanttCtrlTest {
             ES_Phase__c ph1 = new ES_Phase__c();
             ph1.Name = 'test phase 1';
 <<<<<<< HEAD
+<<<<<<< HEAD
             ph1.ES_Inspection__c = prj1.Id;
 =======
             ph1.Inspection__c = prj1.Id;
 >>>>>>> 3dc5bb9 (change10)
+=======
+            ph1.ES_Inspection__c = prj1.Id;
+>>>>>>> f6a11f4 (change20)
             INSERT ph1;
 
             ES_Phase__c ph2 = new ES_Phase__c();
             ph2.Name = 'test phase 2';
 <<<<<<< HEAD
+<<<<<<< HEAD
             ph2.ES_Inspection__c = prj1.Id;
 =======
             ph2.Inspection__c = prj1.Id;
 >>>>>>> 3dc5bb9 (change10)
+=======
+            ph2.ES_Inspection__c = prj1.Id;
+>>>>>>> f6a11f4 (change20)
             INSERT ph2;
 
             ES_Task__c tsk1 = new ES_Task__c();
@@ -103,10 +111,14 @@ public with sharing class ES_GanttCtrlTest {
             ES_Phase__c ph3 = new ES_Phase__c();
             ph3.Name = 'test phase 2';
 <<<<<<< HEAD
+<<<<<<< HEAD
             ph3.ES_Inspection__c = prj2.Id;
 =======
             ph3.Inspection__c = prj2.Id;
 >>>>>>> 3dc5bb9 (change10)
+=======
+            ph3.ES_Inspection__c = prj2.Id;
+>>>>>>> f6a11f4 (change20)
             INSERT ph3;
 
             ES_Task__c tsk2 = new ES_Task__c();
