@@ -10,7 +10,7 @@
     <filters>
         <field>CASES.RECORDTYPE</field>
         <operation>equals</operation>
-        <value>Case.ES_Inspection</value>
+        <value>Case.Inspection</value>
     </filters>
     <filters>
         <field>CASES.STATUS</field>
