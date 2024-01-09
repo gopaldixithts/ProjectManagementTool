@@ -265,6 +265,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ES_Phase__c.Inspection__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ES_Program__c.Program_Health_Icon__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1188,7 +1193,7 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <recordTypeVisibilities>
-        <recordType>Case.ES_Inspection</recordType>
+        <recordType>Case.Inspection</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <tabSettings>
