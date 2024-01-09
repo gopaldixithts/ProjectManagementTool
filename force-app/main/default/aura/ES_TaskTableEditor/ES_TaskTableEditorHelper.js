@@ -1,9 +1,9 @@
 ({
     getTasks : function(component, helper) {
         component.set("v.isLoading",true);
-        var action = component.get("c.getTasksForProject");
+        var action = component.get("c.getTasksForInspection");
         action.setParams({
-            projectId : component.get("v.recordId") 
+            InspectionId : component.get("v.recordId") 
         });        
         action.setCallback(this,function(response){
             //Create a set for status values
@@ -276,7 +276,7 @@
                 var flow = component.find("flowChangeStatus");
                 var inputVariables = [
                     {
-                        name : "InputProjectId",
+                        name : "InputInspectionId",
                         type : "SObject",
                         value : component.get("v.recordId")
                     },

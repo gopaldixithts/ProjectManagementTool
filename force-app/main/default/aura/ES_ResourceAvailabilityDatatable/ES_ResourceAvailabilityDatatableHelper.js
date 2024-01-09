@@ -47,8 +47,8 @@
         }
         
         //Define columns table
-        var columns = [{label: 'Project', type: 'button', editable:false, sortable:true, typeAttributes: { label: {fieldName: 'Project_Name__c'}, variant:'base', class:'slds-truncate',name: 'view_details', title: 'Click to View Details'}},
-                       {label: 'Project Owner',fieldName: 'Project_Owner__c', editable:false, type: 'text', sortable:true},
+        var columns = [{label: 'Inspection', type: 'button', editable:false, sortable:true, typeAttributes: { label: {fieldName: 'Inspection_Name__c'}, variant:'base', class:'slds-truncate',name: 'view_details', title: 'Click to View Details'}},
+                       {label: 'Inspection Owner',fieldName: 'Inspection_Owner__c', editable:false, type: 'text', sortable:true},
                        {label: 'Role',fieldName: 'Role__c', editable:false, type: 'text', sortable:true, initialWidth:100}];
         
         for(var i=0;i<fiscalMonths.length;i++){
@@ -144,7 +144,7 @@
             createAllocation.setParams({
                 "entityApiName": "ES_Resource_Allocation__c",
                 "defaultFieldValues": {
-                    'Project__c' : AllocRec.Project__c,
+                    'Inspection__c' : AllocRec.Inspection__c,
                     'Resource_Availability__c' : AllocRec.Resource_Availability__c,
                     'Role__c' : AllocRec.Role__c,
                     'Feb__c' : AllocRec.Feb__c,

@@ -11,7 +11,7 @@
         var row = event.getParam('row');
         var actionName = action.name?action.name:JSON.stringify(action.name);
         switch (actionName) {
-            case 'view_details' : helper.ViewRecord(component,row.Project__c);
+            case 'view_details' : helper.ViewRecord(component,row.Inspection__c);
                 break;
             case 'View':helper.ViewRecord(component,row.Id);
                 break;

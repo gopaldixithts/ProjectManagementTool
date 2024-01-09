@@ -72,11 +72,11 @@
     </Lightning:card>
     <!--END allocation summary table-->
     
-    <!--START Project datatable-->
+    <!--START Inspection datatable-->
     <Lightning:card class="slds-var-p-top_large">
         <aura:set attribute="title">
             <lightning:icon iconName="custom:custom64" size="small"/>
-            {!if(!empty(v.availRecord.User__c),'Assigned Projects','Pending Requirements')}
+            {!if(!empty(v.availRecord.User__c),'Assigned Inspections','Pending Requirements')}
         </aura:set>
         <c:ES_ResourceAvailabilityDatatable 
                                              recordId="{!v.recordId}" 
@@ -86,6 +86,6 @@
         
     </Lightning:card>
     
-    <!--END Project datatable-->
+    <!--END Inspection datatable-->
     
 </aura:component>

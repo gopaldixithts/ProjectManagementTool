@@ -109,10 +109,10 @@
     handleStatusChange : function (component, event,helper) {
         if(event.getParam("status") === "FINISHED") {
             component.set("v.showflowChangeStatus", false);
-            var projectId = component.get("v.recordId") ;
+            var InspectionId = component.get("v.recordId") ;
             var urlEvent = $A.get("e.force:navigateToSObject");
             urlEvent.setParams({
-                "recordId": projectId
+                "recordId": InspectionId
             });
             urlEvent.fire();
         } 

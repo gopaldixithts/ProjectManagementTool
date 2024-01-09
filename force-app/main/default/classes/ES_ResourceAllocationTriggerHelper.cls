@@ -24,12 +24,12 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
             //Calling util method to check CRUD
             List<String> lstOfTaskFields = new List<String>{'Assigned_To1__c', 'Name','Id', 'Inspection_Id__c'};
                 if(ES_Utility.validateCRUD('ES_Task__c', lstOfTaskFields, 'isAccessible')){
-                    List<ES_Task__c> tasklist=[SELECT id,name,Assigned_To1__c,Phase__r.Inspection__c FROM ES_Task__c WHERE Assigned_To1__c IN :userid AND Inspection_Id__c IN :Inspectionid limit :Limits.getLimitQueries()];
+                    List<ES_Task__c> tasklist=[SELECT id,name,Assigned_To1__c,Phase__r.ES_Inspection__c FROM ES_Task__c WHERE Assigned_To1__c IN :userid AND Inspection_Id__c IN :Inspectionid limit :Limits.getLimitQueries()];
                     for(ES_Resource_Allocation__c rec : recs)
                     {
                         for(ES_Task__c taskRec : tasklist)
                         {
-                            if(!String.isEmpty(rec.Allocated_Resource_Id__c) && rec.Allocated_Resource_Id__c == taskRec.Assigned_To1__c && rec.Inspection__c == taskRec.Phase__r.Inspection__c){
+                            if(!String.isEmpty(rec.Allocated_Resource_Id__c) && rec.Allocated_Resource_Id__c == taskRec.Assigned_To1__c && rec.ES_Inspection__c == taskRec.Phase__r.Inspection__c){
                                 rec.addError('Resource can not be deleted, as resource is assigned to a task');
                             }               
                         }
@@ -83,7 +83,7 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
         try {
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
                 mapOfResAllAndResAvail.put(allocationRec.Id, String.escapeSingleQuotes(allocationRec.Resource_Availability__c));
-                mapOfResAllAndInspection.put(allocationRec.Id, String.escapeSingleQuotes(allocationRec.Inspection__c));
+                mapOfResAllAndInspection.put(allocationRec.Id, String.escapeSingleQuotes(allocationRec.ES_Inspection__c));
             }
             
             for(ES_Resource_Availability__c availabilityRec : [SELECT Id, User__c FROM ES_Resource_Availability__c WHERE Id IN: mapOfResAllAndResAvail.values() limit :Limits.getLimitQueries()]){
@@ -92,7 +92,7 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
             
             for(Inspection__Share shareRec : [Select ParentId, UserOrGroupId from Inspection__Share where ParentId IN: mapOfResAllAndInspection.values() and UserOrGroupId IN: mapOfResourceAvailAndUser.values() limit :Limits.getLimitQueries()]){
                 for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
-                    if(allocationRec.Inspection__c == shareRec.ParentId && mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id)) == shareRec.UserOrGroupId){
+                    if(allocationRec.ES_Inspection__c == shareRec.ParentId && mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id)) == shareRec.UserOrGroupId){
                         lstOfShareRecToBeDeleted.add(shareRec);
                     }
                 }
@@ -144,7 +144,7 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
             
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
                 Inspection__Share projShareObj = new Inspection__Share();
-                projShareObj.ParentId = allocationRec.Inspection__c;
+                projShareObj.ParentId = allocationRec.ES_Inspection__c;
                 projShareObj.UserOrGroupId = mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id));               
                 projShareObj.AccessLevel = 'Edit';
                 projShareObj.RowCause = Schema.Inspection__Share.RowCause.Inspection_Member__c;

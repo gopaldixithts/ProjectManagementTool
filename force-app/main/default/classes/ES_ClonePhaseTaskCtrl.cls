@@ -165,7 +165,7 @@ global with sharing class ES_ClonePhaseTaskCtrl {
         
         //Cloning the selected Phase records
         if(lstPhases.size()>0){
-            List<ES_Phase__c> lstSelectedPhases = [Select Id, Name, Inspection__c, Phase_Health__c, Sum_of_tasks_count_child__c, Phase_Description__c, Start_date_from_child_inspection__c, End_date_from_child__c from ES_Phase__c where Id IN: lstPhases WITH SECURITY_ENFORCED limit:limits.getLimitQueryRows()];
+            List<ES_Phase__c> lstSelectedPhases = [Select Id, Name, ES_Inspection__c, Phase_Health__c, Sum_of_tasks_count_child__c, Phase_Description__c, Start_date_from_child_inspection__c, End_date_from_child__c from ES_Phase__c where Id IN: lstPhases WITH SECURITY_ENFORCED limit:limits.getLimitQueryRows()];
             
             for (ES_Phase__c phase: lstSelectedPhases) {
                 ES_Phase__c phaseClone = phase.clone(false, false, false, false);

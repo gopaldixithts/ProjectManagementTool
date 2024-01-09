@@ -57,7 +57,7 @@ public with sharing class ES_GanttCtrl {
                 }
 
                 // fetching ES Phases
-                List<String> lstOfPhaseFields = new List<String> {'Id', 'Name', 'Kickoff_formula__c', 'Duration__c', 'Deadline_formula__c', 'Health_Icon__c', 'Inspection__c'};
+                List<String> lstOfPhaseFields = new List<String> {'Id', 'Name', 'Kickoff_formula__c', 'Duration__c', 'Deadline_formula__c', 'Health_Icon__c', 'ES_Inspection__c'};
 
                 if (ES_Utility.validateCRUD('ES_Phase__c', lstOfPhaseFields, 'isAccessible')) {
                     Map<Id, ES_Phase__c> mapOfPhases = getPhases(projIds);
@@ -88,12 +88,12 @@ public with sharing class ES_GanttCtrl {
                     }
 
                     for (ES_Phase__c phs: mapOfPhases.values()) {
-                        if (mapOfMilestoneToPhases.containsKey(phs.Inspection__c)) {
-                            List<ES_Phase__c> lstOfPhases = mapOfMilestoneToPhases.get(phs.Inspection__c);
+                        if (mapOfMilestoneToPhases.containsKey(phs.ES_Inspection__c)) {
+                            List<ES_Phase__c> lstOfPhases = mapOfMilestoneToPhases.get(phs.ES_Inspection__c);
                             lstOfPhases.add(phs);
-                            mapOfMilestoneToPhases.put(phs.Inspection__c, lstOfPhases);
+                            mapOfMilestoneToPhases.put(phs.ES_Inspection__c, lstOfPhases);
                         } else {
-                            mapOfMilestoneToPhases.put(phs.Inspection__c, new List<ES_Phase__c>{phs}); 
+                            mapOfMilestoneToPhases.put(phs.ES_Inspection__c, new List<ES_Phase__c>{phs}); 
                         }
                     }
                 } else {
@@ -108,7 +108,7 @@ public with sharing class ES_GanttCtrl {
                         List<GanttDataWrapper> lstOfPhases = new List<GanttDataWrapper>();
 
                         for (ES_Phase__c phs: mapOfMilestoneToPhases.get(prj.Id)) {
-                            GanttDataWrapper ESPhase = getGanttDataWrapper(slotSize, startDate, phs.Id, phs.Name, phs.Kickoff_formula__c, phs.Deadline_formula__c, phs.Duration__c, phs.Inspection__c, 'ES_Phase__c', phs.Health_Icon__c, (followIds.contains(phs.Inspection__r.Id)) ? true : false, (setOfTasksAssignedToMe.contains(phs.Id)) ? true : false, (setOfProjOwners.contains(loginUserId)) ? true : false, null, false);
+                            GanttDataWrapper ESPhase = getGanttDataWrapper(slotSize, startDate, phs.Id, phs.Name, phs.Kickoff_formula__c, phs.Deadline_formula__c, phs.Duration__c, phs.ES_Inspection__c, 'ES_Phase__c', phs.Health_Icon__c, (followIds.contains(phs.Inspection__r.Id)) ? true : false, (setOfTasksAssignedToMe.contains(phs.Id)) ? true : false, (setOfProjOwners.contains(loginUserId)) ? true : false, null, false);
 
                             if (mapOfPhaseToTasks.containsKey(phs.Id)) {
                                 List<GanttDataWrapper> lstOfTasks = new List<GanttDataWrapper>();
@@ -356,7 +356,7 @@ public with sharing class ES_GanttCtrl {
     private static Map<Id, ES_Phase__c> getPhases(List<Id> lstOfProjIds) {
         Map<Id, ES_Phase__c> mapOfPhases = new Map<Id, ES_Phase__c>();
 
-        for (ES_Phase__c phaseRec: [SELECT Id, Name, Kickoff_formula__c, Duration__c, Inspection__c, Deadline_formula__c, Health_Icon__c, Inspection__r.Id FROM ES_Phase__c WHERE Inspection__c IN: lstOfProjIds limit: limits.getLimitQueryRows()]) {
+        for (ES_Phase__c phaseRec: [SELECT Id, Name, Kickoff_formula__c, Duration__c, ES_Inspection__c, Deadline_formula__c, Health_Icon__c, Inspection__r.Id FROM ES_Phase__c WHERE ES_Inspection__c IN: lstOfProjIds limit: limits.getLimitQueryRows()]) {
             mapOfPhases.put(phaseRec.Id, phaseRec);
         }
 

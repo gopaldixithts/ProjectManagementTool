@@ -36,22 +36,22 @@ global with sharing class ES_InstallHandler implements InstallHandler {
                     Integer resourceAvailability = Integer.valueOf(ES_Utility.getESSettings('Default').Default_Availability_for_Scheduler__c);
                     //Create Phases
                     ES_Phase__c phase1 = new ES_Phase__c( Name = '0. Discovery',
-                                                           Inspection__c = InspectionId);
+                                                           ES_Inspection__c = InspectionId);
                     
                     lstOfPhases.add(phase1);
                     
                     ES_Phase__c phase2 = new ES_Phase__c( Name = '1. Initiate',
-                                                           Inspection__c = InspectionId);
+                                                           ES_Inspection__c = InspectionId);
                     
                     lstOfPhases.add(phase2);
                     
                     ES_Phase__c phase3 = new ES_Phase__c( Name = '2. Execute',
-                                                           Inspection__c = InspectionId);
+                                                           ES_Inspection__c = InspectionId);
                     
                     lstOfPhases.add(phase3);
                     
                     ES_Phase__c phase4 = new ES_Phase__c( Name = '3. Transition',
-                                                           Inspection__c = InspectionId);
+                                                           ES_Inspection__c = InspectionId);
                     
                     lstOfPhases.add(phase4);
                     

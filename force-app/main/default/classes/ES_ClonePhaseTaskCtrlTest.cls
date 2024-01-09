@@ -54,12 +54,12 @@ public class ES_ClonePhaseTaskCtrlTest {
             
             //ES phase record
             ES_Phase__c phases = new ES_Phase__c(Name = 'Phase 1',
-                                                   Inspection__c = inspection.Id, Phase_Health__c = 'On Track');
+                                                   ES_Inspection__c = inspection.Id, Phase_Health__c = 'On Track');
             INSERT phases;
             
             //ES phase record
             ES_Phase__c phases1 = new ES_Phase__c(Name = 'Phase Template',
-                                                    Inspection__c = templateInspection.Id, Phase_Health__c = 'On Track');
+                                                    ES_Inspection__c = templateInspection.Id, Phase_Health__c = 'On Track');
             INSERT phases1;
             
             //ES Task records
@@ -110,7 +110,7 @@ public class ES_ClonePhaseTaskCtrlTest {
             List<Inspection__c> lstProj = [select id from Inspection__c where Name = 'Clone Phases/Tasks Test'];
             
             ES_ClonePhaseTaskCtrl.FlowInputs wrap = new ES_ClonePhaseTaskCtrl.FlowInputs();
-            wrap.phases = [select id from ES_Phase__c where Inspection__c=:lstProj[0].Id];
+            wrap.phases = [select id from ES_Phase__c where ES_Inspection__c=:lstProj[0].Id];
             wrap.inspectionId = lstProj[0].Id;
             wrap.phaseCheck = true;
             
@@ -141,7 +141,7 @@ public class ES_ClonePhaseTaskCtrlTest {
             List<Inspection__c> lstProj = [select id from Inspection__c where IsTemplate__c=true];
             
             ES_ClonePhaseTaskCtrl.FlowInputs wrap = new ES_ClonePhaseTaskCtrl.FlowInputs();
-            wrap.phases = [select id, Name, Inspection__c, Phase_Health__c from ES_Phase__c where Inspection__c=:lstProj[0].Id];
+            wrap.phases = [select id, Name, Inspection__c, Phase_Health__c from ES_Phase__c where ES_Inspection__c=:lstProj[0].Id];
             wrap.tasks = [select id from ES_Task__c where Name='Task Template'];
             wrap.inspectionId = lstProj[0].Id;
             wrap.phaseCheck = false;
@@ -175,7 +175,7 @@ public class ES_ClonePhaseTaskCtrlTest {
             List<Inspection__c> lstProj = [select id from Inspection__c where Name='Clone Phases/Tasks Test'];
             
             ES_ClonePhaseTaskCtrl.FlowInputs wrap = new ES_ClonePhaseTaskCtrl.FlowInputs();
-            wrap.phases = [select id, Name, Inspection__c, Phase_Health__c from ES_Phase__c where Name='Phase 1'];
+            wrap.phases = [select id, Name, ES_Inspection__c, Phase_Health__c from ES_Phase__c where Name='Phase 1'];
             wrap.inspectionId = lstProj[0].Id;
             wrap.phaseCheck = false;
             
