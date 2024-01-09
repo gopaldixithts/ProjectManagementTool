@@ -1,6 +1,6 @@
 /************************************************************************************************************
 * Name: ES_ClonePhaseTaskCtrl
-* Description: Apex class for ES Templates functionality which is invoked from "ES Project Template" Flow
+* Description: Apex class for ES Templates functionality which is invoked from "ES Inspection Template" Flow
 * Test class: ES_ClonePhaseTaskCtrlTest(89%)
 ************************************************************************************************************/
 
@@ -13,16 +13,16 @@ global with sharing class ES_ClonePhaseTaskCtrl {
         public List<ES_Task__c> tasks;
         
         @InvocableVariable
-        public Id projectId;
+        public Id inspectionId;
         
         @InvocableVariable
         public Boolean phaseCheck;
         
         @InvocableVariable
-        public String projectName;
+        public String inspectionName;
         
         @InvocableVariable
-        public Date projectStartDate;
+        public Date inspectionStartDate;
     }
     
     public class FlowOutputs {
@@ -42,7 +42,7 @@ global with sharing class ES_ClonePhaseTaskCtrl {
         
         List<Id> lstPhaseIds = new List<Id>();
         List<Id> lstTaskIds = new List<Id>();
-        List<Inspection__c> lstClonedProjects = new List<Inspection__c> ();
+        List<Inspection__c> lstClonedInspections = new List<Inspection__c> ();
         List<ES_Error_Log__c> lstOfErrorLogs = new List<ES_Error_Log__c> ();
         ES_ClonePhaseTaskCtrl.FlowInputs phtask = new ES_ClonePhaseTaskCtrl.FlowInputs();
         ES_ClonePhaseTaskCtrl.FlowOutputs flowOut = new ES_ClonePhaseTaskCtrl.FlowOutputs();
@@ -50,12 +50,12 @@ global with sharing class ES_ClonePhaseTaskCtrl {
         List<FlowOutputs> lstFlowOut = new List<FlowOutputs> ();
         
         for (ES_ClonePhaseTaskCtrl.FlowInputs req: request) {
-            phtask.projectName = req.projectName;
-            phtask.projectStartDate = req.projectStartDate;
+            phtask.inspectionName = req.inspectionName;
+            phtask.inspectionStartDate = req.inspectionStartDate;
             phtask.phases = req.phases;
             phtask.tasks = req.tasks;
             phtask.phaseCheck = req.phaseCheck;
-            phtask.projectId = req.projectId;
+            phtask.inspectionId = req.InspectionId;
         }
         
         //Get tasks for selected phases
@@ -83,22 +83,22 @@ global with sharing class ES_ClonePhaseTaskCtrl {
             return lstFlowOut;
         }
         
-        //Clone project from project template
+        //Clone Inspection from Inspection template
         if (phtask.phases != null && phtask.phases.size() > 0 && phtask.phaseCheck == false) {
             
-            if(phtask.projectName!=null && phtask.projectStartDate!=null){
+            if(phtask.inspectionName!=null && phtask.inspectionStartDate!=null){
                 Inspection__c proRecord = [Select id, Kickoff_formula__c, Deadline_formula__c, Level_of_Effort__c, Portfolio__c, Initial_Start_Date__c, 
                                             Initial_End_Date__c, Sponsor__c, Description__c, SOX_Impact__c, SOX_Comment__c, Release_Changes__c, Path_to_Green__c, SystemsImpacted__c, 
-                                            Roadmap_Status__c, Project_Status__c, Project_Initiator__c, Project_Health__c, Project_Category__c, Processes_Impacted__c, Issues_Risk__c,
-                                            In_Scope__c, Goal_Statement__c, Business_Case__c, Assumptions__c, Problem_Statement__c, Out_of_Scope__c, Health_Comment__c, Release_Date__c, Go_Live_Date__c from Inspection__c where id =: phtask.projectId WITH SECURITY_ENFORCED limit:limits.getLimitQueryRows()];
+                                            Roadmap_Status__c, Inspection_Status__c, Inspection_Initiator__c, Inspection_Health__c, Inspection_Category__c, Processes_Impacted__c, Issues_Risk__c,
+                                            In_Scope__c, Goal_Statement__c, Business_Case__c, Assumptions__c, Problem_Statement__c, Out_of_Scope__c, Health_Comment__c, Release_Date__c, Go_Live_Date__c from Inspection__c where id =: phtask.inspectionId WITH SECURITY_ENFORCED limit:limits.getLimitQueryRows()];
                 
-                Inspection__c projectClone = proRecord.clone(false,false,false,false); 
-                projectClone.Name = phtask.projectName;
-                lstClonedProjects.add(projectClone);
+                Inspection__c inspectionClone = proRecord.clone(false,false,false,false); 
+                inspectionClone.Name = phtask.inspectionName;
+                lstClonedInspections.add(inspectionClone);
                 
-                if (lstClonedProjects.size() > 0) {
+                if (lstClonedInspections.size() > 0) {
                     try {
-                        Database.SaveResult[] srList = Database.INSERT(lstClonedProjects, false);
+                        Database.SaveResult[] srList = Database.INSERT(lstClonedInspections, false);
                         for (Database.SaveResult sr: srList) {
                             if (!sr.isSuccess()) {
                                 // Operation failed, so get all errors                
@@ -106,7 +106,7 @@ global with sharing class ES_ClonePhaseTaskCtrl {
                                     lstOfErrorLogs.add(new ES_Error_Log__c(Apex_Class__c = 'ES_ClonePhaseTaskCtrl', Error_Message__c = err.getMessage() + 'and fields that affected this error:' + err.getFields(), Method_Name__c = 'getTasks'));
                                 }
                             }else{
-                                phtask.projectId = lstClonedProjects[0].Id;
+                                phtask.inspectionId = lstClonedInspections[0].Id;
                             }
                         }
                     } catch (Exception ex) {
@@ -133,7 +133,7 @@ global with sharing class ES_ClonePhaseTaskCtrl {
         }
         
         if(lstPhaseIds.size()>0 || lstTaskIds.size()>0){
-            createPhasesTasks(lstPhaseIds, lstTaskIds, phtask.projectId, phtask.projectStartDate);
+            createPhasesTasks(lstPhaseIds, lstTaskIds, phtask.inspectionId, phtask.inspectionStartDate);
         }
         return new List<FlowOutputs> ();
     }
@@ -141,12 +141,12 @@ global with sharing class ES_ClonePhaseTaskCtrl {
     
     /********************************************************************************************************************
     * Method Name : createPhasesTasks
-    * Params : Accepts list of selected Phases/Task Ids & ProjectId
+    * Params : Accepts list of selected Phases/Task Ids & InspectionId
     * Return : NA
     * Description : Method to clone Phases/Tasks based on the user selection from flow UI.
     * ******************************************************************************************************************/
     @future
-    public static void createPhasesTasks(List<Id> lstPhases, List<Id> lstTasks, Id projectId, Date projectStartDate) {
+    public static void createPhasesTasks(List<Id> lstPhases, List<Id> lstTasks, Id inspectionId, Date inspectionStartDate) {
         List<ES_Phase__c> lstClonedPhases = new List<ES_Phase__c> ();
         List<ES_Task__c> lstClonedTasks = new List<ES_Task__c> ();
         List<ES_Error_Log__c> lstOfErrorLogs = new List<ES_Error_Log__c> ();
@@ -165,11 +165,11 @@ global with sharing class ES_ClonePhaseTaskCtrl {
         
         //Cloning the selected Phase records
         if(lstPhases.size()>0){
-            List<ES_Phase__c> lstSelectedPhases = [Select Id, Name, Project__c, Phase_Health__c, Sum_of_tasks_count_child__c, Phase_Description__c, Start_date_from_child_project__c, End_date_from_child__c from ES_Phase__c where Id IN: lstPhases WITH SECURITY_ENFORCED limit:limits.getLimitQueryRows()];
+            List<ES_Phase__c> lstSelectedPhases = [Select Id, Name, Inspection__c, Phase_Health__c, Sum_of_tasks_count_child__c, Phase_Description__c, Start_date_from_child_inspection__c, End_date_from_child__c from ES_Phase__c where Id IN: lstPhases WITH SECURITY_ENFORCED limit:limits.getLimitQueryRows()];
             
             for (ES_Phase__c phase: lstSelectedPhases) {
                 ES_Phase__c phaseClone = phase.clone(false, false, false, false);
-                phaseClone.Project__c = projectId;
+                phaseClone.Inspection__c = inspectionId;
                 phaseClone.Phase_Health__c = 'Not Started';
                 lstClonedPhases.add(phaseClone);
             }
@@ -218,15 +218,15 @@ global with sharing class ES_ClonePhaseTaskCtrl {
                 taskClone.Start_Date__c = null;
                 taskClone.Due_Date__c = null;
                 
-                if(task.Start_Days_Out__c!=null && projectStartDate!=null && holidaysSet.size()>0){
-                    taskClone.Start_Date__c = calculateStartEndDates(projectStartDate, Integer.valueOf(task.Start_Days_Out__c), holidaysSet);
-                }else if(task.Start_Days_Out__c!=null && projectStartDate!=null){
-                    taskClone.Start_Date__c  = projectStartDate.addDays(Integer.valueOf(task.Start_Days_Out__c));
+                if(task.Start_Days_Out__c!=null && inspectionStartDate!=null && holidaysSet.size()>0){
+                    taskClone.Start_Date__c = calculateStartEndDates(inspectionStartDate, Integer.valueOf(task.Start_Days_Out__c), holidaysSet);
+                }else if(task.Start_Days_Out__c!=null && inspectionStartDate!=null){
+                    taskClone.Start_Date__c  = inspectionStartDate.addDays(Integer.valueOf(task.Start_Days_Out__c));
                     }
                 
-                if(taskClone.Start_Date__c!=null && task.Duration_In_Days__c!=null && projectStartDate!=null && holidaysSet.size()>0){
+                if(taskClone.Start_Date__c!=null && task.Duration_In_Days__c!=null && inspectionStartDate!=null && holidaysSet.size()>0){
                     taskClone.Due_Date__c = calculateStartEndDates(taskClone.Start_Date__c, Integer.valueOf(task.Duration_In_Days__c), holidaysSet);
-                }else if(taskClone.Start_Date__c!=null && task.Duration_In_Days__c!=null && projectStartDate!=null){
+                }else if(taskClone.Start_Date__c!=null && task.Duration_In_Days__c!=null && inspectionStartDate!=null){
                     taskClone.Due_Date__c = taskClone.Start_Date__c.addDays(Integer.valueOf(task.Duration_In_Days__c));
                 }
 
