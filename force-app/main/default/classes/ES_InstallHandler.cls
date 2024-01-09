@@ -134,7 +134,7 @@ global with sharing class ES_InstallHandler implements InstallHandler {
                     List<ES_Resource_Allocation__c> lstAllocation = new List<ES_Resource_Allocation__c>();
                     
                     //Allocation records
-                    ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Inspection__c = InspectionId,
+                    ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Inspection__c = inspectionId,
                                                                                               Resource_Availability__c = securityDecision.getRecords()[1]?.Id,
                                                                                               Role__c = 'SME');
                     lstAllocation.add(resAllocation);

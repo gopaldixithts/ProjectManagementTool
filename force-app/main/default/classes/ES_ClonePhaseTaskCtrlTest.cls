@@ -31,18 +31,18 @@ public class ES_ClonePhaseTaskCtrlTest {
             
             List<ES_Task__c > lstOfTasks = new List<ES_Task__c > ();
             
-            //ES project record
-            Inspection__c project = new Inspection__c(Name = 'Clone Phases/Tasks Test',
+            //ES inspection record
+            Inspection__c inspection = new Inspection__c(Name = 'Clone Phases/Tasks Test',
                                                         Portfolio__c = 'R2R',
                                                         Initial_End_Date__c = System.today() + 30,
                                                         Initial_Start_Date__c = System.today(),
                                                         Level_of_Effort__c = 'Medium'
                                                         //TShirtSize__c = 'Explorer'
                                                        );
-            INSERT project;
+            INSERT inspection;
             
-            //ES project template record
-            Inspection__c templateProject = new Inspection__c(Name = 'Template Project',
+            //ES inspection template record
+            Inspection__c templateInspection = new Inspection__c(Name = 'Template Inspection',
                                                                 Portfolio__c = 'R2R',
                                                                 Initial_End_Date__c = System.today() + 30,
                                                                 Initial_Start_Date__c = System.today(),
@@ -50,16 +50,16 @@ public class ES_ClonePhaseTaskCtrlTest {
                                                                 IsTemplate__c = true
                                                                 //TShirtSize__c = 'Explorer'
                                                                );
-            INSERT templateProject;
+            INSERT templateInspection;
             
             //ES phase record
             ES_Phase__c phases = new ES_Phase__c(Name = 'Phase 1',
-                                                   Project__c = project.Id, Phase_Health__c = 'On Track');
+                                                   Inspection__c = inspection.Id, Phase_Health__c = 'On Track');
             INSERT phases;
             
             //ES phase record
             ES_Phase__c phases1 = new ES_Phase__c(Name = 'Phase Template',
-                                                    Project__c = templateProject.Id, Phase_Health__c = 'On Track');
+                                                    Inspection__c = templateInspection.Id, Phase_Health__c = 'On Track');
             INSERT phases1;
             
             //ES Task records
@@ -110,8 +110,8 @@ public class ES_ClonePhaseTaskCtrlTest {
             List<Inspection__c> lstProj = [select id from Inspection__c where Name = 'Clone Phases/Tasks Test'];
             
             ES_ClonePhaseTaskCtrl.FlowInputs wrap = new ES_ClonePhaseTaskCtrl.FlowInputs();
-            wrap.phases = [select id from ES_Phase__c where Project__c=:lstProj[0].Id];
-            wrap.projectId = lstProj[0].Id;
+            wrap.phases = [select id from ES_Phase__c where Inspection__c=:lstProj[0].Id];
+            wrap.inspectionId = lstProj[0].Id;
             wrap.phaseCheck = true;
             
             List<ES_ClonePhaseTaskCtrl.FlowInputs > paramList = new List<ES_ClonePhaseTaskCtrl.FlowInputs > ();
@@ -128,10 +128,10 @@ public class ES_ClonePhaseTaskCtrlTest {
     }
     
 /*****************************************************************
-* Method Name: cloneProjectFromTemplates
+* Method Name: cloneInspectionFromTemplates
 * Class : ES_ClonePhaseTaskCtrl 
 ******************************************************************/
-    static testmethod void cloneProjectFromTemplates() {
+    static testmethod void cloneInspectionFromTemplates() {
         User testUser = [select id from User where Email = 'standarduser@EStemplate.com'];
         
         System.runAs(testUser) {
@@ -141,21 +141,21 @@ public class ES_ClonePhaseTaskCtrlTest {
             List<Inspection__c> lstProj = [select id from Inspection__c where IsTemplate__c=true];
             
             ES_ClonePhaseTaskCtrl.FlowInputs wrap = new ES_ClonePhaseTaskCtrl.FlowInputs();
-            wrap.phases = [select id, Name, Project__c, Phase_Health__c from ES_Phase__c where Project__c=:lstProj[0].Id];
+            wrap.phases = [select id, Name, Inspection__c, Phase_Health__c from ES_Phase__c where Inspection__c=:lstProj[0].Id];
             wrap.tasks = [select id from ES_Task__c where Name='Task Template'];
-            wrap.projectId = lstProj[0].Id;
+            wrap.inspectionId = lstProj[0].Id;
             wrap.phaseCheck = false;
-            wrap.projectName = 'Test Template Project';
-            wrap.projectStartDate = System.Today();
+            wrap.inspectionName = 'Test Template Inspection';
+            wrap.inspectionStartDate = System.Today();
             
             List<ES_ClonePhaseTaskCtrl.FlowInputs > paramList = new List<ES_ClonePhaseTaskCtrl.FlowInputs > ();
             paramList.add(wrap);
             
             ES_ClonePhaseTaskCtrl.getTasks(paramList);
             
-            List<Inspection__c> lstProj1 = [select id from Inspection__c where Name='Test Template Project'];
+            List<Inspection__c> lstProj1 = [select id from Inspection__c where Name='Test Template Inspection'];
             
-            system.assertEquals(1, lstProj1.size(), 'There should be 1 new Project created from Template');
+            system.assertEquals(1, lstProj1.size(), 'There should be 1 new Inspection created from Template');
             
             Test.stopTest();
         }
@@ -175,8 +175,8 @@ public class ES_ClonePhaseTaskCtrlTest {
             List<Inspection__c> lstProj = [select id from Inspection__c where Name='Clone Phases/Tasks Test'];
             
             ES_ClonePhaseTaskCtrl.FlowInputs wrap = new ES_ClonePhaseTaskCtrl.FlowInputs();
-            wrap.phases = [select id, Name, Project__c, Phase_Health__c from ES_Phase__c where Name='Phase 1'];
-            wrap.projectId = lstProj[0].Id;
+            wrap.phases = [select id, Name, Inspection__c, Phase_Health__c from ES_Phase__c where Name='Phase 1'];
+            wrap.inspectionId = lstProj[0].Id;
             wrap.phaseCheck = false;
             
             List<ES_ClonePhaseTaskCtrl.FlowInputs > paramList = new List<ES_ClonePhaseTaskCtrl.FlowInputs > ();
@@ -207,7 +207,7 @@ public class ES_ClonePhaseTaskCtrlTest {
             ES_ClonePhaseTaskCtrl.FlowInputs wrap = new ES_ClonePhaseTaskCtrl.FlowInputs();
             wrap.phases = [select id from ES_Phase__c where Name='Phase 1'];
             wrap.tasks = [select id, Phase__c from ES_Task__c where Name='Task 1'];
-            wrap.projectId = lstProj[0].Id;
+            wrap.inspectionId = lstProj[0].Id;
             wrap.phaseCheck = false;
             
             List<ES_ClonePhaseTaskCtrl.FlowInputs > paramList = new List<ES_ClonePhaseTaskCtrl.FlowInputs > ();
@@ -244,7 +244,7 @@ public class ES_ClonePhaseTaskCtrlTest {
             
             wrap.phases = new List<ES_Phase__c > ();
             wrap.tasks = [select id, Phase__c from ES_Task__c];
-            wrap.projectStartDate = System.Today();
+            wrap.inspectionStartDate = System.Today();
             
             ES_ClonePhaseTaskCtrl.getTasks(paramList);
             
