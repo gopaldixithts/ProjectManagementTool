@@ -2,11 +2,15 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Inspection_Name__c</fullName>
     <externalId>false</externalId>
+<<<<<<< HEAD
 <<<<<<< HEAD:force-app/main/default/objects/ES_Phase__c/fields/Inspection_Name__c.field-meta.xml
     <formula>Inspection__r.Name</formula>
 =======
     <formula>HYPERLINK(&quot;/lightning/r/Inspection__c/&quot; &amp; Phase__r.Project__c &amp; &quot;/view&quot;, Phase__r.Project__r.Name,&apos;_self&apos;)</formula>
 >>>>>>> 01eee72 (Change2):force-app/main/default/objects/ES_Task__c/fields/Project_Name__c.field-meta.xml
+=======
+    <formula>Inspection__r.Name</formula>
+>>>>>>> ff305cb (change16)
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Inspection Name</label>
     <required>false</required>

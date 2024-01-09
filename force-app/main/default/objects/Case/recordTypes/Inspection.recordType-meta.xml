@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+<<<<<<< HEAD
 <<<<<<< HEAD:force-app/main/default/objects/Case/recordTypes/Inspection.recordType-meta.xml
 <<<<<<< HEAD:force-app/main/default/objects/Case/recordTypes/Inspection.recordType-meta.xml
     <fullName>Inspection</fullName>
@@ -9,6 +10,9 @@
 =======
     <fullName>Inspection</fullName>
 >>>>>>> e5d1b8c (change15):force-app/main/default/objects/Case/recordTypes/ES_Project.recordType-meta.xml
+=======
+    <fullName>Inspection</fullName>
+>>>>>>> ff305cb (change16)
     <active>true</active>
     <businessProcess>ES</businessProcess>
     <description>Inspection Issues &amp; Risks related</description>
