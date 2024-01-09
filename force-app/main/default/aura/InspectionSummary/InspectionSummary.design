@@ -1,4 +1,4 @@
-<design:component label="ES Project Summary">
+<design:component label="Inspection Summary">
 	<sfdc:objects>
         <sfdc:object>Inspection__c</sfdc:object>
     </sfdc:objects>

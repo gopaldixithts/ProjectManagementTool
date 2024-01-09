@@ -1,14 +1,14 @@
-<aura:component controller="ES_ProjectSummaryCtrl"> 
+<aura:component controller="InspectionSummaryCtrl"> 
     
-    <aura:attribute name="recordId" type="Id" description="Project record id"/>	
-    <aura:attribute name="phases" type="Object" description="List of Phases related to the project"/>
+    <aura:attribute name="recordId" type="Id" description="Inspection record id"/>	
+    <aura:attribute name="phases" type="Object" description="List of Phases related to the Inspection"/>
     <aura:attribute name="phaseRecordId" type="ID" description="Record ID of the row related Phase"/>
-    <aura:attribute name="lateTasks" type="Object" description="List of Late tasks of the project"/>
-    <aura:attribute name="tasks" type="Object[]" description="List of OnGoing tasks of the project"/>
-    <aura:attribute name="currentTasks" type="Object[]" description="List of OnGoing tasks of the project"/>
-    <aura:attribute name="nextTasks" type="Object" description="List of OnGoing tasks of the project"/>
-    <aura:attribute name="onGoingTasks" type="Object" description="List of OnGoing tasks of the project"/>
-    <aura:attribute name="milestoneTasks" type="Object" description="List of Milestone tasks of the project"/>
+    <aura:attribute name="lateTasks" type="Object" description="List of Late tasks of the Inspection"/>
+    <aura:attribute name="tasks" type="Object[]" description="List of OnGoing tasks of the Inspection"/>
+    <aura:attribute name="currentTasks" type="Object[]" description="List of OnGoing tasks of the Inspection"/>
+    <aura:attribute name="nextTasks" type="Object" description="List of OnGoing tasks of the Inspection"/>
+    <aura:attribute name="onGoingTasks" type="Object" description="List of OnGoing tasks of the Inspection"/>
+    <aura:attribute name="milestoneTasks" type="Object" description="List of Milestone tasks of the Inspection"/>
     <aura:attribute name="isLoading" type="boolean" default="false" description="spinner when loading data"/>
     <aura:attribute name="startCurrent" type="date" description="Reference date for columns: Current Period and Ongoing"/>
     <aura:attribute name="endCurrent" type="date" description="Reference date for column Current Period"/>
