@@ -75,7 +75,7 @@
         <div if:false={isLoading} class="slds-scrollable" style={dataStyle}>
             <template if:true={dataToShow.length}>
                 <template for:each={dataToShow} for:item="record">
-                    <c-ES-ganttdata key={record.id} class="lwc-resource-component" Inspection={record}
+                    <c-ES-ganttdata key={record.id} class="lwc-resource-component" inspection={record}
                         date-increment={view.slotSize} start-date={startDate} end-date={endDate}
                         oncalleventhandler={eventhandler}>
                     </c-ES-ganttdata>
