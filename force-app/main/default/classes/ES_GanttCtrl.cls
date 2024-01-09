@@ -32,17 +32,17 @@ public with sharing class ES_GanttCtrl {
         Date startDate = startTime;
         
 
-        if (ES_Utility.validateCRUD('ES_Project__c', lstOfprojectFields, 'isAccessible')) {
+        if (ES_Utility.validateCRUD('Inspection__c', lstOfprojectFields, 'isAccessible')) {
 
-            List<ES_Project__c> projects = getProjects(projectId, projectProgress, projectHealth, systemImpacted, projectCategory, program);
+            List<Inspection__c> projects = getProjects(projectId, projectProgress, projectHealth, systemImpacted, projectCategory, program);
 
             if (projects != null && projects.size() != 0) {
-                List < ES_Project__c > projects_clone = projects.clone();
+                List < Inspection__c > projects_clone = projects.clone();
                 projects.clear();
                 Integer size = (projects_clone.size() > 1000) ? 1000 : projects_clone.size();
 
                 for (Integer i = 0; i < size; i++) {
-                    ES_Project__c prj = projects_clone[i];
+                    Inspection__c prj = projects_clone[i];
                     projects.add(prj);
                     projIds.add(prj.Id);
                     setOfProjOwners.add(prj.ownerId);
@@ -100,9 +100,9 @@ public with sharing class ES_GanttCtrl {
                     throw new AuraHandledException('You don\'t have access to ES Phases or tasks. Please contact system administartor.');
                 }
 
-                for (ES_Project__c prj: projects) {
+                for (Inspection__c prj: projects) {
 
-                    GanttDataWrapper ESProject = getGanttDataWrapper(slotSize, startDate, prj.Id, prj.Name, prj.Kickoff_formula__c, prj.Deadline_formula__c, prj.Duration__c, '', 'ES_Project__c', prj.Health_Icon__c, (followIds.contains(prj.Id)) ? true : false, (setOfTasksAssignedToMe.contains(prj.Id)) ? true : false, (prj.OwnerId==loginUserId) ? true : false, formatDate(prj.Deadline_formula__c, 'dd-MM-yyyy'), false);
+                    GanttDataWrapper ESProject = getGanttDataWrapper(slotSize, startDate, prj.Id, prj.Name, prj.Kickoff_formula__c, prj.Deadline_formula__c, prj.Duration__c, '', 'Inspection__c', prj.Health_Icon__c, (followIds.contains(prj.Id)) ? true : false, (setOfTasksAssignedToMe.contains(prj.Id)) ? true : false, (prj.OwnerId==loginUserId) ? true : false, formatDate(prj.Deadline_formula__c, 'dd-MM-yyyy'), false);
 
                     if (mapOfMilestoneToPhases.containsKey(prj.Id)) {
                         List<GanttDataWrapper> lstOfPhases = new List<GanttDataWrapper>();
@@ -297,13 +297,13 @@ public with sharing class ES_GanttCtrl {
      * Parameter : Project Id, project Progress, project Health, systems Impacted, project Category and program to filter records
      * Returns : List of projects
      * ******************************************************************************************************************************************/
-    private static List < ES_Project__c > getProjects(String projectId, String projectProgress, String projectHealth, String systemImpacted, String projectCategory, String program) {
+    private static List < Inspection__c > getProjects(String projectId, String projectProgress, String projectHealth, String systemImpacted, String projectCategory, String program) {
         
         String selectStr = '';
         selectStr = 'SELECT Id,OwnerId, Name, Kickoff_formula__c, Duration__c, Deadline_formula__c,' +
             '  Project_Status__c, Project_Health__c,Health_Icon__c,Project_Category__c,Program_Text__c,SystemsImpacted__c ';
         
-        String fromStr = 'FROM ES_Project__c';
+        String fromStr = 'FROM Inspection__c';
         boolean isWhere = false;
         String whereStr = '';
         
@@ -385,10 +385,10 @@ public with sharing class ES_GanttCtrl {
      * Parameter : List of ES projects
      * Returns : Set of follow up Id's
      **********************************************************************/
-    private static Set<Id> getFollowIds(List < ES_Project__c > projects) {
+    private static Set<Id> getFollowIds(List < Inspection__c > projects) {
         Set<Id> proIds = new Set<Id>();
 
-        for (ES_Project__c p: projects) {
+        for (Inspection__c p: projects) {
             proIds.add(p.Id);
         }
 
@@ -449,31 +449,31 @@ public with sharing class ES_GanttCtrl {
         try {
             List<String> lstOfprojectFields = new List<String> {'Project_Health__c', 'Project_Category__c', 'SystemsImpacted__c', 'Project_Status__c'};
                         
-            if (ES_Utility.validateCRUD('ES_Project__c', lstOfprojectFields, 'isAccessible')) {
+            if (ES_Utility.validateCRUD('Inspection__c', lstOfprojectFields, 'isAccessible')) {
 
                 List<Filter> prjhealth = new List<Filter>();
-                Map<String, String> mapOfHealthValues = ES_Utility.getPicklistValues('ES_Project__c', 'Project_Health__c');
+                Map<String, String> mapOfHealthValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Health__c');
 
                 for (String key: mapOfHealthValues.keySet()) {
                     prjhealth.add(new Filter(key, mapOfHealthValues.get(key)));
                 }
 
                 List<Filter> prjcategory = new List<Filter>();
-                Map<String, String> mapOfCategoryValues = ES_Utility.getPicklistValues('ES_Project__c', 'Project_Category__c');
+                Map<String, String> mapOfCategoryValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Category__c');
 
                 for (String key: mapOfCategoryValues.keySet()) {
                     prjcategory.add(new Filter(key, mapOfCategoryValues.get(key)));
                 }
 
                 List<Filter> sysimpacted = new List<Filter>();
-                Map<String, String> mapOfSystemValues = ES_Utility.getPicklistValues('ES_Project__c', 'SystemsImpacted__c');
+                Map<String, String> mapOfSystemValues = ES_Utility.getPicklistValues('Inspection__c', 'SystemsImpacted__c');
 
                 for (String key: mapOfSystemValues.keySet()) {
                     sysimpacted.add(new Filter(key, mapOfSystemValues.get(key)));
                 }
 
                 List<Filter> prjprogress = new List<Filter>();
-                Map<String, String> mapOfProgressValues = ES_Utility.getPicklistValues('ES_Project__c', 'Project_Status__c');
+                Map<String, String> mapOfProgressValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Status__c');
 
                 for (String key: mapOfProgressValues.keySet()) {
                     prjprogress.add(new Filter(key, mapOfProgressValues.get(key)));

@@ -16,7 +16,7 @@
             <property name="height" label="Height" type="Integer" default="500"/>
             <property name="withfilters" label="With Filters" type="Boolean" default="true"/>
             <objects>
-                <object>ES_Project__c</object>
+                <object>Inspection__c</object>
             </objects>
         </targetConfig>
     </targetConfigs>

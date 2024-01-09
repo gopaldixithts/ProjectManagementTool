@@ -18,7 +18,7 @@ public class ES_Testcoverage {
         Integer resourceAvailability = Integer.valueOf(ES_Utility.getESSettings('Default').Default_Availability_for_Scheduler__c);
         
     //Create Project
-        ES_Project__c project = new ES_Project__c(
+        Inspection__c project = new Inspection__c(
                                                     Name = 'Project Controller Test', 
                                                     Portfolio__c = 'R2R',
                                                     Initial_End_Date__c = System.today()+30,
@@ -109,7 +109,7 @@ public class ES_Testcoverage {
             List<case> lstOfCases = new List<Case>();
             Id caseRecordTypeId = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get(System.Label.ES_Project_Record_Type_on_Case).getRecordTypeId();
             for(Integer i=0; i<10; i++){
-                lstOfCases.add(new Case(ownerId = testUser.Id,Subject='test case', RecordTypeId = caseRecordTypeId, ES_Project__c = project.Id));            
+                lstOfCases.add(new Case(ownerId = testUser.Id,Subject='test case', RecordTypeId = caseRecordTypeId, Inspection__c = project.Id));            
             }
             INSERT lstOfCases;
         }
@@ -124,7 +124,7 @@ public class ES_Testcoverage {
     static testmethod void getSummaryWrapperTestCase(){  
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESUser' and LastName='Last' limit 1];
         System.runAs(testUser){
-            ES_Project__c projectRec = [SELECT Id FROM ES_Project__c LIMIT 1];
+            Inspection__c projectRec = [SELECT Id FROM Inspection__c LIMIT 1];
             
             Test.startTest();
             ES_ProjectSummaryCtrl.createSummaryWrapper wrapperObj = ES_ProjectSummaryCtrl.getSummaryWrapper(projectRec.Id);
@@ -144,7 +144,7 @@ public class ES_Testcoverage {
     static testmethod void getCasesForProjectTestCase(){    
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESUser' and LastName='Last' limit 1];
         System.runAs(testUser){
-            ES_Project__c projectRec = [SELECT Id FROM ES_Project__c LIMIT 1];
+            Inspection__c projectRec = [SELECT Id FROM Inspection__c LIMIT 1];
             Test.startTest();
                 List<Case> lstOfResult = ES_Utility.getCasesForProject(projectRec.Id);
             Test.stopTest();
@@ -160,7 +160,7 @@ public class ES_Testcoverage {
     static testmethod void getESSettingsTest(){    
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESUser' and LastName='Last' limit 1];
         System.runAs(testUser){
-            ES_Project__c projectRec = [SELECT Id FROM ES_Project__c LIMIT 1];
+            Inspection__c projectRec = [SELECT Id FROM Inspection__c LIMIT 1];
             Test.startTest();
                 ES_Setting__mdt setting = ES_Utility.getESSettings('Test');
             Test.stopTest();
@@ -230,7 +230,7 @@ public class ES_Testcoverage {
     static testmethod void deleteRecordNegTestCase(){
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESRPUsr' and LastName='Last' limit 1];
         System.runAs(testUser){
-            ES_Project__c project = [SELECT Id FROM ES_Project__c LIMIT 1];
+            Inspection__c project = [SELECT Id FROM Inspection__c LIMIT 1];
             ES_Resource_Availability__c resAvail = [SELECT Id FROM ES_Resource_Availability__c LIMIT 1]; 
             //Allocation records
             ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Project__c = project.Id,
@@ -253,7 +253,7 @@ public class ES_Testcoverage {
     static testmethod void upsertDeleteAllocationTestCase(){
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESRPUsr' and LastName='Last' limit 1];
         System.runAs(testUser){
-            ES_Project__c project = [SELECT Id FROM ES_Project__c LIMIT 1];
+            Inspection__c project = [SELECT Id FROM Inspection__c LIMIT 1];
             ES_Resource_Availability__c resAvail = [SELECT Id FROM ES_Resource_Availability__c LIMIT 1]; 
             //Allocation records
             ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Project__c = project.Id,
@@ -278,7 +278,7 @@ public class ES_Testcoverage {
     static testmethod void getResourceDetailsWrapperTestCase(){
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESUser' and LastName='Last' limit 1];
         System.runAs(testUser){
-            ES_Project__c project = [SELECT Id,Start_Fiscal_Year__c,End_Fiscal_Year__c FROM ES_Project__c LIMIT 1];
+            Inspection__c project = [SELECT Id,Start_Fiscal_Year__c,End_Fiscal_Year__c FROM Inspection__c LIMIT 1];
             system.debug(project);
             system.debug([select id, project__r.name from ES_Resource_Allocation__c]);
             system.debug([select id, User__r.name from ES_Resource_Availability__c]);
@@ -331,7 +331,7 @@ public class ES_Testcoverage {
         String department = [select Department from User where id = :userInfo.getUserId() limit 1].Department;
         System.runAs(testUser){
             Test.startTest();
-            ES_Project__c project = [SELECT Id,Start_Fiscal_Year__c,End_Fiscal_Year__c FROM ES_Project__c LIMIT 1];
+            Inspection__c project = [SELECT Id,Start_Fiscal_Year__c,End_Fiscal_Year__c FROM Inspection__c LIMIT 1];
             ES_ResourceManagementCtrl.ResourceDataWrapper wrapper = ES_ResourceManagementCtrl.getResourceAllocations('FY22',department , null, null, project.Id);
             system.assertEquals(1, wrapper.resourceAvailabilities.size(), '1 availability should be found');
             system.assertEquals(1, wrapper.resourceAllocations.size(), '1 resourceAllocations should be found');
@@ -366,7 +366,7 @@ public class ES_Testcoverage {
         Test.testInstall(installHandlerScript, null);
         Test.startTest();
         List<ES_Program__c> programs = [select id from ES_Program__c];
-        List<ES_Project__c> projects = [select id from ES_Project__c];
+        List<Inspection__c> projects = [select id from Inspection__c];
         List<ES_Phase__c> phases = [select id from ES_Phase__c];
         List<ES_Task__c> tasks = [select id from ES_Task__c];
         List<ES_Resource_Availability__c> avails = [select id from ES_Resource_Availability__c];

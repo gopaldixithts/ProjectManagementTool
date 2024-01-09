@@ -10,7 +10,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>entityName</name>
-                    <value>ES_Project__c</value>
+                    <value>Inspection__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>filterName</name>
@@ -68,7 +68,7 @@
                     <name>entityNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>ES_Project__c</value>
+                            <value>Inspection__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>

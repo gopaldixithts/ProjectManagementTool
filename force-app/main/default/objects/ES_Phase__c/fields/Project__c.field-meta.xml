@@ -4,7 +4,7 @@
     <description>The project this phase is assigned to</description>
     <externalId>false</externalId>
     <label>Project Name</label>
-    <referenceTo>ES_Project__c</referenceTo>
+    <referenceTo>Inspection__c</referenceTo>
     <relationshipLabel>ES Phases</relationshipLabel>
     <relationshipName>Project_Phases</relationshipName>
     <relationshipOrder>0</relationshipOrder>

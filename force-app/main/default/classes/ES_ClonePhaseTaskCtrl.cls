@@ -42,7 +42,7 @@ global with sharing class ES_ClonePhaseTaskCtrl {
         
         List<Id> lstPhaseIds = new List<Id>();
         List<Id> lstTaskIds = new List<Id>();
-        List<ES_Project__c> lstClonedProjects = new List<ES_Project__c> ();
+        List<Inspection__c> lstClonedProjects = new List<Inspection__c> ();
         List<ES_Error_Log__c> lstOfErrorLogs = new List<ES_Error_Log__c> ();
         ES_ClonePhaseTaskCtrl.FlowInputs phtask = new ES_ClonePhaseTaskCtrl.FlowInputs();
         ES_ClonePhaseTaskCtrl.FlowOutputs flowOut = new ES_ClonePhaseTaskCtrl.FlowOutputs();
@@ -87,12 +87,12 @@ global with sharing class ES_ClonePhaseTaskCtrl {
         if (phtask.phases != null && phtask.phases.size() > 0 && phtask.phaseCheck == false) {
             
             if(phtask.projectName!=null && phtask.projectStartDate!=null){
-                ES_Project__c proRecord = [Select id, Kickoff_formula__c, Deadline_formula__c, Level_of_Effort__c, Portfolio__c, Initial_Start_Date__c, 
+                Inspection__c proRecord = [Select id, Kickoff_formula__c, Deadline_formula__c, Level_of_Effort__c, Portfolio__c, Initial_Start_Date__c, 
                                             Initial_End_Date__c, Sponsor__c, Description__c, SOX_Impact__c, SOX_Comment__c, Release_Changes__c, Path_to_Green__c, SystemsImpacted__c, 
                                             Roadmap_Status__c, Project_Status__c, Project_Initiator__c, Project_Health__c, Project_Category__c, Processes_Impacted__c, Issues_Risk__c,
-                                            In_Scope__c, Goal_Statement__c, Business_Case__c, Assumptions__c, Problem_Statement__c, Out_of_Scope__c, Health_Comment__c, Release_Date__c, Go_Live_Date__c from ES_Project__c where id =: phtask.projectId WITH SECURITY_ENFORCED limit:limits.getLimitQueryRows()];
+                                            In_Scope__c, Goal_Statement__c, Business_Case__c, Assumptions__c, Problem_Statement__c, Out_of_Scope__c, Health_Comment__c, Release_Date__c, Go_Live_Date__c from Inspection__c where id =: phtask.projectId WITH SECURITY_ENFORCED limit:limits.getLimitQueryRows()];
                 
-                ES_Project__c projectClone = proRecord.clone(false,false,false,false); 
+                Inspection__c projectClone = proRecord.clone(false,false,false,false); 
                 projectClone.Name = phtask.projectName;
                 lstClonedProjects.add(projectClone);
                 

@@ -2,7 +2,7 @@
     <lightning-card if:true={withfilters}>
            <lightning-layout vertical-align="center">
                   <lightning-layout-item padding="around-small" flexibility="auto">
-                         <c-ES-gen-lwc-custom-lookup field-label="Program" child-object-api-name='ES_Project__c' target-field-api-name='Program__c' onvalueselected={handleProgramSelection}></c-ES-gen-lwc-custom-lookup>
+                         <c-ES-gen-lwc-custom-lookup field-label="Program" child-object-api-name='Inspection__c' target-field-api-name='Program__c' onvalueselected={handleProgramSelection}></c-ES-gen-lwc-custom-lookup>
                   </lightning-layout-item>
                   <lightning-layout-item padding="around-small" flexibility="auto">
                          <lightning-combobox class="custom_css" name="projprogress" label="Project Progress" value={progressSelected} placeholder="Select Progress" options={progressoptions} onchange={handleChange}></lightning-combobox>
