@@ -43,10 +43,14 @@ global with sharing class ES_ClonePhaseTaskCtrl {
         List<Id> lstPhaseIds = new List<Id>();
         List<Id> lstTaskIds = new List<Id>();
 <<<<<<< HEAD
+<<<<<<< HEAD
         List<Inspection__c> lstClonedInspections = new List<Inspection__c> ();
 =======
         List<Inspection__c> lstClonedProjects = new List<Inspection__c> ();
 >>>>>>> 01eee72 (Change2)
+=======
+        List<Inspection__c> lstClonedInspections = new List<Inspection__c> ();
+>>>>>>> ab22240 (change14)
         List<ES_Error_Log__c> lstOfErrorLogs = new List<ES_Error_Log__c> ();
         ES_ClonePhaseTaskCtrl.FlowInputs phtask = new ES_ClonePhaseTaskCtrl.FlowInputs();
         ES_ClonePhaseTaskCtrl.FlowOutputs flowOut = new ES_ClonePhaseTaskCtrl.FlowOutputs();
@@ -91,6 +95,7 @@ global with sharing class ES_ClonePhaseTaskCtrl {
         if (phtask.phases != null && phtask.phases.size() > 0 && phtask.phaseCheck == false) {
             
 <<<<<<< HEAD
+<<<<<<< HEAD
             if(phtask.inspectionName!=null && phtask.inspectionStartDate!=null){
                 Inspection__c proRecord = [Select id, Kickoff_formula__c, Deadline_formula__c, Level_of_Effort__c, Portfolio__c, Initial_Start_Date__c, 
                                             Initial_End_Date__c, Sponsor__c, Description__c, SOX_Impact__c, SOX_Comment__c, Release_Changes__c, Path_to_Green__c, SystemsImpacted__c, 
@@ -102,15 +107,24 @@ global with sharing class ES_ClonePhaseTaskCtrl {
                 lstClonedInspections.add(inspectionClone);
 =======
             if(phtask.projectName!=null && phtask.projectStartDate!=null){
+=======
+            if(phtask.inspectionName!=null && phtask.inspectionStartDate!=null){
+>>>>>>> ab22240 (change14)
                 Inspection__c proRecord = [Select id, Kickoff_formula__c, Deadline_formula__c, Level_of_Effort__c, Portfolio__c, Initial_Start_Date__c, 
                                             Initial_End_Date__c, Sponsor__c, Description__c, SOX_Impact__c, SOX_Comment__c, Release_Changes__c, Path_to_Green__c, SystemsImpacted__c, 
-                                            Roadmap_Status__c, Project_Status__c, Project_Initiator__c, Project_Health__c, Project_Category__c, Processes_Impacted__c, Issues_Risk__c,
-                                            In_Scope__c, Goal_Statement__c, Business_Case__c, Assumptions__c, Problem_Statement__c, Out_of_Scope__c, Health_Comment__c, Release_Date__c, Go_Live_Date__c from Inspection__c where id =: phtask.projectId WITH SECURITY_ENFORCED limit:limits.getLimitQueryRows()];
+                                            Roadmap_Status__c, Inspection_Status__c, Inspection_Initiator__c, Inspection_Health__c, Inspection_Category__c, Processes_Impacted__c, Issues_Risk__c,
+                                            In_Scope__c, Goal_Statement__c, Business_Case__c, Assumptions__c, Problem_Statement__c, Out_of_Scope__c, Health_Comment__c, Release_Date__c, Go_Live_Date__c from Inspection__c where id =: phtask.inspectionId WITH SECURITY_ENFORCED limit:limits.getLimitQueryRows()];
                 
+<<<<<<< HEAD
                 Inspection__c projectClone = proRecord.clone(false,false,false,false); 
                 projectClone.Name = phtask.projectName;
                 lstClonedProjects.add(projectClone);
 >>>>>>> 01eee72 (Change2)
+=======
+                Inspection__c inspectionClone = proRecord.clone(false,false,false,false); 
+                inspectionClone.Name = phtask.inspectionName;
+                lstClonedInspections.add(inspectionClone);
+>>>>>>> ab22240 (change14)
                 
                 if (lstClonedInspections.size() > 0) {
                     try {
@@ -181,7 +195,11 @@ global with sharing class ES_ClonePhaseTaskCtrl {
         
         //Cloning the selected Phase records
         if(lstPhases.size()>0){
+<<<<<<< HEAD
             List<ES_Phase__c> lstSelectedPhases = [Select Id, Name, ES_Inspection__c, Phase_Health__c, Sum_of_tasks_count_child__c, Phase_Description__c, Start_date_from_child_inspection__c, End_date_from_child__c from ES_Phase__c where Id IN: lstPhases WITH SECURITY_ENFORCED limit:limits.getLimitQueryRows()];
+=======
+            List<ES_Phase__c> lstSelectedPhases = [Select Id, Name, Inspection__c, Phase_Health__c, Sum_of_tasks_count_child__c, Phase_Description__c, Start_date_from_child_inspection__c, End_date_from_child__c from ES_Phase__c where Id IN: lstPhases WITH SECURITY_ENFORCED limit:limits.getLimitQueryRows()];
+>>>>>>> ab22240 (change14)
             
             for (ES_Phase__c phase: lstSelectedPhases) {
                 ES_Phase__c phaseClone = phase.clone(false, false, false, false);
