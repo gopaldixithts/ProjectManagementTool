@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<<<<<<< HEAD:force-app/main/default/objects/Inspection__c/fields/Inspection_Lead__c.field-meta.xml
     <fullName>Inspection_Lead__c</fullName>
     <externalId>false</externalId>
     <formula>Owner:User.FirstName+&quot; &quot;+Owner:User.LastName</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Inspection Lead</label>
+=======
+    <fullName>Inspection_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>Inspection__r.Name</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Inspection Name</label>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/objects/ES_Resource_Allocation__c/fields/Project_Name__c.field-meta.xml
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

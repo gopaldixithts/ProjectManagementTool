@@ -34,10 +34,14 @@ public with sharing class ES_ResourceManagementCtrl {
     * **************************************************************/
     @AuraEnabled
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static ResourceDetail getResourceDetailsWrapper(Inspection__c Inspection)
 =======
     public static ResourceDetail getResourceDetailsWrapper(Inspection__c project)
 >>>>>>> 01eee72 (Change2)
+=======
+    public static ResourceDetail getResourceDetailsWrapper(Inspection__c Inspection)
+>>>>>>> 3dc5bb9 (change10)
     {
         try{                
             //Generate wrapper
@@ -54,10 +58,14 @@ public with sharing class ES_ResourceManagementCtrl {
                                ES_Utility.validateCRUD('ES_Resource_Availability__c', lstOfAvailabilityFields, 'isAccessible') && 
                                ES_Utility.validateCRUD('User', lstOfUsersFields, 'isAccessible') && 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                ES_Utility.validateCRUD('Inspection__c', lstOfInspectionFields, 'isAccessible')){
 =======
                                ES_Utility.validateCRUD('Inspection__c', lstOfProjectFields, 'isAccessible')){
 >>>>>>> 01eee72 (Change2)
+=======
+                               ES_Utility.validateCRUD('Inspection__c', lstOfInspectionFields, 'isAccessible')){
+>>>>>>> 3dc5bb9 (change10)
                                    
                                    resource.ResourceAllocations = getResourceAllocation(Inspection.Id);
                                    
@@ -98,10 +106,14 @@ public with sharing class ES_ResourceManagementCtrl {
     * **************************************************************/
     @AuraEnabled
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static void upsertDeleteAllocation(List<SObject> allocationsToSave, List<SObject> allocationsToDelete, Inspection__c Inspection){
 =======
     public static void upsertDeleteAllocation(List<SObject> allocationsToSave, List<SObject> allocationsToDelete, Inspection__c project){
 >>>>>>> 01eee72 (Change2)
+=======
+    public static void upsertDeleteAllocation(List<SObject> allocationsToSave, List<SObject> allocationsToDelete, Inspection__c Inspection){
+>>>>>>> 3dc5bb9 (change10)
         //Calling util method to check CRUD
         if(ES_Utility.validateCRUD('ES_Resource_Allocation__c', null, 'isCreateable') && ES_Utility.validateCRUD('ES_Resource_Allocation__c', null, 'isUpdateable')){   
             //check if anything to upsert
@@ -172,10 +184,14 @@ public with sharing class ES_ResourceManagementCtrl {
     * Description : Get availabilities using SOQL and transform to wrapper
     * **************************************************************/
 <<<<<<< HEAD
+<<<<<<< HEAD
     private static List<ES_Resource_Availability__c> getAvailibility(List<String> years, Inspection__c Inspection)
 =======
     private static List<ES_Resource_Availability__c> getAvailibility(List<String> years, Inspection__c project)
 >>>>>>> 01eee72 (Change2)
+=======
+    private static List<ES_Resource_Availability__c> getAvailibility(List<String> years, Inspection__c Inspection)
+>>>>>>> 3dc5bb9 (change10)
     {
         List<ES_Resource_Availability__c> ls = new List<ES_Resource_Availability__c>();
         
@@ -196,10 +212,14 @@ public with sharing class ES_ResourceManagementCtrl {
     * Description : Get availabilities using SOQL and transform to wrapper
     * **************************************************************/
 <<<<<<< HEAD
+<<<<<<< HEAD
     private static List<ES_Resource_Availability__c> getDummyAvailabilities(List<String> years, Inspection__c Inspection)
 =======
     private static List<ES_Resource_Availability__c> getDummyAvailabilities(List<String> years, Inspection__c project)
 >>>>>>> 01eee72 (Change2)
+=======
+    private static List<ES_Resource_Availability__c> getDummyAvailabilities(List<String> years, Inspection__c Inspection)
+>>>>>>> 3dc5bb9 (change10)
     {
         List<ES_Resource_Availability__c> dummyAvailablities = new List<ES_Resource_Availability__c>();
         

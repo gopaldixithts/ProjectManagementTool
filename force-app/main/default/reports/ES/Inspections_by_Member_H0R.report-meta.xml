@@ -7,20 +7,28 @@
         <chartSummaries>
             <aggregate>Sum</aggregate>
             <axisBinding>y</axisBinding>
+<<<<<<< HEAD
 <<<<<<< HEAD:force-app/main/default/reports/ES/Inspections_by_Member_H0R.report-meta.xml
             <column>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Percentage_Completion__c</column>
 =======
             <column>Inspection__c.Project_Phases__r.Project_Tasks__r$Percentage_Completion__c</column>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Projects_by_Member_H0R.report-meta.xml
+=======
+            <column>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Percentage_Completion__c</column>
+>>>>>>> 3dc5bb9 (change10)
         </chartSummaries>
         <chartType>HorizontalBar</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
+<<<<<<< HEAD
 <<<<<<< HEAD:force-app/main/default/reports/ES/Inspections_by_Member_H0R.report-meta.xml
         <groupingColumn>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Assigned_To1__c</groupingColumn>
 =======
         <groupingColumn>Inspection__c.Project_Phases__r.Project_Tasks__r$Assigned_To1__c</groupingColumn>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Projects_by_Member_H0R.report-meta.xml
+=======
+        <groupingColumn>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Assigned_To1__c</groupingColumn>
+>>>>>>> 3dc5bb9 (change10)
         <location>CHART_BOTTOM</location>
         <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
@@ -34,6 +42,7 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
+<<<<<<< HEAD
 <<<<<<< HEAD:force-app/main/default/reports/ES/Inspections_by_Member_H0R.report-meta.xml
         <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Name</field>
     </columns>
@@ -64,33 +73,40 @@
         <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Task_Level__c</field>
 =======
         <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Name</field>
+=======
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Name</field>
+>>>>>>> 3dc5bb9 (change10)
     </columns>
     <columns>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Status__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Percentage_Completion__c</field>
-    </columns>
-    <columns>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Alert__c</field>
-    </columns>
-    <columns>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Start_Date__c</field>
-    </columns>
-    <columns>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Due_Date__c</field>
-    </columns>
-    <columns>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Description__c</field>
-    </columns>
-    <columns>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$On_Hold_Reason__c</field>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Status__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Percentage_Completion__c</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Alert__c</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Due_Date__c</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Description__c</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$On_Hold_Reason__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+<<<<<<< HEAD
         <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Task_Level__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Projects_by_Member_H0R.report-meta.xml
+=======
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Task_Level__c</field>
+>>>>>>> 3dc5bb9 (change10)
     </columns>
     <filter>
         <criteriaItems>
@@ -109,20 +125,28 @@
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
+<<<<<<< HEAD
 <<<<<<< HEAD:force-app/main/default/reports/ES/Inspections_by_Member_H0R.report-meta.xml
         <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Assigned_To1__c</field>
 =======
         <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Assigned_To1__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Projects_by_Member_H0R.report-meta.xml
+=======
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Assigned_To1__c</field>
+>>>>>>> 3dc5bb9 (change10)
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
+<<<<<<< HEAD
 <<<<<<< HEAD:force-app/main/default/reports/ES/Inspections_by_Member_H0R.report-meta.xml
         <field>Inspection__c.Inspection_Phases__r$Name</field>
 =======
         <field>Inspection__c.Project_Phases__r$Name</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Projects_by_Member_H0R.report-meta.xml
+=======
+        <field>Inspection__c.Inspection_Phases__r$Name</field>
+>>>>>>> 3dc5bb9 (change10)
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Inspections by Member</name>

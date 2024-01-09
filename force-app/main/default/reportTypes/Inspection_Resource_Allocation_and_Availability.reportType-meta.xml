@@ -188,37 +188,53 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Inspection_Category__c</field>
 =======
             <field>Project_Category__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Inspection_Category__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Inspection_Completion_Image__c</field>
 =======
             <field>Project_Completion_Image__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Inspection_Completion_Image__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Inspection_Status__c</field>
 =======
             <field>Project_Status__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Inspection_Status__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Inspection_End_Month__c</field>
 =======
             <field>Project_End_Month__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Inspection_End_Month__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
@@ -229,28 +245,40 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Inspection_Health__c</field>
 =======
             <field>Project_Health__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Inspection_Health__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Inspection_Initiator__c</field>
 =======
             <field>Project_Initiator__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Inspection_Initiator__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Inspection_Lead__c</field>
 =======
             <field>Project_Lead__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Inspection_Lead__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
@@ -261,28 +289,40 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Inspection_Owner__c</field>
 =======
             <field>Project_Owner__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Inspection_Owner__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Inspection_Size__c</field>
 =======
             <field>Project_Size__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Inspection_Size__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Inspection_Start_Month__c</field>
 =======
             <field>Project_Start_Month__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Inspection_Start_Month__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
@@ -353,10 +393,14 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Sum_of_task_count_child_Inspection__c</field>
 =======
             <field>Sum_of_task_count_child_project__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Sum_of_task_count_child_Inspection__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
@@ -545,19 +589,27 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Inspection_Name__c</field>
 =======
             <field>Project_Name__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Inspection_Name__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c.Resource_Allocations__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
 <<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Resource_Allocation_and_Availability.reportType-meta.xml
             <field>Inspection_Owner__c</field>
 =======
             <field>Project_Owner__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
+=======
+            <field>Inspection_Owner__c</field>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/reportTypes/ES_Project_Resource_Allocation_and_Availability.reportType-meta.xml
             <table>Inspection__c.Resource_Allocations__r</table>
         </columns>
         <columns>

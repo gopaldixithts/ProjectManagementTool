@@ -24,12 +24,20 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
             //Calling util method to check CRUD
             List<String> lstOfTaskFields = new List<String>{'Assigned_To1__c', 'Name','Id', 'Inspection_Id__c'};
                 if(ES_Utility.validateCRUD('ES_Task__c', lstOfTaskFields, 'isAccessible')){
+<<<<<<< HEAD
                     List<ES_Task__c> tasklist=[SELECT id,name,Assigned_To1__c,Phase__r.ES_Inspection__c FROM ES_Task__c WHERE Assigned_To1__c IN :userid AND Inspection_Id__c IN :Inspectionid limit :Limits.getLimitQueries()];
+=======
+                    List<ES_Task__c> tasklist=[SELECT id,name,Assigned_To1__c,Phase__r.Inspection__c FROM ES_Task__c WHERE Assigned_To1__c IN :userid AND Inspection_Id__c IN :Inspectionid limit :Limits.getLimitQueries()];
+>>>>>>> 3dc5bb9 (change10)
                     for(ES_Resource_Allocation__c rec : recs)
                     {
                         for(ES_Task__c taskRec : tasklist)
                         {
+<<<<<<< HEAD
                             if(!String.isEmpty(rec.Allocated_Resource_Id__c) && rec.Allocated_Resource_Id__c == taskRec.Assigned_To1__c && rec.ES_Inspection__c == taskRec.Phase__r.Inspection__c){
+=======
+                            if(!String.isEmpty(rec.Allocated_Resource_Id__c) && rec.Allocated_Resource_Id__c == taskRec.Assigned_To1__c && rec.Inspection__c == taskRec.Phase__r.Inspection__c){
+>>>>>>> 3dc5bb9 (change10)
                                 rec.addError('Resource can not be deleted, as resource is assigned to a task');
                             }               
                         }
@@ -78,21 +86,35 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
         Map<Id,Id> mapOfResAllAndResAvail = new Map<Id,Id>();
         Map<Id,Id> mapOfResAllAndInspection = new Map<Id,Id>();
         Map<Id,Id> mapOfResourceAvailAndUser = new Map<Id,Id>();
+<<<<<<< HEAD
         List<Inspection__Share> lstOfShareRecToBeDeleted = new List<Inspection__Share>();
+=======
+        List<ES_Inspection__Share> lstOfShareRecToBeDeleted = new List<ES_Inspection__Share>();
+>>>>>>> 3dc5bb9 (change10)
         List<ES_Error_Log__c> lstOfErrorLogs = new List<ES_Error_Log__c>();
         try {
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
                 mapOfResAllAndResAvail.put(allocationRec.Id, String.escapeSingleQuotes(allocationRec.Resource_Availability__c));
+<<<<<<< HEAD
                 mapOfResAllAndInspection.put(allocationRec.Id, String.escapeSingleQuotes(allocationRec.ES_Inspection__c));
+=======
+                mapOfResAllAndInspection.put(allocationRec.Id, String.escapeSingleQuotes(allocationRec.Inspection__c));
+>>>>>>> 3dc5bb9 (change10)
             }
             
             for(ES_Resource_Availability__c availabilityRec : [SELECT Id, User__c FROM ES_Resource_Availability__c WHERE Id IN: mapOfResAllAndResAvail.values() limit :Limits.getLimitQueries()]){
                 mapOfResourceAvailAndUser.put(availabilityRec.Id, availabilityRec.User__c);
             }
             
+<<<<<<< HEAD
             for(Inspection__Share shareRec : [Select ParentId, UserOrGroupId from Inspection__Share where ParentId IN: mapOfResAllAndInspection.values() and UserOrGroupId IN: mapOfResourceAvailAndUser.values() limit :Limits.getLimitQueries()]){
                 for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
                     if(allocationRec.ES_Inspection__c == shareRec.ParentId && mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id)) == shareRec.UserOrGroupId){
+=======
+            for(ES_Inspection__Share shareRec : [Select ParentId, UserOrGroupId from ES_Inspection__Share where ParentId IN: mapOfResAllAndInspection.values() and UserOrGroupId IN: mapOfResourceAvailAndUser.values() limit :Limits.getLimitQueries()]){
+                for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
+                    if(allocationRec.Inspection__c == shareRec.ParentId && mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id)) == shareRec.UserOrGroupId){
+>>>>>>> 3dc5bb9 (change10)
                         lstOfShareRecToBeDeleted.add(shareRec);
                     }
                 }
@@ -132,7 +154,11 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
         Map<Id,Id> mapOfResourceAvailAndUser = new Map<Id,Id>();
         List<ES_Error_Log__c> lstOfErrorLogs = new List<ES_Error_Log__c>();
         try {
+<<<<<<< HEAD
             List<Inspection__Share> lsToInsert = new List<Inspection__Share>();
+=======
+            List<ES_Inspection__Share> lsToInsert = new List<ES_Inspection__Share>();
+>>>>>>> 3dc5bb9 (change10)
             
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
                 mapOfResAllAndResAvail.put(allocationRec.Id, allocationRec.Resource_Availability__c);
@@ -143,11 +169,19 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
             }
             
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
+<<<<<<< HEAD
                 Inspection__Share projShareObj = new Inspection__Share();
                 projShareObj.ParentId = allocationRec.ES_Inspection__c;
                 projShareObj.UserOrGroupId = mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id));               
                 projShareObj.AccessLevel = 'Edit';
                 projShareObj.RowCause = Schema.Inspection__Share.RowCause.Inspection_Member__c;
+=======
+                ES_Inspection__Share projShareObj = new ES_Inspection__Share();
+                projShareObj.ParentId = allocationRec.Inspection__c;
+                projShareObj.UserOrGroupId = mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id));               
+                projShareObj.AccessLevel = 'Edit';
+                projShareObj.RowCause = Schema.ES_Inspection__Share.RowCause.Inspection_Member__c;
+>>>>>>> 3dc5bb9 (change10)
                 lsToInsert.add(projShareObj);
             }
             

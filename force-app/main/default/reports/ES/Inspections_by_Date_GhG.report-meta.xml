@@ -10,11 +10,15 @@
         <field>Inspection__c$Deadline_formula__c</field>
     </columns>
     <columns>
+<<<<<<< HEAD
 <<<<<<< HEAD:force-app/main/default/reports/ES/Inspections_by_Date_GhG.report-meta.xml
         <field>Inspection__c$Inspection_Status__c</field>
 =======
         <field>Inspection__c$Project_Status__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Projects_by_Date_GhG.report-meta.xml
+=======
+        <field>Inspection__c$Inspection_Status__c</field>
+>>>>>>> 3dc5bb9 (change10)
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -45,11 +49,15 @@
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
+<<<<<<< HEAD
 <<<<<<< HEAD:force-app/main/default/reports/ES/Inspections_by_Date_GhG.report-meta.xml
         <field>Inspection__c$Inspection_Owner__c</field>
 =======
         <field>Inspection__c$Project_Owner__c</field>
 >>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Projects_by_Date_GhG.report-meta.xml
+=======
+        <field>Inspection__c$Inspection_Owner__c</field>
+>>>>>>> 3dc5bb9 (change10)
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Inspections by Date</name>

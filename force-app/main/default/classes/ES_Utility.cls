@@ -21,10 +21,14 @@ public with sharing class ES_Utility {
         if(hasAccess){  
             cases = [SELECT id,CaseNumber,Subject,ES_Days_Open__c,Description,Type,Status,Priority,Inspection__c FROM Case 
 <<<<<<< HEAD
+<<<<<<< HEAD
                      WHERE Inspection__c =:recordId AND RecordType.DeveloperName =: System.Label.ES_Inspection_Record_Type_on_Case ORDER BY Priority ASC, Type ASC limit: limits.getLimitQueryRows()];                                     
 =======
                      WHERE Inspection__c =:recordId AND RecordType.DeveloperName =: System.Label.ES_Project_Record_Type_on_Case ORDER BY Priority ASC, Type ASC limit: limits.getLimitQueryRows()];                                     
 >>>>>>> 01eee72 (Change2)
+=======
+                     WHERE Inspection__c =:recordId AND RecordType.DeveloperName =: System.Label.ES_Inspection_Record_Type_on_Case ORDER BY Priority ASC, Type ASC limit: limits.getLimitQueryRows()];                                     
+>>>>>>> 3dc5bb9 (change10)
             return cases;
             
         }else{

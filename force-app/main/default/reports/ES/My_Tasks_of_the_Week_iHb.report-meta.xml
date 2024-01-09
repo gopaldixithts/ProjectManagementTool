@@ -2,6 +2,7 @@
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Name</field>
     </columns>
     <columns>
@@ -12,11 +13,18 @@
     <columns>
         <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Due_Date__c</field>
 >>>>>>> 01eee72 (Change2)
+=======
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Name</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Due_Date__c</field>
+>>>>>>> 3dc5bb9 (change10)
     </columns>
     <columns>
         <field>Inspection__c$Name</field>
     </columns>
     <columns>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Status__c</field>
     </columns>
@@ -35,21 +43,28 @@
             <column>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$My_Task__c</column>
 =======
         <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Status__c</field>
+=======
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Status__c</field>
+>>>>>>> 3dc5bb9 (change10)
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Percentage_Completion__c</field>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Percentage_Completion__c</field>
     </columns>
     <columns>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$On_Hold_Reason__c</field>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$On_Hold_Reason__c</field>
     </columns>
     <columns>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Alert__c</field>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Alert__c</field>
     </columns>
     <filter>
         <criteriaItems>
+<<<<<<< HEAD
             <column>Inspection__c.Project_Phases__r.Project_Tasks__r$My_Task__c</column>
 >>>>>>> 01eee72 (Change2)
+=======
+            <column>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$My_Task__c</column>
+>>>>>>> 3dc5bb9 (change10)
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
@@ -57,10 +72,14 @@
         </criteriaItems>
         <criteriaItems>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <column>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Status__c</column>
 =======
             <column>Inspection__c.Project_Phases__r.Project_Tasks__r$Status__c</column>
 >>>>>>> 01eee72 (Change2)
+=======
+            <column>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Status__c</column>
+>>>>>>> 3dc5bb9 (change10)
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
@@ -68,10 +87,14 @@
         </criteriaItems>
         <criteriaItems>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <column>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Due_Date__c</column>
 =======
             <column>Inspection__c.Project_Phases__r.Project_Tasks__r$Due_Date__c</column>
 >>>>>>> 01eee72 (Change2)
+=======
+            <column>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Due_Date__c</column>
+>>>>>>> 3dc5bb9 (change10)
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>lessOrEqual</operator>

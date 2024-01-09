@@ -54,9 +54,13 @@
     <targetObject>Case</targetObject>
     <targetParentField>Inspection__c</targetParentField>
 <<<<<<< HEAD:force-app/main/default/quickActions/Inspection__c.Create_Case.quickAction-meta.xml
+<<<<<<< HEAD:force-app/main/default/quickActions/Inspection__c.Create_Case.quickAction-meta.xml
     <targetRecordType>Case.Inspection</targetRecordType>
 =======
     <targetRecordType>Case.ES_Project</targetRecordType>
 >>>>>>> 01eee72 (Change2):force-app/main/default/quickActions/ES_Project__c.Create_Case.quickAction-meta.xml
+=======
+    <targetRecordType>Case.ES_Inspection</targetRecordType>
+>>>>>>> 3dc5bb9 (change10):force-app/main/default/quickActions/ES_Project__c.Create_Case.quickAction-meta.xml
     <type>Create</type>
 </QuickAction>

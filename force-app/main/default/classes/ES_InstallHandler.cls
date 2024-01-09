@@ -20,12 +20,17 @@ global with sharing class ES_InstallHandler implements InstallHandler {
                     insert securityDecision.getRecords();
                     
 <<<<<<< HEAD
+<<<<<<< HEAD
                     Inspection__c Inspection = new Inspection__c(
                         Name = 'Demo Inspection', 
 =======
                     Inspection__c project = new Inspection__c(
                         Name = 'Demo Project', 
 >>>>>>> 01eee72 (Change2)
+=======
+                    Inspection__c Inspection = new Inspection__c(
+                        Name = 'Demo Inspection', 
+>>>>>>> 3dc5bb9 (change10)
                         Portfolio__c = 'R2R',
                         OwnerId= userId,
                         Initial_End_Date__c = System.today()+30,
@@ -33,10 +38,14 @@ global with sharing class ES_InstallHandler implements InstallHandler {
                         Program__c = securityDecision.getRecords()[0]?.Id,
                         Level_of_Effort__c = 'Small');
 <<<<<<< HEAD
+<<<<<<< HEAD
                     securityDecision = Security.stripInaccessible(AccessType.CREATABLE, new List<Inspection__c>{Inspection});
 =======
                     securityDecision = Security.stripInaccessible(AccessType.CREATABLE, new List<Inspection__c>{project});
 >>>>>>> 01eee72 (Change2)
+=======
+                    securityDecision = Security.stripInaccessible(AccessType.CREATABLE, new List<Inspection__c>{Inspection});
+>>>>>>> 3dc5bb9 (change10)
                     insert securityDecision.getRecords();
                     
                     Id InspectionId = securityDecision.getRecords()[0]?.Id;
@@ -45,22 +54,38 @@ global with sharing class ES_InstallHandler implements InstallHandler {
                     Integer resourceAvailability = Integer.valueOf(ES_Utility.getESSettings('Default').Default_Availability_for_Scheduler__c);
                     //Create Phases
                     ES_Phase__c phase1 = new ES_Phase__c( Name = '0. Discovery',
+<<<<<<< HEAD
                                                            ES_Inspection__c = InspectionId);
+=======
+                                                           Inspection__c = InspectionId);
+>>>>>>> 3dc5bb9 (change10)
                     
                     lstOfPhases.add(phase1);
                     
                     ES_Phase__c phase2 = new ES_Phase__c( Name = '1. Initiate',
+<<<<<<< HEAD
                                                            ES_Inspection__c = InspectionId);
+=======
+                                                           Inspection__c = InspectionId);
+>>>>>>> 3dc5bb9 (change10)
                     
                     lstOfPhases.add(phase2);
                     
                     ES_Phase__c phase3 = new ES_Phase__c( Name = '2. Execute',
+<<<<<<< HEAD
                                                            ES_Inspection__c = InspectionId);
+=======
+                                                           Inspection__c = InspectionId);
+>>>>>>> 3dc5bb9 (change10)
                     
                     lstOfPhases.add(phase3);
                     
                     ES_Phase__c phase4 = new ES_Phase__c( Name = '3. Transition',
+<<<<<<< HEAD
                                                            ES_Inspection__c = InspectionId);
+=======
+                                                           Inspection__c = InspectionId);
+>>>>>>> 3dc5bb9 (change10)
                     
                     lstOfPhases.add(phase4);
                     
@@ -143,7 +168,11 @@ global with sharing class ES_InstallHandler implements InstallHandler {
                     List<ES_Resource_Allocation__c> lstAllocation = new List<ES_Resource_Allocation__c>();
                     
                     //Allocation records
+<<<<<<< HEAD
                     ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Inspection__c = inspectionId,
+=======
+                    ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Inspection__c = InspectionId,
+>>>>>>> 3dc5bb9 (change10)
                                                                                               Resource_Availability__c = securityDecision.getRecords()[1]?.Id,
                                                                                               Role__c = 'SME');
                     lstAllocation.add(resAllocation);

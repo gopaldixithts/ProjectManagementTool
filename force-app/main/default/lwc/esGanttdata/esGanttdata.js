@@ -384,10 +384,14 @@ export default class ESGanttdata extends NavigationMixin(LightningElement) {
     }
  
 <<<<<<< HEAD
+<<<<<<< HEAD
     get isESInspection() {
 =======
     get isESProject() {
 >>>>>>> 01eee72 (Change2)
+=======
+    get isESInspection() {
+>>>>>>> 3dc5bb9 (change10)
         return this.record.objAPIName == 'Inspection__c' ? true : false;
     }
  

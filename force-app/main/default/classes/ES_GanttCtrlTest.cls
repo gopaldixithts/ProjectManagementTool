@@ -37,10 +37,14 @@ public with sharing class ES_GanttCtrlTest {
 
             Inspection__c prj1 = new Inspection__c();
 <<<<<<< HEAD
+<<<<<<< HEAD
             prj1.Name = 'New Inspection 1';
 =======
             prj1.Name = 'New project 1';
 >>>>>>> 01eee72 (Change2)
+=======
+            prj1.Name = 'New Inspection 1';
+>>>>>>> 3dc5bb9 (change10)
             prj1.Program__c = pg1.Id;
             prj1.Inspection_Status__c = 'Execute';
             prj1.Inspection_Category__c = 'IT';
@@ -50,12 +54,20 @@ public with sharing class ES_GanttCtrlTest {
 
             ES_Phase__c ph1 = new ES_Phase__c();
             ph1.Name = 'test phase 1';
+<<<<<<< HEAD
             ph1.ES_Inspection__c = prj1.Id;
+=======
+            ph1.Inspection__c = prj1.Id;
+>>>>>>> 3dc5bb9 (change10)
             INSERT ph1;
 
             ES_Phase__c ph2 = new ES_Phase__c();
             ph2.Name = 'test phase 2';
+<<<<<<< HEAD
             ph2.ES_Inspection__c = prj1.Id;
+=======
+            ph2.Inspection__c = prj1.Id;
+>>>>>>> 3dc5bb9 (change10)
             INSERT ph2;
 
             ES_Task__c tsk1 = new ES_Task__c();
@@ -72,10 +84,14 @@ public with sharing class ES_GanttCtrlTest {
 
             Inspection__c prj2 = new Inspection__c();
 <<<<<<< HEAD
+<<<<<<< HEAD
             prj2.Name = 'New Inspection 2';
 =======
             prj2.Name = 'New project 2';
 >>>>>>> 01eee72 (Change2)
+=======
+            prj2.Name = 'New Inspection 2';
+>>>>>>> 3dc5bb9 (change10)
             prj2.Program__c = pg2.Id;
             prj2.Path_to_Green__c = 'Test';
             prj2.Level_of_Effort__c = 'Medium';
@@ -86,7 +102,11 @@ public with sharing class ES_GanttCtrlTest {
 
             ES_Phase__c ph3 = new ES_Phase__c();
             ph3.Name = 'test phase 2';
+<<<<<<< HEAD
             ph3.ES_Inspection__c = prj2.Id;
+=======
+            ph3.Inspection__c = prj2.Id;
+>>>>>>> 3dc5bb9 (change10)
             INSERT ph3;
 
             ES_Task__c tsk2 = new ES_Task__c();
@@ -173,6 +193,7 @@ public with sharing class ES_GanttCtrlTest {
 
     static testmethod void testFilterValues() {
 <<<<<<< HEAD
+<<<<<<< HEAD
         Map<String, String> mapOfHealthValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Health__c');
         Map<String, String> mapOfCategoryValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Category__c');
         Map<String, String> mapOfSystemValues = ES_Utility.getPicklistValues('Inspection__c', 'SystemsImpacted__c');
@@ -183,6 +204,12 @@ public with sharing class ES_GanttCtrlTest {
         Map<String, String> mapOfSystemValues = ES_Utility.getPicklistValues('Inspection__c', 'SystemsImpacted__c');
         Map<String, String> mapOfProgressValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Status__c');
 >>>>>>> 01eee72 (Change2)
+=======
+        Map<String, String> mapOfHealthValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Health__c');
+        Map<String, String> mapOfCategoryValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Category__c');
+        Map<String, String> mapOfSystemValues = ES_Utility.getPicklistValues('Inspection__c', 'SystemsImpacted__c');
+        Map<String, String> mapOfProgressValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Status__c');
+>>>>>>> 3dc5bb9 (change10)
 
         User testUser = [SELECT Id FROM User WHERE UserName = 'standarduser@ESgantt.com'];
 
