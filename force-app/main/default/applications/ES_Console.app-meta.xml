@@ -11,7 +11,7 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>ES Console</label>
     <navType>Console</navType>
-    <tabs>Inspection_Home</tabs>
+    <tabs>Inspection_Home</tabs> 
     <tabs>ES_Project__c</tabs>
     <tabs>ES_Program__c</tabs>
     <tabs>standard-Case</tabs>
