@@ -3,10 +3,14 @@
     <fullName>ES_Program__c</fullName>
     <externalId>false</externalId>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <formula>Inspection__r.Program__r.Name</formula>
 =======
     <formula>ES_Inspection__r.Program__r.Name</formula>
 >>>>>>> 3dc5bb9 (change10)
+=======
+    <formula>Inspection__r.Program__r.Name</formula>
+>>>>>>> 5762da5 (change12)
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>ES Program</label>
     <required>false</required>
