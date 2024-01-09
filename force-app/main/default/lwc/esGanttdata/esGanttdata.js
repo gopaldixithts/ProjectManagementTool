@@ -383,7 +383,11 @@ export default class ESGanttdata extends NavigationMixin(LightningElement) {
         return this.record.objAPIName == 'ES_Task__c' ? true : false;
     }
  
+<<<<<<< HEAD
     get isESInspection() {
+=======
+    get isESProject() {
+>>>>>>> 01eee72 (Change2)
         return this.record.objAPIName == 'Inspection__c' ? true : false;
     }
  

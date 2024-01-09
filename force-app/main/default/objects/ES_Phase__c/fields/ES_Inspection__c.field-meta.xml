@@ -3,7 +3,11 @@
     <fullName>ES_Inspection__c</fullName>
     <description>The Inspection this phase is assigned to</description>
     <externalId>false</externalId>
+<<<<<<< HEAD:force-app/main/default/objects/ES_Phase__c/fields/ES_Inspection__c.field-meta.xml
     <label>Inspection Name</label>
+=======
+    <label>Project Name</label>
+>>>>>>> 01eee72 (Change2):force-app/main/default/objects/ES_Phase__c/fields/Project__c.field-meta.xml
     <referenceTo>Inspection__c</referenceTo>
     <relationshipLabel>ES Phases</relationshipLabel>
     <relationshipName>Inspection_Phases</relationshipName>

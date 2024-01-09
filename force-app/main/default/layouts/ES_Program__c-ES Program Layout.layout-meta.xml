@@ -98,7 +98,11 @@
         <fields>Inspection_Completion_Image__c</fields>
         <fields>Health_Comment__c</fields>
         <fields>Path_to_Green__c</fields>
+<<<<<<< HEAD:force-app/main/default/layouts/ES_Program__c-ES Program Layout.layout-meta.xml
         <fields>Inspection_Owner__c</fields>
+=======
+        <fields>Project_Owner__c</fields>
+>>>>>>> 01eee72 (Change2):force-app/main/default/layouts/ES_Program__c-PMT Program Layout.layout-meta.xml
         <relatedList>Inspection__c.Program__c</relatedList>
     </relatedLists>
     <relatedLists>

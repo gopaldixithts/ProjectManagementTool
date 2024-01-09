@@ -36,7 +36,11 @@ public with sharing class ES_GanttCtrlTest {
             INSERT pg1;
 
             Inspection__c prj1 = new Inspection__c();
+<<<<<<< HEAD
             prj1.Name = 'New Inspection 1';
+=======
+            prj1.Name = 'New project 1';
+>>>>>>> 01eee72 (Change2)
             prj1.Program__c = pg1.Id;
             prj1.Inspection_Status__c = 'Execute';
             prj1.Inspection_Category__c = 'IT';
@@ -67,7 +71,11 @@ public with sharing class ES_GanttCtrlTest {
             INSERT pg2;
 
             Inspection__c prj2 = new Inspection__c();
+<<<<<<< HEAD
             prj2.Name = 'New Inspection 2';
+=======
+            prj2.Name = 'New project 2';
+>>>>>>> 01eee72 (Change2)
             prj2.Program__c = pg2.Id;
             prj2.Path_to_Green__c = 'Test';
             prj2.Level_of_Effort__c = 'Medium';
@@ -164,10 +172,17 @@ public with sharing class ES_GanttCtrlTest {
     }
 
     static testmethod void testFilterValues() {
+<<<<<<< HEAD
         Map<String, String> mapOfHealthValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Health__c');
         Map<String, String> mapOfCategoryValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Category__c');
         Map<String, String> mapOfSystemValues = ES_Utility.getPicklistValues('Inspection__c', 'SystemsImpacted__c');
         Map<String, String> mapOfProgressValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Status__c');
+=======
+        Map<String, String> mapOfHealthValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Health__c');
+        Map<String, String> mapOfCategoryValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Category__c');
+        Map<String, String> mapOfSystemValues = ES_Utility.getPicklistValues('Inspection__c', 'SystemsImpacted__c');
+        Map<String, String> mapOfProgressValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Status__c');
+>>>>>>> 01eee72 (Change2)
 
         User testUser = [SELECT Id FROM User WHERE UserName = 'standarduser@ESgantt.com'];
 

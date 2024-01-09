@@ -11,8 +11,13 @@ public class ES_TaskandPhaseManagementCtrlTest {
             List<ES_Task__c> lstOfTasks = new List<ES_Task__c>();
             Integer resourceAvailability = Integer.valueOf(ES_Utility.getESSettings('Default').Default_Availability_for_Scheduler__c);
             
+<<<<<<< HEAD
             //ES Inspection record
             Inspection__c Inspection = new Inspection__c(Name='Inspection Controller Test', 
+=======
+            //ES project record
+            Inspection__c project = new Inspection__c(Name='Project Controller Test', 
+>>>>>>> 01eee72 (Change2)
                                                         Portfolio__c='R2R',
                                                         Initial_End_Date__c=System.today()+30,
                                                         Initial_Start_Date__c=System.today(),
@@ -68,7 +73,11 @@ public class ES_TaskandPhaseManagementCtrlTest {
     static testmethod void getTasksForInspectionTestCase(){
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESUser' and LastName='Last' limit 1];
         System.runAs(testUser){
+<<<<<<< HEAD
             Inspection__c Inspection = [SELECT Id FROM Inspection__c LIMIT 1];
+=======
+            Inspection__c project = [SELECT Id FROM Inspection__c LIMIT 1];
+>>>>>>> 01eee72 (Change2)
             Test.startTest();
             List<ES_Task__c> lstOfResult = ES_TaskandPhaseManagementCtrl.getTasksForInspection(Inspection.Id);
             Test.stopTest();
@@ -152,15 +161,24 @@ public class ES_TaskandPhaseManagementCtrlTest {
     static testmethod void savePhasesTestCase(){
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESUser' and LastName='Last' limit 1];
         System.runAs(testUser){
+<<<<<<< HEAD
             Inspection__c Inspection = [SELECT Id FROM Inspection__c LIMIT 1];
+=======
+            Inspection__c project = [SELECT Id FROM Inspection__c LIMIT 1];
+>>>>>>> 01eee72 (Change2)
             
             //Create Phases        
             ES_Phase__c phase = new ES_Phase__c(Name='Phase 3', Inspection__c = Inspection.Id);
             Test.startTest();
             ES_TaskandPhaseManagementCtrl.savePhases(new List<ES_Phase__c> {phase});
             
+<<<<<<< HEAD
             Inspection__c InspectionUpdated = [SELECT Id, (SELECT Id FROM Inspection_Phases__r) FROM Inspection__c WHERE Id=: Inspection.Id];          
             system.assertEquals(2, InspectionUpdated.Inspection_Phases__r.size(), 'There should be 2 phases available.');
+=======
+            Inspection__c projectUpdated = [SELECT Id, (SELECT Id FROM Project_Phases__r) FROM Inspection__c WHERE Id=: project.Id];          
+            system.assertEquals(2, projectUpdated.Project_Phases__r.size(), 'There should be 2 phases available.');
+>>>>>>> 01eee72 (Change2)
             Test.stopTest();
         }
         
@@ -239,7 +257,11 @@ public class ES_TaskandPhaseManagementCtrlTest {
     static testmethod void getTaskWrapperTestCase(){
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESUser' and LastName='Last' limit 1];
         System.runAs(testUser){
+<<<<<<< HEAD
             Inspection__c Inspection = [SELECT Id FROM Inspection__c LIMIT 1];
+=======
+            Inspection__c project = [SELECT Id FROM Inspection__c LIMIT 1];
+>>>>>>> 01eee72 (Change2)
             Test.startTest();
             ES_TaskandPhaseManagementCtrl.createTasksWrapper options = ES_TaskandPhaseManagementCtrl.getTaskWrapper(Inspection.Id);
             Test.stopTest();

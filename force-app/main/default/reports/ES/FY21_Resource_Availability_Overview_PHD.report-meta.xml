@@ -16,7 +16,11 @@
         <field>Inspection__c.Resource_Allocations__r$Role__c</field>
     </columns>
     <columns>
+<<<<<<< HEAD
         <field>Inspection__c$Inspection_Category__c</field>
+=======
+        <field>Inspection__c$Project_Category__c</field>
+>>>>>>> 01eee72 (Change2)
     </columns>
     <columns>
         <field>Inspection__c$Name</field>

@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
+<<<<<<< HEAD:force-app/main/default/reports/ES/Inspection_Overview_dqk.report-meta.xml
         <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Name</field>
     </columns>
     <columns>
         <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Status__c</field>
+=======
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Name</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Status__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Project_Overview_dqk.report-meta.xml
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Inspection__c$Percentage_Completion__c</field>
     </columns>
     <columns>
+<<<<<<< HEAD:force-app/main/default/reports/ES/Inspection_Overview_dqk.report-meta.xml
         <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Description__c</field>
+=======
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Description__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Project_Overview_dqk.report-meta.xml
     </columns>
     <filter>
         <criteriaItems>
@@ -25,7 +36,11 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
+<<<<<<< HEAD:force-app/main/default/reports/ES/Inspection_Overview_dqk.report-meta.xml
         <field>Inspection__c$Inspection_Health__c</field>
+=======
+        <field>Inspection__c$Project_Health__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Project_Overview_dqk.report-meta.xml
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
@@ -35,7 +50,11 @@
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
+<<<<<<< HEAD:force-app/main/default/reports/ES/Inspection_Overview_dqk.report-meta.xml
         <field>Inspection__c.Inspection_Phases__r$Name</field>
+=======
+        <field>Inspection__c.Project_Phases__r$Name</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Project_Overview_dqk.report-meta.xml
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Inspections with Task Progress</name>

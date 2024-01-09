@@ -676,7 +676,11 @@
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
+<<<<<<< HEAD:force-app/main/default/flexipages/Inspection_Record_Page.flexipage-meta.xml
     <masterLabel>ES Inspection Record Page</masterLabel>
+=======
+    <masterLabel>ES Project Record Page</masterLabel>
+>>>>>>> 01eee72 (Change2):force-app/main/default/flexipages/ES_Project_Record_Page.flexipage-meta.xml
     <sobjectType>Inspection__c</sobjectType>
     <template>
         <name>flexipage:recordHomeSingleColNoHeaderTemplateDesktop</name>

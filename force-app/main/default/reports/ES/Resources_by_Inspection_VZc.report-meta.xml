@@ -65,7 +65,11 @@
     </groupingsAcross>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
+<<<<<<< HEAD:force-app/main/default/reports/ES/Resources_by_Inspection_VZc.report-meta.xml
         <field>Inspection__c$Inspection_Category__c</field>
+=======
+        <field>Inspection__c$Project_Category__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Resources_by_Project_VZc.report-meta.xml
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>

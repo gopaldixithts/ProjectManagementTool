@@ -62,10 +62,17 @@
                 </chartSummary>
                 <componentType>Donut</componentType>
                 <dashboardFilterColumns>
+<<<<<<< HEAD
                     <column>Inspection__c$Inspection_Health__c</column>
                 </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>Inspection__c$Inspection_Category__c</column>
+=======
+                    <column>Inspection__c$Project_Health__c</column>
+                </dashboardFilterColumns>
+                <dashboardFilterColumns>
+                    <column>Inspection__c$Project_Category__c</column>
+>>>>>>> 01eee72 (Change2)
                 </dashboardFilterColumns>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
@@ -73,7 +80,11 @@
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
+<<<<<<< HEAD
                 <groupingColumn>Inspection__c$Inspection_Health__c</groupingColumn>
+=======
+                <groupingColumn>Inspection__c$Project_Health__c</groupingColumn>
+>>>>>>> 01eee72 (Change2)
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
@@ -105,10 +116,17 @@
                 </chartSummary>
                 <componentType>Gauge</componentType>
                 <dashboardFilterColumns>
+<<<<<<< HEAD
                     <column>Inspection__c$Inspection_Health__c</column>
                 </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>Inspection__c$Inspection_Category__c</column>
+=======
+                    <column>Inspection__c$Project_Health__c</column>
+                </dashboardFilterColumns>
+                <dashboardFilterColumns>
+                    <column>Inspection__c$Project_Category__c</column>
+>>>>>>> 01eee72 (Change2)
                 </dashboardFilterColumns>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
@@ -142,10 +160,17 @@
                 </chartSummary>
                 <componentType>BarStacked</componentType>
                 <dashboardFilterColumns>
+<<<<<<< HEAD
                     <column>Inspection__c$Inspection_Health__c</column>
                 </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>Inspection__c$Inspection_Category__c</column>
+=======
+                    <column>Inspection__c$Project_Health__c</column>
+                </dashboardFilterColumns>
+                <dashboardFilterColumns>
+                    <column>Inspection__c$Project_Category__c</column>
+>>>>>>> 01eee72 (Change2)
                 </dashboardFilterColumns>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
@@ -154,7 +179,11 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingColumn>Inspection__c$Owner_s_Department__c</groupingColumn>
+<<<<<<< HEAD
                 <groupingColumn>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Assigned_To1__c</groupingColumn>
+=======
+                <groupingColumn>Inspection__c.Project_Phases__r.Project_Tasks__r$Assigned_To1__c</groupingColumn>
+>>>>>>> 01eee72 (Change2)
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
@@ -183,10 +212,17 @@
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <componentType>FlexTable</componentType>
                 <dashboardFilterColumns>
+<<<<<<< HEAD
                     <column>Inspection__c$Inspection_Health__c</column>
                 </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>Inspection__c$Inspection_Category__c</column>
+=======
+                    <column>Inspection__c$Project_Health__c</column>
+                </dashboardFilterColumns>
+                <dashboardFilterColumns>
+                    <column>Inspection__c$Project_Category__c</column>
+>>>>>>> 01eee72 (Change2)
                 </dashboardFilterColumns>
                 <flexComponentProperties>
                     <decimalPrecision>-1</decimalPrecision>
@@ -234,10 +270,17 @@
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <componentType>FlexTable</componentType>
                 <dashboardFilterColumns>
+<<<<<<< HEAD
                     <column>Inspection__c$Inspection_Health__c</column>
                 </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>Inspection__c$Inspection_Category__c</column>
+=======
+                    <column>Inspection__c$Project_Health__c</column>
+                </dashboardFilterColumns>
+                <dashboardFilterColumns>
+                    <column>Inspection__c$Project_Category__c</column>
+>>>>>>> 01eee72 (Change2)
                 </dashboardFilterColumns>
                 <flexComponentProperties>
                     <decimalPrecision>-1</decimalPrecision>

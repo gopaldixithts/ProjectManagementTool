@@ -430,52 +430,92 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_Category__c</field>
+=======
+        <field>Inspection__c.Project_Category__c</field>
+>>>>>>> 01eee72 (Change2)
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_Completion_Image__c</field>
+=======
+        <field>Inspection__c.Project_Completion_Image__c</field>
+>>>>>>> 01eee72 (Change2)
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_End_Month__c</field>
+=======
+        <field>Inspection__c.Project_End_Month__c</field>
+>>>>>>> 01eee72 (Change2)
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_Health__c</field>
+=======
+        <field>Inspection__c.Project_Health__c</field>
+>>>>>>> 01eee72 (Change2)
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_Initiator__c</field>
+=======
+        <field>Inspection__c.Project_Initiator__c</field>
+>>>>>>> 01eee72 (Change2)
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_Lead__c</field>
+=======
+        <field>Inspection__c.Project_Lead__c</field>
+>>>>>>> 01eee72 (Change2)
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_Owner__c</field>
+=======
+        <field>Inspection__c.Project_Owner__c</field>
+>>>>>>> 01eee72 (Change2)
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_Size__c</field>
+=======
+        <field>Inspection__c.Project_Size__c</field>
+>>>>>>> 01eee72 (Change2)
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_Start_Month__c</field>
+=======
+        <field>Inspection__c.Project_Start_Month__c</field>
+>>>>>>> 01eee72 (Change2)
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_Status__c</field>
+=======
+        <field>Inspection__c.Project_Status__c</field>
+>>>>>>> 01eee72 (Change2)
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -550,7 +590,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+<<<<<<< HEAD
         <field>Inspection__c.Sum_of_task_count_child_Inspection__c</field>
+=======
+        <field>Inspection__c.Sum_of_task_count_child_project__c</field>
+>>>>>>> 01eee72 (Change2)
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

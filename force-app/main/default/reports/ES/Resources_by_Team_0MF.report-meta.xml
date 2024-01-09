@@ -79,7 +79,11 @@
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
+<<<<<<< HEAD
         <field>Inspection__c$Inspection_Category__c</field>
+=======
+        <field>Inspection__c$Project_Category__c</field>
+>>>>>>> 01eee72 (Change2)
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Resources by Team</name>

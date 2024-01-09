@@ -31,8 +31,13 @@ public class ES_ClonePhaseTaskCtrlTest {
             
             List<ES_Task__c > lstOfTasks = new List<ES_Task__c > ();
             
+<<<<<<< HEAD
             //ES inspection record
             Inspection__c inspection = new Inspection__c(Name = 'Clone Phases/Tasks Test',
+=======
+            //ES project record
+            Inspection__c project = new Inspection__c(Name = 'Clone Phases/Tasks Test',
+>>>>>>> 01eee72 (Change2)
                                                         Portfolio__c = 'R2R',
                                                         Initial_End_Date__c = System.today() + 30,
                                                         Initial_Start_Date__c = System.today(),
@@ -41,8 +46,13 @@ public class ES_ClonePhaseTaskCtrlTest {
                                                        );
             INSERT inspection;
             
+<<<<<<< HEAD
             //ES inspection template record
             Inspection__c templateInspection = new Inspection__c(Name = 'Template Inspection',
+=======
+            //ES project template record
+            Inspection__c templateProject = new Inspection__c(Name = 'Template Project',
+>>>>>>> 01eee72 (Change2)
                                                                 Portfolio__c = 'R2R',
                                                                 Initial_End_Date__c = System.today() + 30,
                                                                 Initial_Start_Date__c = System.today(),
@@ -153,7 +163,11 @@ public class ES_ClonePhaseTaskCtrlTest {
             
             ES_ClonePhaseTaskCtrl.getTasks(paramList);
             
+<<<<<<< HEAD
             List<Inspection__c> lstProj1 = [select id from Inspection__c where Name='Test Template Inspection'];
+=======
+            List<Inspection__c> lstProj1 = [select id from Inspection__c where Name='Test Template Project'];
+>>>>>>> 01eee72 (Change2)
             
             system.assertEquals(1, lstProj1.size(), 'There should be 1 new Inspection created from Template');
             

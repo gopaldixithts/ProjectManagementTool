@@ -2,7 +2,11 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Inspection__c</fullName>
     <externalId>false</externalId>
+<<<<<<< HEAD:force-app/main/default/objects/ES_Resource_Allocation__c/fields/Inspection__c.field-meta.xml
     <label>Inspection</label>
+=======
+    <label>Project</label>
+>>>>>>> 01eee72 (Change2):force-app/main/default/objects/ES_Resource_Allocation__c/fields/Project__c.field-meta.xml
     <referenceTo>Inspection__c</referenceTo>
     <relationshipName>Resource_Allocations</relationshipName>
     <relationshipOrder>1</relationshipOrder>

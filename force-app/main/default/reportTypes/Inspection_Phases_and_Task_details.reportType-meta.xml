@@ -191,52 +191,92 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <field>Inspection_Category__c</field>
+=======
+            <field>Project_Category__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <field>Inspection_Completion_Image__c</field>
+=======
+            <field>Project_Completion_Image__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <field>Inspection_End_Month__c</field>
+=======
+            <field>Project_End_Month__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <field>Inspection_Health__c</field>
+=======
+            <field>Project_Health__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <field>Inspection_Initiator__c</field>
+=======
+            <field>Project_Initiator__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <field>Inspection_Lead__c</field>
+=======
+            <field>Project_Lead__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <field>Inspection_Owner__c</field>
+=======
+            <field>Project_Owner__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <field>Inspection_Size__c</field>
+=======
+            <field>Project_Size__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <field>Inspection_Start_Month__c</field>
+=======
+            <field>Project_Start_Month__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <field>Inspection_Status__c</field>
+=======
+            <field>Project_Status__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
@@ -331,7 +371,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <field>Sum_of_task_count_child_Inspection__c</field>
+=======
+            <field>Sum_of_task_count_child_project__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c</table>
         </columns>
         <columns>
@@ -350,157 +394,283 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Id</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>true</checkedByDefault>
             <field>Name</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CreatedDate</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CreatedBy</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedDate</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedBy</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Daily_progress__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Days_to_go__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Deadline_formula__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Phase_Description__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Duration__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>End_date_from_child__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Expected_age_of_completion__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Health_Icon__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Kickoff_formula__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Length__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Percentage_Completion_without_child__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Phase_Completion_Image__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Phase_Completion__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Phase_Health__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Phase_Weighted_Perc__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Sum_of_tasks_count_child__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Start_date_from_child_Inspection__c</field>
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Start_date_from_child_project__c</field>
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>End_Date_Rollup__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Start_Date_Rollup__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Sum_Of_Task_Completion__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Sum_Task_Duration__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Sum_Weighted_perc__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Task_Count__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Phases_with_completed_tasks__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Inspection_Name__c</field>
             <table>Inspection__c.Inspection_Phases__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Project_Name__c</field>
+            <table>Inspection__c.Project_Phases__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <masterLabel>ES Phases</masterLabel>
     </sections>
@@ -508,177 +678,318 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Id</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>true</checkedByDefault>
             <field>Name</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CreatedDate</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CreatedBy</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedDate</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedBy</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>LastActivityDate</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Alert__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Assigned_To1__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Assigned_To_Email__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Checklist_Selected__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Days_Late__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Description__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Due_Date__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Duration__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Is_Milestone__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Is_Recurring__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>My_Task__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>On_Hold_Reason__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Percentage_Completion__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Inspection_Name__c</field>
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Project_Name__c</field>
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Sign_off_status__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Start_Date__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Status_Icon_Name__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Status_Icon__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Status__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Task_Level__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Task_Level_formula__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Task_Name_w_Alert__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Topic__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Weighted_percentage__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Phase_Name__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Start_Days_Out__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Duration_In_Days__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>IsTemplate__c</field>
+<<<<<<< HEAD:force-app/main/default/reportTypes/Inspection_Phases_and_Task_details.reportType-meta.xml
             <table>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r</table>
+=======
+            <table>Inspection__c.Project_Phases__r.Project_Tasks__r</table>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reportTypes/ES_Project_Phases_and_Task_details.reportType-meta.xml
         </columns>
         <masterLabel>ES Tasks</masterLabel>
     </sections>

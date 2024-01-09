@@ -3,9 +3,15 @@
     <fullName>Inspection__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
+<<<<<<< HEAD:force-app/main/default/objects/Case/fields/Inspection__c.field-meta.xml
     <label>ES Inspection</label>
     <referenceTo>Inspection__c</referenceTo>
     <relationshipLabel>Cases (Related Inspection)</relationshipLabel>
+=======
+    <label>ES Project</label>
+    <referenceTo>Inspection__c</referenceTo>
+    <relationshipLabel>Cases (Related Project)</relationshipLabel>
+>>>>>>> 01eee72 (Change2):force-app/main/default/objects/Case/fields/ES_Project__c.field-meta.xml
     <relationshipName>Cases</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

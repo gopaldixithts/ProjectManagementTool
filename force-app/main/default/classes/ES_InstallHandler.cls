@@ -19,15 +19,24 @@ global with sharing class ES_InstallHandler implements InstallHandler {
                         AccessType.CREATABLE, new List<ES_Program__c>{program});
                     insert securityDecision.getRecords();
                     
+<<<<<<< HEAD
                     Inspection__c Inspection = new Inspection__c(
                         Name = 'Demo Inspection', 
+=======
+                    Inspection__c project = new Inspection__c(
+                        Name = 'Demo Project', 
+>>>>>>> 01eee72 (Change2)
                         Portfolio__c = 'R2R',
                         OwnerId= userId,
                         Initial_End_Date__c = System.today()+30,
                         Initial_Start_Date__c = System.today(),
                         Program__c = securityDecision.getRecords()[0]?.Id,
                         Level_of_Effort__c = 'Small');
+<<<<<<< HEAD
                     securityDecision = Security.stripInaccessible(AccessType.CREATABLE, new List<Inspection__c>{Inspection});
+=======
+                    securityDecision = Security.stripInaccessible(AccessType.CREATABLE, new List<Inspection__c>{project});
+>>>>>>> 01eee72 (Change2)
                     insert securityDecision.getRecords();
                     
                     Id InspectionId = securityDecision.getRecords()[0]?.Id;

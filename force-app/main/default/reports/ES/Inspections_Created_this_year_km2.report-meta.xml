@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
+<<<<<<< HEAD:force-app/main/default/reports/ES/Inspections_Created_this_year_km2.report-meta.xml
         <field>Inspection__c$Inspection_Owner__c</field>
+=======
+        <field>Inspection__c$Project_Owner__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Projects_Created_this_year_km2.report-meta.xml
     </columns>
     <columns>
         <field>Inspection__c$Name</field>
@@ -10,7 +14,11 @@
         <field>Inspection__c$Description__c</field>
     </columns>
     <columns>
+<<<<<<< HEAD:force-app/main/default/reports/ES/Inspections_Created_this_year_km2.report-meta.xml
         <field>Inspection__c$Inspection_Category__c</field>
+=======
+        <field>Inspection__c$Project_Category__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/Projects_Created_this_year_km2.report-meta.xml
     </columns>
     <columns>
         <field>Inspection__c$Kickoff_formula__c</field>

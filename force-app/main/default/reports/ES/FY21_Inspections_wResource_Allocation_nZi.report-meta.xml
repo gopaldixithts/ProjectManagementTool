@@ -32,7 +32,11 @@
         <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.User__c</field>
     </columns>
     <columns>
+<<<<<<< HEAD:force-app/main/default/reports/ES/FY21_Inspections_wResource_Allocation_nZi.report-meta.xml
         <field>Inspection__c$Inspection_Category__c</field>
+=======
+        <field>Inspection__c$Project_Category__c</field>
+>>>>>>> 01eee72 (Change2):force-app/main/default/reports/ES/FY21_Projects_wResource_Allocation_nZi.report-meta.xml
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>

@@ -17,9 +17,15 @@ public class ES_Testcoverage {
         List<ES_Task__c> lstOfTasks = new List<ES_Task__c>();
         Integer resourceAvailability = Integer.valueOf(ES_Utility.getESSettings('Default').Default_Availability_for_Scheduler__c);
         
+<<<<<<< HEAD
     //Create Inspection
         Inspection__c Inspection = new Inspection__c(
                                                     Name = 'Inspection Controller Test', 
+=======
+    //Create Project
+        Inspection__c project = new Inspection__c(
+                                                    Name = 'Project Controller Test', 
+>>>>>>> 01eee72 (Change2)
                                                     Portfolio__c = 'R2R',
                                                     Initial_End_Date__c = System.today()+30,
                                                     Initial_Start_Date__c = System.today(),
@@ -109,7 +115,11 @@ public class ES_Testcoverage {
             List<case> lstOfCases = new List<Case>();
             Id caseRecordTypeId = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get(System.Label.ES_Inspection_Record_Type_on_Case).getRecordTypeId();
             for(Integer i=0; i<10; i++){
+<<<<<<< HEAD
                 lstOfCases.add(new Case(ownerId = testUser.Id,Subject='test case', RecordTypeId = caseRecordTypeId, Inspection__c = Inspection.Id));            
+=======
+                lstOfCases.add(new Case(ownerId = testUser.Id,Subject='test case', RecordTypeId = caseRecordTypeId, Inspection__c = project.Id));            
+>>>>>>> 01eee72 (Change2)
             }
             INSERT lstOfCases;
         }
@@ -124,7 +134,11 @@ public class ES_Testcoverage {
     static testmethod void getSummaryWrapperTestCase(){  
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESUser' and LastName='Last' limit 1];
         System.runAs(testUser){
+<<<<<<< HEAD
             Inspection__c InspectionRec = [SELECT Id FROM Inspection__c LIMIT 1];
+=======
+            Inspection__c projectRec = [SELECT Id FROM Inspection__c LIMIT 1];
+>>>>>>> 01eee72 (Change2)
             
             Test.startTest();
             ES_InspectionSummaryCtrl.createSummaryWrapper wrapperObj = ES_InspectionSummaryCtrl.getSummaryWrapper(InspectionRec.Id);
@@ -144,7 +158,11 @@ public class ES_Testcoverage {
     static testmethod void getCasesForInspectionTestCase(){    
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESUser' and LastName='Last' limit 1];
         System.runAs(testUser){
+<<<<<<< HEAD
             Inspection__c InspectionRec = [SELECT Id FROM Inspection__c LIMIT 1];
+=======
+            Inspection__c projectRec = [SELECT Id FROM Inspection__c LIMIT 1];
+>>>>>>> 01eee72 (Change2)
             Test.startTest();
                 List<Case> lstOfResult = ES_Utility.getCasesForInspection(InspectionRec.Id);
             Test.stopTest();
@@ -160,7 +178,11 @@ public class ES_Testcoverage {
     static testmethod void getESSettingsTest(){    
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESUser' and LastName='Last' limit 1];
         System.runAs(testUser){
+<<<<<<< HEAD
             Inspection__c InspectionRec = [SELECT Id FROM Inspection__c LIMIT 1];
+=======
+            Inspection__c projectRec = [SELECT Id FROM Inspection__c LIMIT 1];
+>>>>>>> 01eee72 (Change2)
             Test.startTest();
                 ES_Setting__mdt setting = ES_Utility.getESSettings('Test');
             Test.stopTest();
@@ -230,7 +252,11 @@ public class ES_Testcoverage {
     static testmethod void deleteRecordNegTestCase(){
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESRPUsr' and LastName='Last' limit 1];
         System.runAs(testUser){
+<<<<<<< HEAD
             Inspection__c Inspection = [SELECT Id FROM Inspection__c LIMIT 1];
+=======
+            Inspection__c project = [SELECT Id FROM Inspection__c LIMIT 1];
+>>>>>>> 01eee72 (Change2)
             ES_Resource_Availability__c resAvail = [SELECT Id FROM ES_Resource_Availability__c LIMIT 1]; 
             //Allocation records
             ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Inspection__c = Inspection.Id,
@@ -253,7 +279,11 @@ public class ES_Testcoverage {
     static testmethod void upsertDeleteAllocationTestCase(){
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESRPUsr' and LastName='Last' limit 1];
         System.runAs(testUser){
+<<<<<<< HEAD
             Inspection__c Inspection = [SELECT Id FROM Inspection__c LIMIT 1];
+=======
+            Inspection__c project = [SELECT Id FROM Inspection__c LIMIT 1];
+>>>>>>> 01eee72 (Change2)
             ES_Resource_Availability__c resAvail = [SELECT Id FROM ES_Resource_Availability__c LIMIT 1]; 
             //Allocation records
             ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Inspection__c = Inspection.Id,
@@ -278,9 +308,15 @@ public class ES_Testcoverage {
     static testmethod void getResourceDetailsWrapperTestCase(){
         User testUser = [select id from user where profile.Name='Standard User' and alias = 'ESUser' and LastName='Last' limit 1];
         System.runAs(testUser){
+<<<<<<< HEAD
             Inspection__c Inspection = [SELECT Id,Start_Fiscal_Year__c,End_Fiscal_Year__c FROM Inspection__c LIMIT 1];
             system.debug(Inspection);
             system.debug([select id, Inspection__r.name from ES_Resource_Allocation__c]);
+=======
+            Inspection__c project = [SELECT Id,Start_Fiscal_Year__c,End_Fiscal_Year__c FROM Inspection__c LIMIT 1];
+            system.debug(project);
+            system.debug([select id, project__r.name from ES_Resource_Allocation__c]);
+>>>>>>> 01eee72 (Change2)
             system.debug([select id, User__r.name from ES_Resource_Availability__c]);
             system.debug([select id, User__r.name from ES_Resource_Availability__c]);
             
@@ -331,8 +367,13 @@ public class ES_Testcoverage {
         String department = [select Department from User where id = :userInfo.getUserId() limit 1].Department;
         System.runAs(testUser){
             Test.startTest();
+<<<<<<< HEAD
             Inspection__c Inspection = [SELECT Id,Start_Fiscal_Year__c,End_Fiscal_Year__c FROM Inspection__c LIMIT 1];
             ES_ResourceManagementCtrl.ResourceDataWrapper wrapper = ES_ResourceManagementCtrl.getResourceAllocations('FY22',department , null, null, Inspection.Id);
+=======
+            Inspection__c project = [SELECT Id,Start_Fiscal_Year__c,End_Fiscal_Year__c FROM Inspection__c LIMIT 1];
+            ES_ResourceManagementCtrl.ResourceDataWrapper wrapper = ES_ResourceManagementCtrl.getResourceAllocations('FY22',department , null, null, project.Id);
+>>>>>>> 01eee72 (Change2)
             system.assertEquals(1, wrapper.resourceAvailabilities.size(), '1 availability should be found');
             system.assertEquals(1, wrapper.resourceAllocations.size(), '1 resourceAllocations should be found');
             Test.stopTest();
@@ -366,7 +407,11 @@ public class ES_Testcoverage {
         Test.testInstall(installHandlerScript, null);
         Test.startTest();
         List<ES_Program__c> programs = [select id from ES_Program__c];
+<<<<<<< HEAD
         List<Inspection__c> Inspections = [select id from Inspection__c];
+=======
+        List<Inspection__c> projects = [select id from Inspection__c];
+>>>>>>> 01eee72 (Change2)
         List<ES_Phase__c> phases = [select id from ES_Phase__c];
         List<ES_Task__c> tasks = [select id from ES_Task__c];
         List<ES_Resource_Availability__c> avails = [select id from ES_Resource_Availability__c];

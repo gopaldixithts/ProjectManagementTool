@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Name</field>
     </columns>
     <columns>
         <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Due_Date__c</field>
+=======
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Name</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Due_Date__c</field>
+>>>>>>> 01eee72 (Change2)
     </columns>
     <columns>
         <field>Inspection__c$Name</field>
     </columns>
     <columns>
+<<<<<<< HEAD
         <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Status__c</field>
     </columns>
     <columns>
@@ -25,20 +33,45 @@
     <filter>
         <criteriaItems>
             <column>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$My_Task__c</column>
+=======
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Status__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Percentage_Completion__c</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$On_Hold_Reason__c</field>
+    </columns>
+    <columns>
+        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Alert__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Inspection__c.Project_Phases__r.Project_Tasks__r$My_Task__c</column>
+>>>>>>> 01eee72 (Change2)
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>me</value>
         </criteriaItems>
         <criteriaItems>
+<<<<<<< HEAD
             <column>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Status__c</column>
+=======
+            <column>Inspection__c.Project_Phases__r.Project_Tasks__r$Status__c</column>
+>>>>>>> 01eee72 (Change2)
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
             <value>Completed,&quot;Closed, not Completed&quot;</value>
         </criteriaItems>
         <criteriaItems>
+<<<<<<< HEAD
             <column>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Due_Date__c</column>
+=======
+            <column>Inspection__c.Project_Phases__r.Project_Tasks__r$Due_Date__c</column>
+>>>>>>> 01eee72 (Change2)
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>lessOrEqual</operator>
