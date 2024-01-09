@@ -6,13 +6,13 @@
 ******************************************************************************************/
 public with sharing class ES_Utility {
     /*****************************************************************************************
-* Method Name: getCasesForProject
-* Description: Get list of Cases for a project for the Case Datatable on Project Summary page. Used in ES_CaseDataTable component
-* Parameters : Project recordId
+* Method Name: getCasesForInspection
+* Description: Get list of Cases for a Inspection for the Case Datatable on Inspection Summary page. Used in ES_CaseDataTable component
+* Parameters : Inspection recordId
 * Return Values: list of cases
 * *****************************************************************************************/  
     @AuraEnabled
-    public static List<Case> getCasesForProject(Id recordId){    
+    public static List<Case> getCasesForInspection(Id recordId){    
         List<case> cases = new List<case>();
         //Calling util method to check CRUD
         List<String> lstOfCaseFields = new List<String>{'CaseNumber', 'Subject', 'ES_Days_Open__c', 'Description', 'Type', 'Status', 'Priority', 'Inspection__c'};        
@@ -20,7 +20,7 @@ public with sharing class ES_Utility {
         
         if(hasAccess){  
             cases = [SELECT id,CaseNumber,Subject,ES_Days_Open__c,Description,Type,Status,Priority,Inspection__c FROM Case 
-                     WHERE Inspection__c =:recordId AND RecordType.DeveloperName =: System.Label.ES_Project_Record_Type_on_Case ORDER BY Priority ASC, Type ASC limit: limits.getLimitQueryRows()];                                     
+                     WHERE Inspection__c =:recordId AND RecordType.DeveloperName =: System.Label.ES_Inspection_Record_Type_on_Case ORDER BY Priority ASC, Type ASC limit: limits.getLimitQueryRows()];                                     
             return cases;
             
         }else{

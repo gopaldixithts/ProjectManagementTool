@@ -177,7 +177,7 @@
         <searchFilterFields>Phase__c</searchFilterFields>
         <searchFilterFields>Due_Date__c</searchFilterFields>
         <searchResultsAdditionalFields>Phase__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Project_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Inspection_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Assigned_To1__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Is_Milestone__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Sign_off_status__c</searchResultsAdditionalFields>

@@ -95,10 +95,10 @@
         <fields>NAME</fields>
         <fields>Description__c</fields>
         <fields>Health_Icon__c</fields>
-        <fields>Project_Completion_Image__c</fields>
+        <fields>Inspection_Completion_Image__c</fields>
         <fields>Health_Comment__c</fields>
         <fields>Path_to_Green__c</fields>
-        <fields>Project_Owner__c</fields>
+        <fields>Inspection_Owner__c</fields>
         <relatedList>Inspection__c.Program__c</relatedList>
     </relatedLists>
     <relatedLists>

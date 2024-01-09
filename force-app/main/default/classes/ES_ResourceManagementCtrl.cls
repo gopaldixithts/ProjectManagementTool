@@ -15,7 +15,7 @@ public with sharing class ES_ResourceManagementCtrl {
         @AuraEnabled
         public List<ES_Resource_Availability__c> ResourceAvailabilities; //All the available resources
         @AuraEnabled
-        public List<ES_Resource_Allocation__c> ResourceAllocations; //Allocations for the project
+        public List<ES_Resource_Allocation__c> ResourceAllocations; //Allocations for the Inspection
         @AuraEnabled
         public List<ES_Resource_Availability__c> dummyAvailabilities; //dummy availabilities with no user
         @AuraEnabled
@@ -28,42 +28,42 @@ public with sharing class ES_ResourceManagementCtrl {
     
     /*****************************************************************
     * Method Name : getResourceDetailsWrapper
-    * Params : project record
+    * Params : Inspection record
     * Retrun : ResourceDetailWrapper
     * Description : Get data using SOQL and transform to wrapper
     * **************************************************************/
     @AuraEnabled
-    public static ResourceDetail getResourceDetailsWrapper(Inspection__c project)
+    public static ResourceDetail getResourceDetailsWrapper(Inspection__c Inspection)
     {
         try{                
             //Generate wrapper
             ResourceDetail resource = new ResourceDetail();
             
-            List<String> lstOfAllocationFields = new List<String>{'Id','Role__c','Resource_Availability__c', 'Jan__c','Feb__c','Mar__c','Apr__c','May__c','Jun__c','Jul__c','Aug__c','Sep__c','Oct__c','Nov__c','Dec__c','Fiscal_Year__c','Project__c'};
+            List<String> lstOfAllocationFields = new List<String>{'Id','Role__c','Resource_Availability__c', 'Jan__c','Feb__c','Mar__c','Apr__c','May__c','Jun__c','Jul__c','Aug__c','Sep__c','Oct__c','Nov__c','Dec__c','Fiscal_Year__c','Inspection__c'};
                 
                 List<String> lstOfAvailabilityFields = new List<String>{'User__c','Feb_Remaining__c','Mar_Remaining__c','Apr_Remaining__c','May_Remaining__c','Jun_Remaining__c','Jul_Remaining__c','Aug_Remaining__c','Sep_Remaining__c','Oct_Remaining__c','Nov_Remaining__c','Dec_Remaining__c', 'Jan_Remaining__c','Id','fiscal_year__c', 'Start_Date__c', 'End_Date__c'};
                     
                     List<String> lstOfUsersFields = new List<String>{'Name','SmallPhotoURL','ManagerId','IsActive'};
-                        List<String> lstOfProjectFields = new List<String>{'Start_Fiscal_Year__c','End_Fiscal_Year__c','Deadline_formula__c','Kickoff_formula__c'};
+                        List<String> lstOfInspectionFields = new List<String>{'Start_Fiscal_Year__c','End_Fiscal_Year__c','Deadline_formula__c','Kickoff_formula__c'};
             
                             if(ES_Utility.validateCRUD('ES_Resource_Allocation__c', lstOfAllocationFields, 'isAccessible') && 
                                ES_Utility.validateCRUD('ES_Resource_Availability__c', lstOfAvailabilityFields, 'isAccessible') && 
                                ES_Utility.validateCRUD('User', lstOfUsersFields, 'isAccessible') && 
-                               ES_Utility.validateCRUD('Inspection__c', lstOfProjectFields, 'isAccessible')){
+                               ES_Utility.validateCRUD('Inspection__c', lstOfInspectionFields, 'isAccessible')){
                                    
-                                   resource.ResourceAllocations = getResourceAllocation(project.Id);
+                                   resource.ResourceAllocations = getResourceAllocation(Inspection.Id);
                                    
                                    //calculate fiscal years using start and end
-                                   Integer startFiscal = Integer.valueOf(project.Start_Fiscal_Year__c.mid(2,2));
-                                   Integer endFiscal = Integer.valueOf(project.End_Fiscal_Year__c.mid(2,2));
+                                   Integer startFiscal = Integer.valueOf(Inspection.Start_Fiscal_Year__c.mid(2,2));
+                                   Integer endFiscal = Integer.valueOf(Inspection.End_Fiscal_Year__c.mid(2,2));
                                    Integer difference = endFiscal - startFiscal;
                                    List<String> years = new List<String>();
                                    for(integer i=0;i<=difference;i++){
                                        years.add('FY' + (startFiscal+i));
                                    }
                                    
-                                   resource.ResourceAvailabilities = getAvailibility(years, project);
-                                   resource.dummyAvailabilities = getDummyAvailabilities(years, project);
+                                   resource.ResourceAvailabilities = getAvailibility(years, Inspection);
+                                   resource.dummyAvailabilities = getDummyAvailabilities(years, Inspection);
                                    resource.roles = getRolesPickVals();
                                    resource.isCreatable = Schema.sObjectType.ES_Resource_Allocation__c.isCreateable();
                                    resource.fiscalYearOffset = Integer.valueOf(getESSettings().Start_Month_of_Fiscal_Year__c);
@@ -89,7 +89,7 @@ public with sharing class ES_ResourceManagementCtrl {
     * Description : upsert/delete the allocation records
     * **************************************************************/
     @AuraEnabled
-    public static void upsertDeleteAllocation(List<SObject> allocationsToSave, List<SObject> allocationsToDelete, Inspection__c project){
+    public static void upsertDeleteAllocation(List<SObject> allocationsToSave, List<SObject> allocationsToDelete, Inspection__c Inspection){
         //Calling util method to check CRUD
         if(ES_Utility.validateCRUD('ES_Resource_Allocation__c', null, 'isCreateable') && ES_Utility.validateCRUD('ES_Resource_Allocation__c', null, 'isUpdateable')){   
             //check if anything to upsert
@@ -134,20 +134,20 @@ public with sharing class ES_ResourceManagementCtrl {
     
     /*****************************************************************
     * Method Name : getResourceAllocation
-    * Params : project record Id
+    * Params : Inspection record Id
     * Retrun : List of resource allocations
     * Description : Get allocations using SOQL and transform to wrapper
     * **************************************************************/
-    private static List<ES_Resource_Allocation__c> getResourceAllocation(Id projectId)
+    private static List<ES_Resource_Allocation__c> getResourceAllocation(Id InspectionId)
     {
         List<ES_Resource_Allocation__c> allocations = new List<ES_Resource_Allocation__c>();       
         allocations = [select id,Role__c,Resource_Availability__r.User__c,Resource_Availability__r.is_Dummy_Availability__c,
                        Resource_Availability__r.User__r.Name,Resource_Availability__r.User_Id__c, Resource_Availability__r.User__r.SmallPhotoURL,
-                       Resource_Availability__r.User__r.ManagerId,Project__r.Start_Fiscal_Year__c,
-                       Project__r.End_Fiscal_Year__c,Project__r.Deadline_formula__c,Project__r.Kickoff_formula__c,
+                       Resource_Availability__r.User__r.ManagerId,Inspection__r.Start_Fiscal_Year__c,
+                       Inspection__r.End_Fiscal_Year__c,Inspection__r.Deadline_formula__c,Inspection__r.Kickoff_formula__c,
                        Jan__c,Feb__c,Mar__c,Apr__c,May__c,Jun__c,Jul__c,Aug__c,Sep__c,Oct__c,
                        Nov__c,Dec__c,Fiscal_Year__c
-                       from ES_Resource_Allocation__c where Project__c=:projectId order by Role__c desc limit :limits.getLimitQueryRows()];
+                       from ES_Resource_Allocation__c where Inspection__c=:InspectionId order by Role__c desc limit :limits.getLimitQueryRows()];
         
         return allocations;
     }
@@ -155,11 +155,11 @@ public with sharing class ES_ResourceManagementCtrl {
     
     /*****************************************************************
     * Method Name : getAvailibility
-    * Params : project record
+    * Params : Inspection record
     * Retrun : list of reousrce availability
     * Description : Get availabilities using SOQL and transform to wrapper
     * **************************************************************/
-    private static List<ES_Resource_Availability__c> getAvailibility(List<String> years, Inspection__c project)
+    private static List<ES_Resource_Availability__c> getAvailibility(List<String> years, Inspection__c Inspection)
     {
         List<ES_Resource_Availability__c> ls = new List<ES_Resource_Availability__c>();
         
@@ -175,11 +175,11 @@ public with sharing class ES_ResourceManagementCtrl {
     
     /*****************************************************************
     * Method Name : getDummyAvailabilities
-    * Params : project record
+    * Params : Inspection record
     * Retrun : list of availabilities with no user
     * Description : Get availabilities using SOQL and transform to wrapper
     * **************************************************************/
-    private static List<ES_Resource_Availability__c> getDummyAvailabilities(List<String> years, Inspection__c project)
+    private static List<ES_Resource_Availability__c> getDummyAvailabilities(List<String> years, Inspection__c Inspection)
     {
         List<ES_Resource_Availability__c> dummyAvailablities = new List<ES_Resource_Availability__c>();
         
@@ -210,11 +210,11 @@ public with sharing class ES_ResourceManagementCtrl {
     @AuraEnabled
     public static AvailabilityWrapper getAllocationsForResource(Id resourceId, String fiscalYear)
     {
-        List<String> lstOfAllocationFields = new List<String>{'Id','Name','Role__c','Project_Owner__c','Resource_Availability__c','Project__c','Project_Name__c','Fiscal_Year__c','Resource_Name__c','Feb__c','Mar__c','Apr__c','May__c','Jun__c','Jul__c','Aug__c','Sep__c','Oct__c','Nov__c','Dec__c','Jan__c'};
+        List<String> lstOfAllocationFields = new List<String>{'Id','Name','Role__c','Inspection_Owner__c','Resource_Availability__c','Inspection__c','Inspection_Name__c','Fiscal_Year__c','Resource_Name__c','Feb__c','Mar__c','Apr__c','May__c','Jun__c','Jul__c','Aug__c','Sep__c','Oct__c','Nov__c','Dec__c','Jan__c'};
             //Calling util method to check CRUD
             if(ES_Utility.validateCRUD('ES_Resource_Allocation__c', lstOfAllocationFields, 'isAccessible')){
                 AvailabilityWrapper wrapper = new AvailabilityWrapper();
-                wrapper.resourceAvailabilities = [SELECT id,Name,Role__c,Project_Owner__c,Resource_Availability__c,Project__c,Project_Name__c,  Fiscal_Year__c,Resource_Name__c,Feb__c,Mar__c,Apr__c,May__c,Jun__c,Jul__c,Aug__c,Sep__c,Oct__c,Nov__c,Dec__c,Jan__c FROM ES_Resource_Allocation__c WHERE Resource_Availability__c=:resourceId And Fiscal_Year__c=:fiscalYear order by Project_Name__c ASC, Name ASC limit: limits.getLimitQueryRows()];                                    
+                wrapper.resourceAvailabilities = [SELECT id,Name,Role__c,Inspection_Owner__c,Resource_Availability__c,Inspection__c,Inspection_Name__c,  Fiscal_Year__c,Resource_Name__c,Feb__c,Mar__c,Apr__c,May__c,Jun__c,Jul__c,Aug__c,Sep__c,Oct__c,Nov__c,Dec__c,Jan__c FROM ES_Resource_Allocation__c WHERE Resource_Availability__c=:resourceId And Fiscal_Year__c=:fiscalYear order by Inspection_Name__c ASC, Name ASC limit: limits.getLimitQueryRows()];                                    
                 
                 wrapper.isResourcePlanner = Schema.sObjectType.ES_Resource_Availability__c.isCreateable();
                 return wrapper;
@@ -321,12 +321,12 @@ public with sharing class ES_ResourceManagementCtrl {
     /*************************************************
     * Method Name: getResourceAllocations
     * Description: get the resource availabilities and allocations based on the values selected
-    * Parameters : fiscal year, department, manager id, user id and project id
+    * Parameters : fiscal year, department, manager id, user id and Inspection id
     * Return Values: wrapper with allocation and availabilities
     * ***********************************************/
     @AuraEnabled(cacheable=true)
-    public static ResourceDataWrapper getResourceAllocations(String fiscalYear, String selectedDept, String selectedManagerId, String selectedUserId, String selectedProjectId) {
-        List<String> lstOfAllocationFields = new List<String>{'Id','Name','Role__c','Project_Owner__c','Resource_Availability__c','Project__c','Project_Name__c','Fiscal_Year__c','Resource_Name__c','Feb__c','Mar__c','Apr__c','May__c','Jun__c','Jul__c','Aug__c','Sep__c','Oct__c','Nov__c','Dec__c','Jan__c'};
+    public static ResourceDataWrapper getResourceAllocations(String fiscalYear, String selectedDept, String selectedManagerId, String selectedUserId, String selectedInspectionId) {
+        List<String> lstOfAllocationFields = new List<String>{'Id','Name','Role__c','Inspection_Owner__c','Resource_Availability__c','Inspection__c','Inspection_Name__c','Fiscal_Year__c','Resource_Name__c','Feb__c','Mar__c','Apr__c','May__c','Jun__c','Jul__c','Aug__c','Sep__c','Oct__c','Nov__c','Dec__c','Jan__c'};
         List<String> lstOfAvailabilityFields = new List<String>{'User__c','Feb_Remaining__c','Mar_Remaining__c','Apr_Remaining__c','May_Remaining__c','Jun_Remaining__c','Jul_Remaining__c','Aug_Remaining__c','Sep_Remaining__c','Oct_Remaining__c','Nov_Remaining__c','Dec_Remaining__c', 'Jan_Remaining__c','Id','fiscal_year__c', 'Start_Date__c', 'End_Date__c'};
         //Calling util method to check CRUD
         if(ES_Utility.validateCRUD('ES_Resource_Availability__c', lstOfAvailabilityFields, 'isAccessible') && ES_Utility.validateCRUD('ES_Resource_Allocation__c', lstOfAllocationFields, 'isAccessible')){
@@ -351,8 +351,8 @@ public with sharing class ES_ResourceManagementCtrl {
             query = String.escapeSingleQuotes(query);
             wrapper.resourceAvailabilities = database.query(query);
             
-            query = 'select id,Role__c,Resource_Availability__r.User__c, Project_Name__c,Resource_Availability__c,';
-            query += 'Project__c,Jan__c,Feb__c,Mar__c,Apr__c,May__c,Jun__c,Jul__c,Aug__c,Sep__c,Oct__c,';
+            query = 'select id,Role__c,Resource_Availability__r.User__c, Inspection_Name__c,Resource_Availability__c,';
+            query += 'Inspection__c,Jan__c,Feb__c,Mar__c,Apr__c,May__c,Jun__c,Jul__c,Aug__c,Sep__c,Oct__c,';
             query += 'Nov__c,Dec__c,Fiscal_Year__c,User_Name__c from ES_Resource_Allocation__c where User_Department__c = :selectedDept and Fiscal_Year__c=:fiscalYear ';
             if(String.isNotEmpty(selectedManagerId)){
                 query += 'and Resource_Availability__r.User__r.ManagerId = :selectedManagerId ';
@@ -360,8 +360,8 @@ public with sharing class ES_ResourceManagementCtrl {
             if(String.isNotEmpty(selectedUserId)){
                 query += 'and Resource_Availability__r.User__c = :selectedUserId ';
             }
-            if(String.isNotEmpty(selectedProjectId)){
-                query += 'and Project__c = :selectedProjectId ';
+            if(String.isNotEmpty(selectedInspectionId)){
+                query += 'and Inspection__c = :selectedInspectionId ';
             }
             query += 'with security_enforced order by Name limit :queryRowLimit';
             //Esacpe single quotes for SOQL Injection

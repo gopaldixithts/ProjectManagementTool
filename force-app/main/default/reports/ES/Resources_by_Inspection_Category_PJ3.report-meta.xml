@@ -65,15 +65,15 @@
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>Inspection__c$Project_Category__c</field>
+        <field>Inspection__c$Inspection_Category__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Resources by Project Category</name>
+    <name>Resources by Inspection Category</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>ES_Project_Resource_Allocation_and_Availability__c</reportType>
+    <reportType>ES_Inspection_Resource_Allocation_and_Availability__c</reportType>
     <scope>organization</scope>
     <showDetails>false</showDetails>
     <showGrandTotal>false</showGrandTotal>

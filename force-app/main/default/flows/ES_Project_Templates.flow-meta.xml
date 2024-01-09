@@ -26,19 +26,19 @@
             </value>
         </inputParameters>
         <inputParameters>
-            <name>projectId</name>
+            <name>InspectionId</name>
             <value>
                 <elementReference>recordId</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
-            <name>projectName</name>
+            <name>InspectionName</name>
             <value>
-                <elementReference>Project_Name</elementReference>
+                <elementReference>Inspection_Name</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
-            <name>projectStartDate</name>
+            <name>InspectionStartDate</name>
             <value>
                 <elementReference>Start_Date</elementReference>
             </value>
@@ -77,9 +77,9 @@
             </value>
         </inputParameters>
         <inputParameters>
-            <name>projectId</name>
+            <name>InspectionId</name>
             <value>
-                <elementReference>SelectedProjectId</elementReference>
+                <elementReference>SelectedInspectionId</elementReference>
             </value>
         </inputParameters>
         <outputParameters>
@@ -94,7 +94,7 @@
         <locationX>644</locationX>
         <locationY>638</locationY>
         <assignmentItems>
-            <assignToReference>SelectedProjectId</assignToReference>
+            <assignToReference>SelectedInspectionId</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId</elementReference>
@@ -121,35 +121,35 @@
         </connector>
     </assignments>
     <assignments>
-        <name>TemplateProject</name>
-        <label>TemplateProject</label>
+        <name>TemplateInspection</name>
+        <label>TemplateInspection</label>
         <locationX>644</locationX>
         <locationY>398</locationY>
         <assignmentItems>
-            <assignToReference>ProjectType</assignToReference>
+            <assignToReference>InspectionType</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>ProjectNameSelection</targetReference>
+            <targetReference>InspectionNameSelection</targetReference>
         </connector>
     </assignments>
     <choices>
-        <name>Clone_Phases_Tasks_from_Existing_Projects</name>
-        <choiceText>Clone Phases/Tasks from Existing Projects</choiceText>
+        <name>Clone_Phases_Tasks_from_Existing_Inspections</name>
+        <choiceText>Clone Phases/Tasks from Existing Inspections</choiceText>
         <dataType>String</dataType>
         <value>
-            <stringValue>Clone Phases/Tasks from Existing Projects</stringValue>
+            <stringValue>Clone Phases/Tasks from Existing Inspections</stringValue>
         </value>
     </choices>
     <choices>
-        <name>Clone_Phases_Tasks_from_Project_Templates</name>
-        <choiceText>Clone Phases/Tasks from Project Templates</choiceText>
+        <name>Clone_Phases_Tasks_from_Inspection_Templates</name>
+        <choiceText>Clone Phases/Tasks from Inspection Templates</choiceText>
         <dataType>String</dataType>
         <value>
-            <stringValue>Clone Phases/Tasks from Project Templates</stringValue>
+            <stringValue>Clone Phases/Tasks from Inspection Templates</stringValue>
         </value>
     </choices>
     <decisions>
@@ -203,33 +203,33 @@
         </rules>
     </decisions>
     <decisions>
-        <name>ProjectTypeCheck</name>
-        <label>ProjectTypeCheck</label>
+        <name>InspectionTypeCheck</name>
+        <label>InspectionTypeCheck</label>
         <locationX>776</locationX>
         <locationY>278</locationY>
         <defaultConnector>
-            <targetReference>Project_Search</targetReference>
+            <targetReference>Inspection_Search</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Template_Projects</name>
+            <name>Template_Inspections</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>GetProjectType</leftValueReference>
+                <leftValueReference>GetInspectionType</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>TemplateProject</targetReference>
+                <targetReference>TemplateInspection</targetReference>
             </connector>
-            <label>Template Projects</label>
+            <label>Template Inspections</label>
         </rules>
     </decisions>
-    <description>Flow to clone Projects/Phases/Tasks using &quot;Use This Template&quot; or &quot;Clone Phases/Tasks&quot; action on Project record</description>
-    <interviewLabel>ES Project Templates {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>ES Project Templates</label>
+    <description>Flow to clone Inspections/Phases/Tasks using &quot;Use This Template&quot; or &quot;Clone Phases/Tasks&quot; action on Inspection record</description>
+    <interviewLabel>ES Inspection Templates {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ES Inspection Templates</label>
     <loops>
         <name>Phases_Selection_Loop</name>
         <label>Phases Selection Loop</label>
@@ -277,10 +277,10 @@
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Project__c</field>
+            <field>Inspection__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>SelectedProjectId</elementReference>
+                <elementReference>SelectedInspectionId</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
@@ -288,13 +288,13 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>GetProjectType</name>
-        <label>GetProjectType</label>
+        <name>GetInspectionType</name>
+        <label>GetInspectionType</label>
         <locationX>776</locationX>
         <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>ProjectTypeCheck</targetReference>
+            <targetReference>InspectionTypeCheck</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -357,7 +357,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>NoPhasesWarningMsg</name>
-            <fieldText>&lt;p&gt;There aren&apos;t any phases for the selected Project!&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;There aren&apos;t any phases for the selected Inspection!&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -431,7 +431,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-2883&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Phase Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Project_Name__c&quot;,&quot;guid&quot;:&quot;column-a5eb&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Project Name&quot;,&quot;type&quot;:&quot;customRichText&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-2883&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Phase Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Inspection_Name__c&quot;,&quot;guid&quot;:&quot;column-a5eb&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Inspection Name&quot;,&quot;type&quot;:&quot;customRichText&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -444,8 +444,8 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Project_Search</name>
-        <label>Project Search</label>
+        <name>Inspection_Search</name>
+        <label>Inspection Search</label>
         <locationX>908</locationX>
         <locationY>398</locationY>
         <allowBack>true</allowBack>
@@ -455,12 +455,12 @@
             <targetReference>Get_Phases</targetReference>
         </connector>
         <fields>
-            <name>ProjectScreenLabel</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Please select the Project to clone Phases/Tasks&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <name>InspectionScreenLabel</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Please select the Inspection to clone Phases/Tasks&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>ProjectNameSearch</name>
+            <name>InspectionNameSearch</name>
             <extensionName>flowruntime:lookup</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
@@ -472,13 +472,13 @@
             <inputParameters>
                 <name>label</name>
                 <value>
-                    <stringValue>Project Name</stringValue>
+                    <stringValue>Inspection Name</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>fieldApiName</name>
                 <value>
-                    <stringValue>Project__c</stringValue>
+                    <stringValue>Inspection__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -489,7 +489,7 @@
             </inputParameters>
             <isRequired>true</isRequired>
             <outputParameters>
-                <assignToReference>SelectedProjectId</assignToReference>
+                <assignToReference>SelectedInspectionId</assignToReference>
                 <name>recordId</name>
             </outputParameters>
         </fields>
@@ -497,8 +497,8 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>ProjectNameSelection</name>
-        <label>ProjectNameSelection</label>
+        <name>InspectionNameSelection</name>
+        <label>InspectionNameSelection</label>
         <locationX>644</locationX>
         <locationY>518</locationY>
         <allowBack>true</allowBack>
@@ -508,14 +508,14 @@
             <targetReference>AssignCurrentRecordId</targetReference>
         </connector>
         <fields>
-            <name>ProjectNameLabel</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Please provide Name &amp;amp; Start Date for the new Project&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <name>InspectionNameLabel</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Please provide Name &amp;amp; Start Date for the new Inspection&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Project_Name</name>
+            <name>Inspection_Name</name>
             <dataType>String</dataType>
-            <fieldText>Project Name</fieldText>
+            <fieldText>Inspection Name</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
         </fields>
@@ -589,7 +589,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>ProjectType</leftValueReference>
+                    <leftValueReference>InspectionType</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <booleanValue>true</booleanValue>
@@ -646,7 +646,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>ProjectType</leftValueReference>
+                    <leftValueReference>InspectionType</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <booleanValue>false</booleanValue>
@@ -661,7 +661,7 @@
         <locationX>650</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>GetProjectType</targetReference>
+            <targetReference>GetInspectionType</targetReference>
         </connector>
     </start>
     <status>Active</status>
@@ -684,7 +684,7 @@
         <objectType>ES_Phase__c</objectType>
     </variables>
     <variables>
-        <name>ProjectType</name>
+        <name>InspectionType</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
@@ -704,7 +704,7 @@
         </value>
     </variables>
     <variables>
-        <name>SelectedProjectId</name>
+        <name>SelectedInspectionId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>

@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>Start Date Rollup</label>
     <summarizedField>ES_Phase__c.Start_Date_Rollup__c</summarizedField>
-    <summaryForeignKey>ES_Phase__c.Project__c</summaryForeignKey>
+    <summaryForeignKey>ES_Phase__c.Inspection__c</summaryForeignKey>
     <summaryOperation>min</summaryOperation>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

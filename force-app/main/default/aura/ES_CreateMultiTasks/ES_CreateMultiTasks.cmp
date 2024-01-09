@@ -6,14 +6,14 @@
     <aura:attribute name="isCreated" type="boolean" default="false" description="Confirm message loading attribute"/>
     
     
-    <aura:attribute name="recordId" type="Id" description="Project record id"/> <!--Define Project Record atrributes -->
+    <aura:attribute name="recordId" type="Id" description="Inspection record id"/> <!--Define Inspection Record atrributes -->
     <aura:attribute name="taskList" type="ES_Task__c[]" description="tasks to create"/> <!--Define Task List attribute for Mass creation -->
     
     <!--Define Attributes for Picklist values -->
     <aura:attribute name="ObjectName" type="String" default="ES_Task__c" access="global" description="Object Name as String"/>
     <aura:attribute name="TaskStatus" type="String" default="Status__c" access="global" description="Define Task Status as String"/>
-    <aura:attribute name="MemberList" type="List" description="List of members assigned to the project"/>
-    <aura:attribute name="PhaseList" type="List" description="List of Project Phases"/>
+    <aura:attribute name="MemberList" type="List" description="List of members assigned to the inspection"/>
+    <aura:attribute name="PhaseList" type="List" description="List of Inspection Phases"/>
     
     <ltng:require styles="{!$Resource.ES_StyleUtility}"/>
 

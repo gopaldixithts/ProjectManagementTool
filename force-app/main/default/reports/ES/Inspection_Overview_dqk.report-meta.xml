@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Name</field>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Name</field>
     </columns>
     <columns>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Status__c</field>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Status__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Inspection__c$Percentage_Completion__c</field>
     </columns>
     <columns>
-        <field>Inspection__c.Project_Phases__r.Project_Tasks__r$Description__c</field>
+        <field>Inspection__c.Inspection_Phases__r.Inspection_Tasks__r$Description__c</field>
     </columns>
     <filter>
         <criteriaItems>
@@ -25,7 +25,7 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>Inspection__c$Project_Health__c</field>
+        <field>Inspection__c$Inspection_Health__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
@@ -35,15 +35,15 @@
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>Inspection__c.Project_Phases__r$Name</field>
+        <field>Inspection__c.Inspection_Phases__r$Name</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Projects with Task Progress</name>
+    <name>Inspections with Task Progress</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>ES_Project_Phases_and_Task_details__c</reportType>
+    <reportType>ES_Inspection_Phases_and_Task_details__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>

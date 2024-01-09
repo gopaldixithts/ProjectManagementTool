@@ -6,7 +6,7 @@
     <label>Phase</label>
     <referenceTo>ES_Phase__c</referenceTo>
     <relationshipLabel>ES Tasks</relationshipLabel>
-    <relationshipName>Project_Tasks</relationshipName>
+    <relationshipName>Inspection_Tasks</relationshipName>
     <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>true</reparentableMasterDetail>
     <trackFeedHistory>false</trackFeedHistory>

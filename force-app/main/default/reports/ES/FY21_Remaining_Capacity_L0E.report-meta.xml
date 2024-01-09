@@ -71,7 +71,7 @@
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>ES_Project_Resource_Allocation_and_Availability__c</reportType>
+    <reportType>ES_Inspection_Resource_Allocation_and_Availability__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>

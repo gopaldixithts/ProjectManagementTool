@@ -3,12 +3,12 @@
     <baseObject>Inspection__c</baseObject>
     <category>other</category>
     <deployed>true</deployed>
-    <description>Used for reporting ES Project and related Resource allocations and Availabilities</description>
+    <description>Used for reporting ES Inspection and related Resource allocations and Availabilities</description>
     <join>
         <outerJoin>false</outerJoin>
         <relationship>Resource_Allocations__r</relationship>
     </join>
-    <label>ES Project, Resource Allocation and Availability</label>
+    <label>ES Inspection, Resource Allocation and Availability</label>
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
@@ -187,22 +187,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Project_Category__c</field>
+            <field>Inspection_Category__c</field>
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Project_Completion_Image__c</field>
+            <field>Inspection_Completion_Image__c</field>
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Project_Status__c</field>
+            <field>Inspection_Status__c</field>
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Project_End_Month__c</field>
+            <field>Inspection_End_Month__c</field>
             <table>Inspection__c</table>
         </columns>
         <columns>
@@ -212,17 +212,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Project_Health__c</field>
+            <field>Inspection_Health__c</field>
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Project_Initiator__c</field>
+            <field>Inspection_Initiator__c</field>
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Project_Lead__c</field>
+            <field>Inspection_Lead__c</field>
             <table>Inspection__c</table>
         </columns>
         <columns>
@@ -232,17 +232,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Project_Owner__c</field>
+            <field>Inspection_Owner__c</field>
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Project_Size__c</field>
+            <field>Inspection_Size__c</field>
             <table>Inspection__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Project_Start_Month__c</field>
+            <field>Inspection_Start_Month__c</field>
             <table>Inspection__c</table>
         </columns>
         <columns>
@@ -312,7 +312,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Sum_of_task_count_child_project__c</field>
+            <field>Sum_of_task_count_child_Inspection__c</field>
             <table>Inspection__c</table>
         </columns>
         <columns>
@@ -340,7 +340,7 @@
             <field>IsTemplate__c</field>
             <table>Inspection__c</table>
         </columns>
-        <masterLabel>ES Projects</masterLabel>
+        <masterLabel>ES Inspections</masterLabel>
     </sections>
     <sections>
         <columns>
@@ -500,12 +500,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Project_Name__c</field>
+            <field>Inspection_Name__c</field>
             <table>Inspection__c.Resource_Allocations__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Project_Owner__c</field>
+            <field>Inspection_Owner__c</field>
             <table>Inspection__c.Resource_Allocations__r</table>
         </columns>
         <columns>

@@ -13,11 +13,11 @@ import fetchGanttData from '@salesforce/apex/ES_GanttCtrl.fetchGanttData';
 import ganttJS from "@salesforce/resourceUrl/ES_Gantt";
 
 export default class ESGantt extends NavigationMixin(LightningElement) {
-        @api projectId;
-        @api projectProgress;
-        @api projectHealth;
+        @api InspectionId;
+        @api InspectionProgress;
+        @api InspectionHealth;
         @api systemImpacted;
-        @api projectCategory;
+        @api InspectionCategory;
         @api programSelected;
         @api recordId;
         @api defaultView; // design attribute
@@ -28,7 +28,7 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
         @track mytaskflag;
         @track followprojflag;
         @track isResourceView;
-        @track isProjectView;
+        @track isInspectionView;
         @track isRecordTypeView;
         @track startDateUTC; // sending to backend using time
         @track endDateUTC; // sending to backend using time
@@ -46,8 +46,8 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
         isExpandAll = false;
         isLoading = false;
         taskCheck = false;
-        followProject = false;
-        projectCheck = false;
+        followInspection = false;
+        InspectionCheck = false;
         filtersCheck = false;
         filtersToShow = false;
         toastCheck = false;
@@ -82,7 +82,7 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
         };
 
         connectedCallback() {
-                if (this.projectId != '') {
+                if (this.InspectionId != '') {
                         this.dataStyle = "width:100%;";
                         this.headerStyle = "width:100%; position: sticky; top:0px; z-index:100; background-color: white;"
                 } else {
@@ -297,15 +297,15 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                 this.startDate = this.newStartDate;
         }
 
-        //wire method to fetch ES project, phases and task records as JSON string as per filters selected and pass it to gantt 
+        //wire method to fetch ES Inspection, phases and task records as JSON string as per filters selected and pass it to gantt 
         @wire(fetchGanttData, {
                 slotSize: '$view.slotSize',
                 startTime: '$startDateUTC',
-                projectId: '$projectId',
-                projectProgress: '$projectProgress',
-                projectHealth: '$projectHealth',
+                InspectionId: '$InspectionId',
+                InspectionProgress: '$InspectionProgress',
+                InspectionHealth: '$InspectionHealth',
                 systemImpacted: '$systemImpacted',
-                projectCategory: '$projectCategory',
+                InspectionCategory: '$InspectionCategory',
                 program: '$programSelected',
         })
         wiredGanttData(result) {
@@ -335,14 +335,14 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                 this.dataToShow = [];
                 if (data.length != 0) {
                         data.forEach(wrapper => {
-                                var projectRec = {
+                                var InspectionRec = {
                                         ...wrapper
                                 };
-                                projectRec.isExpanded = false;
-                                projectRec.isDraggable = false;
-                                projectRec.titleClass = "slds-media "; //slds-media_center
-                                projectRec.actionIcon = (projectRec.lstOfChilds) ? 'utility:chevronright' : '';
-                                this.dataToShow.push(projectRec);
+                                InspectionRec.isExpanded = false;
+                                InspectionRec.isDraggable = false;
+                                InspectionRec.titleClass = "slds-media "; //slds-media_center
+                                InspectionRec.actionIcon = (InspectionRec.lstOfChilds) ? 'utility:chevronright' : '';
+                                this.dataToShow.push(InspectionRec);
                                 this.dataBkp = this.dataToShow;
                         });
                 }
@@ -353,13 +353,13 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                 if (this.isExpandedCheck) {
                         this.showCurrentView(this.dataToShow);
                 }
-                if (this.expandedData.length != 0 && this.projectId != '' && !this.isExpandedCheck && this.dataToShow.length != 0) {
+                if (this.expandedData.length != 0 && this.InspectionId != '' && !this.isExpandedCheck && this.dataToShow.length != 0) {
                         if (this.mytaskflag == true) {
                                 var filtered = [];
-                                this.dataToShow.forEach(project => {
-                                        filtered.push(project.id);
-                                        if (typeof project.lstOfChilds != 'undefined') {
-                                                project.lstOfChilds.forEach(phase => {
+                                this.dataToShow.forEach(Inspection => {
+                                        filtered.push(Inspection.id);
+                                        if (typeof Inspection.lstOfChilds != 'undefined') {
+                                                Inspection.lstOfChilds.forEach(phase => {
                                                         if (this.expandedData.includes(phase.id)) {
                                                                 filtered.push(phase.id);
                                                         }
@@ -395,7 +395,7 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                 switch (event.target.name) {
                         case 'projtgl':
                                 this.myprojflag = event.target.checked;
-                                this.projectCheck = event.target.checked;
+                                this.InspectionCheck = event.target.checked;
                                 break;
                         case 'tasktgl':
                                 this.mytaskflag = event.target.checked;
@@ -403,7 +403,7 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                                 break;
                         case 'followtgl':
                                 this.followprojflag = event.target.checked;
-                                this.followProject = event.target.checked;
+                                this.followInspection = event.target.checked;
                                 break;
                 }
 
@@ -423,14 +423,14 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                 try {
                         this.isLoading = true;
                         var clonedData = [...this.dataToShow];
-                        //Filter when My Project is selected
+                        //Filter when My Inspection is selected
                         if (this.myprojflag == true) {
                                 clonedData = clonedData.filter(function(element) {
-                                        return element.isMyProject == true;
+                                        return element.isMyInspection == true;
                                 }, this);
                         }
 
-                        //Filter when Follow Projects is selected
+                        //Filter when Follow Inspections is selected
                         if (this.followprojflag == true) {
                                 this.filtersCheck = true;
                                 clonedData = clonedData.filter(function(element) {
@@ -441,7 +441,7 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                         //Filter when All Tasks is selected
                         if (this.mytaskflag == true) {
                                 this.filtersCheck = true;
-                                clonedData = this.filterProjectsWithoutPhases(clonedData);
+                                clonedData = this.filterInspectionsWithoutPhases(clonedData);
                                 var newclonedData = JSON.parse(JSON.stringify(clonedData))
 
                                 newclonedData.forEach(element => {
@@ -459,7 +459,7 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                                 });
 
                                 var newClone = this.filterPhasesWithoutTasks(newclonedData);
-                                newClone = this.filterProjectsWithoutPhases(newClone);
+                                newClone = this.filterInspectionsWithoutPhases(newClone);
                                 clonedData.length = 0;
                                 clonedData = newClone;
                         }
@@ -472,22 +472,22 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                 }
         }
 
-        //function to filter Projects without Phases 
-        filterProjectsWithoutPhases(newclonedData) {
+        //function to filter Inspections without Phases 
+        filterInspectionsWithoutPhases(newclonedData) {
                 var tempData = newclonedData;
-                var filteredProjects = tempData.filter(function(element) {
+                var filteredInspections = tempData.filter(function(element) {
                         return (typeof element.lstOfChilds != 'undefined' && element.lstOfChilds.length != 0);
                 }, this);
-                return filteredProjects;
+                return filteredInspections;
         }
 
         //function to filter Phases without Tasks 
         filterPhasesWithoutTasks(newclonedData) {
                 var tempData = newclonedData;
-                var filteredPhases = tempData.map((project) => {
+                var filteredPhases = tempData.map((Inspection) => {
                         return {
-                                ...project,
-                                lstOfChilds: project.lstOfChilds.filter((phase) =>
+                                ...Inspection,
+                                lstOfChilds: Inspection.lstOfChilds.filter((phase) =>
                                         (typeof phase.lstOfChilds != 'undefined' && phase.lstOfChilds.length != 0))
                         }
                 })
@@ -603,7 +603,7 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                         case 'showdata':
                                 this.handleshowdataevent(event.detail.recordId);
                                 var tempData = JSON.parse(JSON.stringify(this.dataToShow))
-                                if (this.projectId != '') {
+                                if (this.InspectionId != '') {
                                         tempData.forEach(element => {
                                                 if (element.actionIcon == 'utility:chevrondown') {
                                                         this.expandedData.push(element.id);
@@ -622,7 +622,7 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                         var record = this.dataToShow[index];
                         if (record.objAPIName == 'Inspection__c') { //add new phase
                                 defaultValue = encodeDefaultFieldValues({
-                                        Project__c: id
+                                        Inspection__c: id
                                 });
                                 newObjectAPI = 'ES_Phase__c';
 
@@ -680,7 +680,7 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
         }
 
         //funtion to handle expand action
-        expandView(recordToAdd, index, cloneData, isProject) {
+        expandView(recordToAdd, index, cloneData, isInspection) {
                 try {
                         var record = {
                                 ...recordToAdd
@@ -703,7 +703,7 @@ export default class ESGantt extends NavigationMixin(LightningElement) {
                         }
                         record.titleClass = customClass;
 
-                        if (isProject) {
+                        if (isInspection) {
                                 cloneData.splice(index, 1);
                                 cloneData.splice(index, 0, record);
                         } else {

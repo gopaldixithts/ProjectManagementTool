@@ -195,8 +195,8 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentName>ES_ProjectSummary</componentName>
-                <identifier>ES_ProjectSummary</identifier>
+                <componentName>ES_InspectionSummary</componentName>
+                <identifier>ES_InspectionSummary</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-32924f00-d5cc-4cd7-8361-6b9c9284f60c</name>
@@ -676,7 +676,7 @@
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>ES Project Record Page</masterLabel>
+    <masterLabel>ES Inspection Record Page</masterLabel>
     <sobjectType>Inspection__c</sobjectType>
     <template>
         <name>flexipage:recordHomeSingleColNoHeaderTemplateDesktop</name>

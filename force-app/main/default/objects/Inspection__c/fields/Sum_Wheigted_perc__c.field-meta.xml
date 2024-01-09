@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>Sum Wheigted %</label>
     <summarizedField>ES_Phase__c.Phase_Weighted_Perc__c</summarizedField>
-    <summaryForeignKey>ES_Phase__c.Project__c</summaryForeignKey>
+    <summaryForeignKey>ES_Phase__c.Inspection__c</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

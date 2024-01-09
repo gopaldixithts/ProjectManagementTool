@@ -1,7 +1,7 @@
 <aura:documentation>
     <aura:description>
-        <p><code>c:ES_MassResourceAllocationContainer</code> is available for project record pages only.</p>
-        <p>This component shows the resource allocation for the project and allows users to edit allocations.</p>
+        <p><code>c:ES_MassResourceAllocationContainer</code> is available for inspection record pages only.</p>
+        <p>This component shows the resource allocation for the inspection and allows users to edit allocations.</p>
         
         <h4>Required Dependencies</h4>
         <p>Here is the list of components being used in this component</p>

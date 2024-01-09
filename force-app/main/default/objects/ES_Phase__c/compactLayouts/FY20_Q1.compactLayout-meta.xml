@@ -4,6 +4,6 @@
     <fields>Name</fields>
     <fields>Health_Icon__c</fields>
     <fields>Phase_Completion_Image__c</fields>
-    <fields>Project__c</fields>
+    <fields>Inspection__c</fields>
     <label>FY20-Q1</label>
 </CompactLayout>

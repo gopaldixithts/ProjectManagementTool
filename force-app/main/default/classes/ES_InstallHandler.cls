@@ -1,6 +1,6 @@
 /******************************************************************************
 * Name: ES_InstallHandler.apxc
-* Description : Creates a dummy project after installation on a sandbox or dev edition
+* Description : Creates a dummy Inspection after installation on a sandbox or dev edition
 * Test class : ES_Testcoverage(100%)
 ******************************************************************************/
 global with sharing class ES_InstallHandler implements InstallHandler {
@@ -19,39 +19,39 @@ global with sharing class ES_InstallHandler implements InstallHandler {
                         AccessType.CREATABLE, new List<ES_Program__c>{program});
                     insert securityDecision.getRecords();
                     
-                    Inspection__c project = new Inspection__c(
-                        Name = 'Demo Project', 
+                    Inspection__c Inspection = new Inspection__c(
+                        Name = 'Demo Inspection', 
                         Portfolio__c = 'R2R',
                         OwnerId= userId,
                         Initial_End_Date__c = System.today()+30,
                         Initial_Start_Date__c = System.today(),
                         Program__c = securityDecision.getRecords()[0]?.Id,
                         Level_of_Effort__c = 'Small');
-                    securityDecision = Security.stripInaccessible(AccessType.CREATABLE, new List<Inspection__c>{project});
+                    securityDecision = Security.stripInaccessible(AccessType.CREATABLE, new List<Inspection__c>{Inspection});
                     insert securityDecision.getRecords();
                     
-                    Id projectId = securityDecision.getRecords()[0]?.Id;
+                    Id InspectionId = securityDecision.getRecords()[0]?.Id;
                     List<ES_Phase__c> lstOfPhases = new List<ES_Phase__c>();
                     List<ES_Task__c> lstOfTasks = new List<ES_Task__c>();
                     Integer resourceAvailability = Integer.valueOf(ES_Utility.getESSettings('Default').Default_Availability_for_Scheduler__c);
                     //Create Phases
                     ES_Phase__c phase1 = new ES_Phase__c( Name = '0. Discovery',
-                                                           Project__c = projectId);
+                                                           Inspection__c = InspectionId);
                     
                     lstOfPhases.add(phase1);
                     
                     ES_Phase__c phase2 = new ES_Phase__c( Name = '1. Initiate',
-                                                           Project__c = projectId);
+                                                           Inspection__c = InspectionId);
                     
                     lstOfPhases.add(phase2);
                     
                     ES_Phase__c phase3 = new ES_Phase__c( Name = '2. Execute',
-                                                           Project__c = projectId);
+                                                           Inspection__c = InspectionId);
                     
                     lstOfPhases.add(phase3);
                     
                     ES_Phase__c phase4 = new ES_Phase__c( Name = '3. Transition',
-                                                           Project__c = projectId);
+                                                           Inspection__c = InspectionId);
                     
                     lstOfPhases.add(phase4);
                     
@@ -60,7 +60,7 @@ global with sharing class ES_InstallHandler implements InstallHandler {
                     
                     //Create Tasks
                     ES_Task__c task1 = new ES_Task__c(
-                        Name = '0.00 Project Start', 
+                        Name = '0.00 Inspection Start', 
                         Status__c = 'Completed',
                         Start_Date__c = System.today()-40, 
                         Due_Date__c = System.today()-10, 
@@ -98,7 +98,7 @@ global with sharing class ES_InstallHandler implements InstallHandler {
                     lstOfTasks.add(task4);
                     
                     ES_Task__c task5 = new ES_Task__c(
-                        Name = '3.99 Project End', 
+                        Name = '3.99 Inspection End', 
                         Status__c = 'Not Started',
                         Start_Date__c = System.today()+89, 
                         Due_Date__c = System.today()+90, 
@@ -134,7 +134,7 @@ global with sharing class ES_InstallHandler implements InstallHandler {
                     List<ES_Resource_Allocation__c> lstAllocation = new List<ES_Resource_Allocation__c>();
                     
                     //Allocation records
-                    ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Project__c = projectId,
+                    ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Inspection__c = InspectionId,
                                                                                               Resource_Availability__c = securityDecision.getRecords()[1]?.Id,
                                                                                               Role__c = 'SME');
                     lstAllocation.add(resAllocation);

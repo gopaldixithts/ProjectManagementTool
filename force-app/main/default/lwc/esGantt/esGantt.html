@@ -7,7 +7,7 @@
             <lightning-layout vertical-align="center">
                 <lightning-layout-item padding="around-small" flexibility="auto">
                     <div if:true={filtersToShow}>
-                        <lightning-input type="toggle" checked={projectCheck} name="projtgl" variant="label-hidden" onchange={handleValueChange} message-toggle-active="My Projects" message-toggle-inactive="My Projects"></lightning-input>
+                        <lightning-input type="toggle" checked={InspectionCheck} name="projtgl" variant="label-hidden" onchange={handleValueChange} message-toggle-active="My Inspections" message-toggle-inactive="My Inspections"></lightning-input>
                     </div>
                 </lightning-layout-item>
                 <lightning-layout-item padding="around-small" flexibility="auto">
@@ -15,7 +15,7 @@
                 </lightning-layout-item>
                 <lightning-layout-item padding="around-small" flexibility="auto">
                     <div if:true={filtersToShow}>
-                        <lightning-input type="toggle" name="followtgl" checked={followProject} variant="label-hidden" onchange={handleValueChange} message-toggle-active="Following" message-toggle-inactive="Following"></lightning-input>
+                        <lightning-input type="toggle" name="followtgl" checked={followInspection} variant="label-hidden" onchange={handleValueChange} message-toggle-active="Following" message-toggle-inactive="Following"></lightning-input>
                     </div>
                 </lightning-layout-item>
                 <lightning-layout-item padding="around-small" flexibility="auto">
@@ -41,13 +41,13 @@
                     <lightning-button label="" icon-name="utility:refresh" onclick={handleonclick}></lightning-button>
                 </lightning-layout-item>
                 <lightning-layout-item padding="around-small" flexibility="auto">
-                    <span style="color:#c8c8c8">Project</span><br/>
+                    <span style="color:#c8c8c8">Inspection</span><br/>
                     <span style="color:#A3A3A3">Phase</span><br/>
                     <span style="color:#3db9d3">Task</span>
                 </lightning-layout-item>
             </lightning-layout>
             <lightning-layout vertical-align="center" class="lwc-chart_container lwc-timeline" size="12">
-                <lightning-layout-item padding="around-small" size="2" class="slds-text-heading_medium slds-p-around_small">ES Projects</lightning-layout-item>           
+                <lightning-layout-item padding="around-small" size="2" class="slds-text-heading_medium slds-p-around_small">ES Inspections</lightning-layout-item>           
                 <lightning-layout-item flexibility="auto">
                     <lightning-layout vertical-align="center">
                         <template for:each={dates} for:item="date">
@@ -75,7 +75,7 @@
         <div if:false={isLoading} class="slds-scrollable" style={dataStyle}>
             <template if:true={dataToShow.length}>
                 <template for:each={dataToShow} for:item="record">
-                    <c-ES-ganttdata key={record.id} class="lwc-resource-component" project={record}
+                    <c-ES-ganttdata key={record.id} class="lwc-resource-component" Inspection={record}
                         date-increment={view.slotSize} start-date={startDate} end-date={endDate}
                         oncalleventhandler={eventhandler}>
                     </c-ES-ganttdata>

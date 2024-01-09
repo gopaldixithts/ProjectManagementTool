@@ -29,7 +29,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ES_ProjectSummaryCtrl</apexClass>
+        <apexClass>ES_InspectionSummaryCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -225,7 +225,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Phase__c.Project_Name__c</field>
+        <field>ES_Phase__c.Inspection_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -235,7 +235,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Phase__c.Start_date_from_child_project__c</field>
+        <field>ES_Phase__c.Start_date_from_child_Inspection__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -425,52 +425,52 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Inspection__c.Project_Category__c</field>
+        <field>Inspection__c.Inspection_Category__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Inspection__c.Project_Completion_Image__c</field>
+        <field>Inspection__c.Inspection_Completion_Image__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Inspection__c.Project_End_Month__c</field>
+        <field>Inspection__c.Inspection_End_Month__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Inspection__c.Project_Health__c</field>
+        <field>Inspection__c.Inspection_Health__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Inspection__c.Project_Initiator__c</field>
+        <field>Inspection__c.Inspection_Initiator__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Inspection__c.Project_Lead__c</field>
+        <field>Inspection__c.Inspection_Lead__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Inspection__c.Project_Owner__c</field>
+        <field>Inspection__c.Inspection_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Inspection__c.Project_Size__c</field>
+        <field>Inspection__c.Inspection_Size__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Inspection__c.Project_Start_Month__c</field>
+        <field>Inspection__c.Inspection_Start_Month__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Inspection__c.Project_Status__c</field>
+        <field>Inspection__c.Inspection_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -545,7 +545,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Inspection__c.Sum_of_task_count_child_project__c</field>
+        <field>Inspection__c.Sum_of_task_count_child_Inspection__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -690,12 +690,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Resource_Allocation__c.Project_Name__c</field>
+        <field>ES_Resource_Allocation__c.Inspection_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Resource_Allocation__c.Project_Owner__c</field>
+        <field>ES_Resource_Allocation__c.Inspection_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1040,12 +1040,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Task__c.Project_Id__c</field>
+        <field>ES_Task__c.Inspection_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Task__c.Project_Name__c</field>
+        <field>ES_Task__c.Inspection_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1188,7 +1188,7 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <recordTypeVisibilities>
-        <recordType>Case.ES_Project</recordType>
+        <recordType>Case.ES_Inspection</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <tabSettings>

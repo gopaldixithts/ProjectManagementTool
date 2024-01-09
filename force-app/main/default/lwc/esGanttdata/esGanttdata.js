@@ -1,6 +1,6 @@
 /*
  * Name : ESGanttdata
- * Description : This is the child component to render the Projects/Phases/Tasks data for ES Gantt
+ * Description : This is the child component to render the Inspections/Phases/Tasks data for ES Gantt
  */
 import {LightningElement,api} from "lwc";
 import {ShowToastEvent} from "lightning/platformShowToastEvent";
@@ -17,11 +17,11 @@ export default class ESGanttdata extends NavigationMixin(LightningElement) {
     @api endDate;
     @api dateIncrement;
     @api
-    get project() {
-        return this._project;
+    get Inspection() {
+        return this._Inspection;
     }
-    set project(_project) {
-        this._project = _project;
+    set Inspection(_Inspection) {
+        this._Inspection = _Inspection;
         this.setVisibility();
     }
  
@@ -184,11 +184,11 @@ export default class ESGanttdata extends NavigationMixin(LightningElement) {
     //function to set necessary stlying once the scale/navigation actions are changed
     setVisibility() {
         var recordToShow = {
-            ...this.project
+            ...this.Inspection
         };
-        recordToShow.class = this.calcClass(this.project);
-        recordToShow.class = recordToShow.class + ' ' + this.project.id;
-        recordToShow.style = this.calcStyle(this.project);
+        recordToShow.class = this.calcClass(this.Inspection);
+        recordToShow.class = recordToShow.class + ' ' + this.Inspection.id;
+        recordToShow.style = this.calcStyle(this.Inspection);
         this.record = recordToShow;
     }
  
@@ -334,7 +334,7 @@ export default class ESGanttdata extends NavigationMixin(LightningElement) {
                 this.dragInfo.startIndex = index;
             }
 
-            let allocation = JSON.parse(JSON.stringify(this.project));
+            let allocation = JSON.parse(JSON.stringify(this.Inspection));
  
             switch (direction) {
                 case "left":
@@ -383,7 +383,7 @@ export default class ESGanttdata extends NavigationMixin(LightningElement) {
         return this.record.objAPIName == 'ES_Task__c' ? true : false;
     }
  
-    get isESProject() {
+    get isESInspection() {
         return this.record.objAPIName == 'Inspection__c' ? true : false;
     }
  

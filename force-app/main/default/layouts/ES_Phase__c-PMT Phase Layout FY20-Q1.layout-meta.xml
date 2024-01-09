@@ -48,7 +48,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Project_Name__c</field>
+                <field>Inspection_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -75,7 +75,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Project__c</field>
+                <field>Inspection__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>

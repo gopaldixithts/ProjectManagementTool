@@ -53,6 +53,6 @@
     <standardLabel>New</standardLabel>
     <targetObject>Case</targetObject>
     <targetParentField>Inspection__c</targetParentField>
-    <targetRecordType>Case.ES_Project</targetRecordType>
+    <targetRecordType>Case.ES_Inspection</targetRecordType>
     <type>Create</type>
 </QuickAction>

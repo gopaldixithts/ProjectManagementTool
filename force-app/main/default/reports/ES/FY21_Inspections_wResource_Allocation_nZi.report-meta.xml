@@ -32,7 +32,7 @@
         <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.User__c</field>
     </columns>
     <columns>
-        <field>Inspection__c$Project_Category__c</field>
+        <field>Inspection__c$Inspection_Category__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -107,12 +107,12 @@
         <field>Inspection__c.Resource_Allocations__r$Role__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>FY Projects w/Resource Allocation</name>
+    <name>FY Inspections w/Resource Allocation</name>
     <params>
         <name>co</name>
         <value>0</value>
     </params>
-    <reportType>ES_Project_Resource_Allocation_and_Availability__c</reportType>
+    <reportType>ES_Inspection_Resource_Allocation_and_Availability__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>

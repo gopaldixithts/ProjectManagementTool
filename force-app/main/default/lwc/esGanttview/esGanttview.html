@@ -5,24 +5,24 @@
                          <c-ES-gen-lwc-custom-lookup field-label="Program" child-object-api-name='Inspection__c' target-field-api-name='Program__c' onvalueselected={handleProgramSelection}></c-ES-gen-lwc-custom-lookup>
                   </lightning-layout-item>
                   <lightning-layout-item padding="around-small" flexibility="auto">
-                         <lightning-combobox class="custom_css" name="projprogress" label="Project Progress" value={progressSelected} placeholder="Select Progress" options={progressoptions} onchange={handleChange}></lightning-combobox>
+                         <lightning-combobox class="custom_css" name="projprogress" label="Inspection Progress" value={progressSelected} placeholder="Select Progress" options={progressoptions} onchange={handleChange}></lightning-combobox>
                   </lightning-layout-item>
                   <lightning-layout-item padding="around-small" flexibility="auto">
-                         <lightning-combobox class="custom_css" name="projhealth" label="Project Health" value={healthSelected} placeholder="Select Health" options={healthoptions} onchange={handleChange}></lightning-combobox>
+                         <lightning-combobox class="custom_css" name="projhealth" label="Inspection Health" value={healthSelected} placeholder="Select Health" options={healthoptions} onchange={handleChange}></lightning-combobox>
                   </lightning-layout-item>
                   <lightning-layout-item padding="around-small" flexibility="auto">
-                         <lightning-combobox class="custom_css" name="projcategory" label="Project Category" value={categorySelected} placeholder="Select Category" options={categoryoptions} onchange={handleChange}></lightning-combobox>
+                         <lightning-combobox class="custom_css" name="projcategory" label="Inspection Category" value={categorySelected} placeholder="Select Category" options={categoryoptions} onchange={handleChange}></lightning-combobox>
                   </lightning-layout-item>
                   <lightning-layout-item padding="around-small" flexibility="auto">
                          <lightning-combobox class="custom_css" name="sysimpacted" label="System(s) Impacted" value={systemSelected} placeholder="Select System" options={systemoptions} onchange={handleChange}></lightning-combobox>
                   </lightning-layout-item>
-                  <lightning-button style="padding-top: 22px; padding-right: 10px;" variant="brand" label="Search Projects" title="Primary action" onclick={handleSearch}></lightning-button>
+                  <lightning-button style="padding-top: 22px; padding-right: 10px;" variant="brand" label="Search Inspections" title="Primary action" onclick={handleSearch}></lightning-button>
            </lightning-layout>
-           <template if:true={searchProjects}>
-                  <c-ES-gantt project-id={recordId} project-progress={progressSelected} project-health={healthSelected} system-impacted={systemSelected} project-category={categorySelected} program-selected={programSelected} myprojflag={showMyProj} mytaskflag={showTskAssignedToMe} followprojflag={showFollowing}></c-ES-gantt>
+           <template if:true={searchInspections}>
+                  <c-ES-gantt Inspection-id={recordId} Inspection-progress={progressSelected} Inspection-health={healthSelected} system-impacted={systemSelected} Inspection-category={categorySelected} program-selected={programSelected} myprojflag={showMyProj} mytaskflag={showTskAssignedToMe} followprojflag={showFollowing}></c-ES-gantt>
            </template>
     </lightning-card>
     <lightning-card if:false={withfilters}>
-           <c-ES-gantt project-id={recordId} project-progress={progressSelected} project-health={healthSelected} system-impacted={systemSelected} project-category={categorySelected} program-selected={programSelected} myprojflag={showMyProj} mytaskflag={showTskAssignedToMe} followprojflag={showFollowing}></c-ES-gantt>
+           <c-ES-gantt Inspection-id={recordId} Inspection-progress={progressSelected} Inspection-health={healthSelected} system-impacted={systemSelected} Inspection-category={categorySelected} program-selected={programSelected} myprojflag={showMyProj} mytaskflag={showTskAssignedToMe} followprojflag={showFollowing}></c-ES-gantt>
     </lightning-card>
 </template>

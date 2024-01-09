@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>My_Open_Project_Cases</fullName>
+    <fullName>My_Open_Inspection_Cases</fullName>
     <columns>CASES.SUBJECT</columns>
     <columns>CASES.CASE_NUMBER</columns>
     <columns>CASES.PRIORITY</columns>
@@ -10,12 +10,12 @@
     <filters>
         <field>CASES.RECORDTYPE</field>
         <operation>equals</operation>
-        <value>Case.ES_Project</value>
+        <value>Case.ES_Inspection</value>
     </filters>
     <filters>
         <field>CASES.STATUS</field>
         <operation>equals</operation>
         <value>On Hold,In Progress,New</value>
     </filters>
-    <label>My Open Project Cases</label>
+    <label>My Open Inspection Cases</label>
 </ListView>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>Inspection__c$Project_Owner__c</field>
+        <field>Inspection__c$Inspection_Owner__c</field>
     </columns>
     <columns>
         <field>Inspection__c$Name</field>
@@ -10,7 +10,7 @@
         <field>Inspection__c$Description__c</field>
     </columns>
     <columns>
-        <field>Inspection__c$Project_Category__c</field>
+        <field>Inspection__c$Inspection_Category__c</field>
     </columns>
     <columns>
         <field>Inspection__c$Kickoff_formula__c</field>
@@ -31,12 +31,12 @@
         </criteriaItems>
     </filter>
     <format>Tabular</format>
-    <name>Projects Created this year</name>
+    <name>Inspections Created this year</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>ES_Project_Phases_and_Task_details__c</reportType>
+    <reportType>ES_Inspection_Phases_and_Task_details__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>

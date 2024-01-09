@@ -4,7 +4,7 @@
         
     </aura:description>
     <aura:example name="ES Task Table Editor" ref="ES Task Table Editor" label="ES Task Table Editor">
-        Lightning dataTable displaying the project related Tasks to users, including following features:
+        Lightning dataTable displaying the Inspection related Tasks to users, including following features:
         - Filters on Phase, Status and Assignee
         - Columns sort
         - Mass edit of tasks using component standard features

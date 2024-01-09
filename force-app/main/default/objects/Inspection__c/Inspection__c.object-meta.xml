@@ -129,7 +129,7 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>ES_Project_Record_Page</content>
+        <content>ES_Inspection_Record_Page</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -137,7 +137,7 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>ES_Project_Record_Page</content>
+        <content>ES_Inspection_Record_Page</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -147,9 +147,9 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>LEX_Project</compactLayoutAssignment>
+    <compactLayoutAssignment>LEX_Inspection</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>A collaborative enterprise which has a planned goal. A project can one or more phases</description>
+    <description>A collaborative enterprise which has a planned goal. A Inspection can one or more phases</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
@@ -161,14 +161,14 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>ES Project</label>
+    <label>ES Inspection</label>
     <nameField>
-        <label>Project Name</label>
+        <label>Inspection Name</label>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
-    <pluralLabel>ES Projects</pluralLabel>
+    <pluralLabel>ES Inspections</pluralLabel>
     <searchLayouts>
         <customTabListAdditionalFields>OWNER.FIRST_NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>OWNER.LAST_NAME</customTabListAdditionalFields>
@@ -177,7 +177,7 @@
         <searchFilterFields>OWNER.FIRST_NAME</searchFilterFields>
         <searchFilterFields>OWNER.LAST_NAME</searchFilterFields>
         <searchResultsAdditionalFields>Program_Text__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Project_Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Inspection_Category__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Roadmap_Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Level_of_Effort__c</searchResultsAdditionalFields>
     </searchLayouts>

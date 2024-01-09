@@ -3,8 +3,8 @@
     <fullName>Start_Date_from_parent_phase__c</fullName>
     <externalId>false</externalId>
     <label>Start Date from parent phase</label>
-    <summarizedField>ES_Phase__c.Start_date_from_child_project__c</summarizedField>
-    <summaryForeignKey>ES_Phase__c.Project__c</summaryForeignKey>
+    <summarizedField>ES_Phase__c.Start_date_from_child_Inspection__c</summarizedField>
+    <summaryForeignKey>ES_Phase__c.Inspection__c</summaryForeignKey>
     <summaryOperation>min</summaryOperation>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

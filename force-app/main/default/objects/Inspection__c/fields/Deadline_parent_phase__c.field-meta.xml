@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>End Date from parent phase</label>
     <summarizedField>ES_Phase__c.End_date_from_child__c</summarizedField>
-    <summaryForeignKey>ES_Phase__c.Project__c</summaryForeignKey>
+    <summaryForeignKey>ES_Phase__c.Inspection__c</summaryForeignKey>
     <summaryOperation>max</summaryOperation>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

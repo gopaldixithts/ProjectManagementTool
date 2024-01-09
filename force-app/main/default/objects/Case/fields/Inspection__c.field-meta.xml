@@ -3,9 +3,9 @@
     <fullName>Inspection__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>ES Project</label>
+    <label>ES Inspection</label>
     <referenceTo>Inspection__c</referenceTo>
-    <relationshipLabel>Cases (Related Project)</relationshipLabel>
+    <relationshipLabel>Cases (Related Inspection)</relationshipLabel>
     <relationshipName>Cases</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

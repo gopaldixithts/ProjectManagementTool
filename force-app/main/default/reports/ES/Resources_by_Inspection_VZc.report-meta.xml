@@ -65,7 +65,7 @@
     </groupingsAcross>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>Inspection__c$Project_Category__c</field>
+        <field>Inspection__c$Inspection_Category__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
@@ -73,12 +73,12 @@
         <field>Inspection__c$Name</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Resources by Project</name>
+    <name>Resources by Inspection</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>ES_Project_Resource_Allocation_and_Availability__c</reportType>
+    <reportType>ES_Inspection_Resource_Allocation_and_Availability__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>

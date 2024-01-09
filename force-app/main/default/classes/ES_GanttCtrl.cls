@@ -11,11 +11,11 @@ public with sharing class ES_GanttCtrl {
     /***********************************************************************************************************************************************************************************************************************************
      * Method Name: fetchGanttData
      * Description: It queries data as per filters provided to show on gantt chart
-     * Parameter : It accepts filters which is selected by user like project Progress, project Health. system Impacted. project Category, program and projectId if chart is displayed on specific project record page
+     * Parameter : It accepts filters which is selected by user like Inspection Progress, Inspection Health. system Impacted. Inspection Category, program and InspectionId if chart is displayed on specific Inspection record page
      * Returns : String
      ***********************************************************************************************************************************************************************************************************************************/
      @AuraEnabled(cacheable = true)
-    public static List<GanttDataWrapper> fetchGanttData(Integer slotSize, Date startTime, String projectId, String projectProgress, String projectHealth, String systemImpacted, String projectCategory, String program) {
+    public static List<GanttDataWrapper> fetchGanttData(Integer slotSize, Date startTime, String InspectionId, String InspectionProgress, String InspectionHealth, String systemImpacted, String InspectionCategory, String program) {
         List<GanttDataWrapper> lstOfGanttDataWrapper = new List<GanttDataWrapper>();
         List<Id> projIds = new List<Id>();
         Id loginUserId = UserInfo.getUserId();
@@ -26,24 +26,24 @@ public with sharing class ES_GanttCtrl {
         Map<Id, List<ES_Phase__c>> mapOfMilestoneToPhases = new Map<Id, List < ES_Phase__c>>();
         Map<Id, List<ES_Task__c>> mapOfPhaseToTasks = new Map<Id, List<ES_Task__c>>();
 
-        List<String> lstOfprojectFields = new List<String> {'Id', 'OwnerId', 'Name', 'Kickoff_formula__c', 'Duration__c', 'Deadline_formula__c', 'Project_Status__c', 'Project_Health__c', 'Health_Icon__c', 'Project_Category__c', 'Program_Text__c', 'SystemsImpacted__c'};
+        List<String> lstOfInspectionFields = new List<String> {'Id', 'OwnerId', 'Name', 'Kickoff_formula__c', 'Duration__c', 'Deadline_formula__c', 'Inspection_Status__c', 'Inspection_Health__c', 'Health_Icon__c', 'Inspection_Category__c', 'Program_Text__c', 'SystemsImpacted__c'};
 
         slotSize = Integer.valueOf(slotSize);
         Date startDate = startTime;
         
 
-        if (ES_Utility.validateCRUD('Inspection__c', lstOfprojectFields, 'isAccessible')) {
+        if (ES_Utility.validateCRUD('Inspection__c', lstOfInspectionFields, 'isAccessible')) {
 
-            List<Inspection__c> projects = getProjects(projectId, projectProgress, projectHealth, systemImpacted, projectCategory, program);
+            List<Inspection__c> Inspections = getInspections(InspectionId, InspectionProgress, InspectionHealth, systemImpacted, InspectionCategory, program);
 
-            if (projects != null && projects.size() != 0) {
-                List < Inspection__c > projects_clone = projects.clone();
-                projects.clear();
-                Integer size = (projects_clone.size() > 1000) ? 1000 : projects_clone.size();
+            if (Inspections != null && Inspections.size() != 0) {
+                List < Inspection__c > Inspections_clone = Inspections.clone();
+                Inspections.clear();
+                Integer size = (Inspections_clone.size() > 1000) ? 1000 : Inspections_clone.size();
 
                 for (Integer i = 0; i < size; i++) {
-                    Inspection__c prj = projects_clone[i];
-                    projects.add(prj);
+                    Inspection__c prj = Inspections_clone[i];
+                    Inspections.add(prj);
                     projIds.add(prj.Id);
                     setOfProjOwners.add(prj.ownerId);
                 }
@@ -51,13 +51,13 @@ public with sharing class ES_GanttCtrl {
                 List<String> lstOfEntitySubscrFields = new List<String> {'Id', 'ParentId', 'SubscriberId'};
                     
                 if (ES_Utility.validateCRUD('EntitySubscription', lstOfEntitySubscrFields, 'isAccessible')) {
-                    followIds = getFollowIds(projects);
+                    followIds = getFollowIds(Inspections);
                 } else {
-                    throw new AuraHandledException('Access restricted to check following project, please contact system administrator.');
+                    throw new AuraHandledException('Access restricted to check following Inspection, please contact system administrator.');
                 }
 
                 // fetching ES Phases
-                List<String> lstOfPhaseFields = new List<String> {'Id', 'Name', 'Kickoff_formula__c', 'Duration__c', 'Deadline_formula__c', 'Health_Icon__c', 'Project__c'};
+                List<String> lstOfPhaseFields = new List<String> {'Id', 'Name', 'Kickoff_formula__c', 'Duration__c', 'Deadline_formula__c', 'Health_Icon__c', 'Inspection__c'};
 
                 if (ES_Utility.validateCRUD('ES_Phase__c', lstOfPhaseFields, 'isAccessible')) {
                     Map<Id, ES_Phase__c> mapOfPhases = getPhases(projIds);
@@ -72,7 +72,7 @@ public with sharing class ES_GanttCtrl {
                             if (tsk.Assigned_To1__c == loginUserId) {
                                 setOfTasksAssignedToMe.add(tsk.Id);
                                 setOfTasksAssignedToMe.add(tsk.Phase__r.Id);
-                                setOfTasksAssignedToMe.add(tsk.Phase__r.Project__r.Id);
+                                setOfTasksAssignedToMe.add(tsk.Phase__r.Inspection__r.Id);
                             }
 
                             if (mapOfPhaseToTasks.containsKey(tsk.Phase__c)) {
@@ -88,33 +88,33 @@ public with sharing class ES_GanttCtrl {
                     }
 
                     for (ES_Phase__c phs: mapOfPhases.values()) {
-                        if (mapOfMilestoneToPhases.containsKey(phs.Project__c)) {
-                            List<ES_Phase__c> lstOfPhases = mapOfMilestoneToPhases.get(phs.Project__c);
+                        if (mapOfMilestoneToPhases.containsKey(phs.Inspection__c)) {
+                            List<ES_Phase__c> lstOfPhases = mapOfMilestoneToPhases.get(phs.Inspection__c);
                             lstOfPhases.add(phs);
-                            mapOfMilestoneToPhases.put(phs.Project__c, lstOfPhases);
+                            mapOfMilestoneToPhases.put(phs.Inspection__c, lstOfPhases);
                         } else {
-                            mapOfMilestoneToPhases.put(phs.Project__c, new List<ES_Phase__c>{phs}); 
+                            mapOfMilestoneToPhases.put(phs.Inspection__c, new List<ES_Phase__c>{phs}); 
                         }
                     }
                 } else {
                     throw new AuraHandledException('You don\'t have access to ES Phases or tasks. Please contact system administartor.');
                 }
 
-                for (Inspection__c prj: projects) {
+                for (Inspection__c prj: Inspections) {
 
-                    GanttDataWrapper ESProject = getGanttDataWrapper(slotSize, startDate, prj.Id, prj.Name, prj.Kickoff_formula__c, prj.Deadline_formula__c, prj.Duration__c, '', 'Inspection__c', prj.Health_Icon__c, (followIds.contains(prj.Id)) ? true : false, (setOfTasksAssignedToMe.contains(prj.Id)) ? true : false, (prj.OwnerId==loginUserId) ? true : false, formatDate(prj.Deadline_formula__c, 'dd-MM-yyyy'), false);
+                    GanttDataWrapper ESInspection = getGanttDataWrapper(slotSize, startDate, prj.Id, prj.Name, prj.Kickoff_formula__c, prj.Deadline_formula__c, prj.Duration__c, '', 'Inspection__c', prj.Health_Icon__c, (followIds.contains(prj.Id)) ? true : false, (setOfTasksAssignedToMe.contains(prj.Id)) ? true : false, (prj.OwnerId==loginUserId) ? true : false, formatDate(prj.Deadline_formula__c, 'dd-MM-yyyy'), false);
 
                     if (mapOfMilestoneToPhases.containsKey(prj.Id)) {
                         List<GanttDataWrapper> lstOfPhases = new List<GanttDataWrapper>();
 
                         for (ES_Phase__c phs: mapOfMilestoneToPhases.get(prj.Id)) {
-                            GanttDataWrapper ESPhase = getGanttDataWrapper(slotSize, startDate, phs.Id, phs.Name, phs.Kickoff_formula__c, phs.Deadline_formula__c, phs.Duration__c, phs.Project__c, 'ES_Phase__c', phs.Health_Icon__c, (followIds.contains(phs.Project__r.Id)) ? true : false, (setOfTasksAssignedToMe.contains(phs.Id)) ? true : false, (setOfProjOwners.contains(loginUserId)) ? true : false, null, false);
+                            GanttDataWrapper ESPhase = getGanttDataWrapper(slotSize, startDate, phs.Id, phs.Name, phs.Kickoff_formula__c, phs.Deadline_formula__c, phs.Duration__c, phs.Inspection__c, 'ES_Phase__c', phs.Health_Icon__c, (followIds.contains(phs.Inspection__r.Id)) ? true : false, (setOfTasksAssignedToMe.contains(phs.Id)) ? true : false, (setOfProjOwners.contains(loginUserId)) ? true : false, null, false);
 
                             if (mapOfPhaseToTasks.containsKey(phs.Id)) {
                                 List<GanttDataWrapper> lstOfTasks = new List<GanttDataWrapper>();
 
                                 for (ES_Task__c tsk: mapOfPhaseToTasks.get(phs.Id)) {
-                                    GanttDataWrapper ESTask = getGanttDataWrapper(slotSize, startDate, tsk.Id, tsk.Name, tsk.Start_Date__c, tsk.Due_Date__c, tsk.Duration__c, tsk.Phase__c, 'ES_Task__c', tsk.Status_Icon__c, (followIds.contains(tsk.Phase__r.Project__r.Id)) ? true : false, (setOfTasksAssignedToMe.contains(tsk.Id)) ? true : false, (setOfProjOwners.contains(loginUserId)) ? true : false, null, tsk.Is_Milestone__c);
+                                    GanttDataWrapper ESTask = getGanttDataWrapper(slotSize, startDate, tsk.Id, tsk.Name, tsk.Start_Date__c, tsk.Due_Date__c, tsk.Duration__c, tsk.Phase__c, 'ES_Task__c', tsk.Status_Icon__c, (followIds.contains(tsk.Phase__r.Inspection__r.Id)) ? true : false, (setOfTasksAssignedToMe.contains(tsk.Id)) ? true : false, (setOfProjOwners.contains(loginUserId)) ? true : false, null, tsk.Is_Milestone__c);
                                     ESTask.lstOfChilds = new List<GanttDataWrapper>();
                                     lstOfTasks.add(ESTask);
                                 }
@@ -122,13 +122,13 @@ public with sharing class ES_GanttCtrl {
                             }
                             lstOfPhases.add(ESPhase);
                         }
-                        ESProject.lstOfChilds = lstOfPhases;
+                        ESInspection.lstOfChilds = lstOfPhases;
                     }
-                    lstOfWrapper.add(ESProject);
+                    lstOfWrapper.add(ESInspection);
                 }
             }
         } else {
-            throw new AuraHandledException('You don\'t have access to ES Project. Please contact system administartor.');
+            throw new AuraHandledException('You don\'t have access to ES Inspection. Please contact system administartor.');
         }
         return lstOfWrapper;
     }
@@ -169,7 +169,7 @@ public with sharing class ES_GanttCtrl {
         public Boolean isAssignedToMe {get;set;}
             
         @AuraEnabled
-        public Boolean isMyProject {get;set;}
+        public Boolean isMyInspection {get;set;}
             
         @AuraEnabled
         public String deadline {get;set;}
@@ -193,7 +193,7 @@ public with sharing class ES_GanttCtrl {
      * Parameter : Mutilple parameters
      * Returns : GanttDataWrapper
      **********************************************************************************************************************************************/
-    public static GanttDataWrapper getGanttDataWrapper(Integer slotSize, Date sDate, Id recId, String name, Date startDate, Date endDate, Decimal duration, String parentId, String objAPIName, String statusIcon, Boolean isFollow, Boolean isAssignedToMe, Boolean isMyProject, String prjDeadline, Boolean isMilestone) {
+    public static GanttDataWrapper getGanttDataWrapper(Integer slotSize, Date sDate, Id recId, String name, Date startDate, Date endDate, Decimal duration, String parentId, String objAPIName, String statusIcon, Boolean isFollow, Boolean isAssignedToMe, Boolean isMyInspection, String prjDeadline, Boolean isMilestone) {
         try{
         GanttDataWrapper wrapperRecord = new GanttDataWrapper();
         wrapperRecord.id = recId;
@@ -206,7 +206,7 @@ public with sharing class ES_GanttCtrl {
         wrapperRecord.statusIcon = statusIcon; 
         wrapperRecord.isFollow = isFollow;
         wrapperRecord.isAssignedToMe = isAssignedToMe;
-        wrapperRecord.isMyProject = isMyProject;
+        wrapperRecord.isMyInspection = isMyInspection;
         wrapperRecord.deadline = prjDeadline;
         wrapperRecord.isMilestone = isMilestone;
 
@@ -292,35 +292,35 @@ public with sharing class ES_GanttCtrl {
     }
 
     /********************************************************************************************************************************************
-     * Method Name:getProjects
-     * Description : Search for ES projects with search filters
-     * Parameter : Project Id, project Progress, project Health, systems Impacted, project Category and program to filter records
-     * Returns : List of projects
+     * Method Name:getInspections
+     * Description : Search for ES Inspections with search filters
+     * Parameter : Inspection Id, Inspection Progress, Inspection Health, systems Impacted, Inspection Category and program to filter records
+     * Returns : List of Inspections
      * ******************************************************************************************************************************************/
-    private static List < Inspection__c > getProjects(String projectId, String projectProgress, String projectHealth, String systemImpacted, String projectCategory, String program) {
+    private static List < Inspection__c > getInspections(String InspectionId, String InspectionProgress, String InspectionHealth, String systemImpacted, String InspectionCategory, String program) {
         
         String selectStr = '';
         selectStr = 'SELECT Id,OwnerId, Name, Kickoff_formula__c, Duration__c, Deadline_formula__c,' +
-            '  Project_Status__c, Project_Health__c,Health_Icon__c,Project_Category__c,Program_Text__c,SystemsImpacted__c ';
+            '  Inspection_Status__c, Inspection_Health__c,Health_Icon__c,Inspection_Category__c,Program_Text__c,SystemsImpacted__c ';
         
         String fromStr = 'FROM Inspection__c';
         boolean isWhere = false;
         String whereStr = '';
         
         whereStr = ' WHERE isTemplate__c=false';
-        if (projectId != null && projectId != '') {
+        if (InspectionId != null && InspectionId != '') {
             isWhere = true;
-            whereStr = whereStr + ' AND Id=\'' + string.escapeSingleQuotes(projectId) + '\'';
+            whereStr = whereStr + ' AND Id=\'' + string.escapeSingleQuotes(InspectionId) + '\'';
             
         }
         
-        if (projectProgress != null && projectProgress != 'All') {
-            whereStr = whereStr + ' AND Project_Status__c=\'' + string.escapeSingleQuotes(projectProgress) + '\'';
+        if (InspectionProgress != null && InspectionProgress != 'All') {
+            whereStr = whereStr + ' AND Inspection_Status__c=\'' + string.escapeSingleQuotes(InspectionProgress) + '\'';
         }
         
-        if (projectHealth != null && projectHealth != '' && projectHealth != 'All') {
+        if (InspectionHealth != null && InspectionHealth != '' && InspectionHealth != 'All') {
             
-            whereStr = whereStr + ' AND Project_Health__c=\'' + string.escapeSingleQuotes(projectHealth) + '\'';
+            whereStr = whereStr + ' AND Inspection_Health__c=\'' + string.escapeSingleQuotes(InspectionHealth) + '\'';
             
         }
         
@@ -330,9 +330,9 @@ public with sharing class ES_GanttCtrl {
             
         }
         
-        if (projectCategory != null && projectCategory != '' && projectCategory != 'All') {
+        if (InspectionCategory != null && InspectionCategory != '' && InspectionCategory != 'All') {
             
-            whereStr = whereStr + ' AND Project_Category__c=\'' + string.escapeSingleQuotes(projectCategory) + '\'';
+            whereStr = whereStr + ' AND Inspection_Category__c=\'' + string.escapeSingleQuotes(InspectionCategory) + '\'';
             
         }
         
@@ -349,14 +349,14 @@ public with sharing class ES_GanttCtrl {
 
     /*****************************************************************************************************************
      * Method Name:getPhases
-     * Description : Search for ES phases related to list of projects which is given as input parameter
-     * Parameter : List of projects Id's
+     * Description : Search for ES phases related to list of Inspections which is given as input parameter
+     * Parameter : List of Inspections Id's
      * Returns : List of ES Phases
      * ***************************************************************************************************************/
     private static Map<Id, ES_Phase__c> getPhases(List<Id> lstOfProjIds) {
         Map<Id, ES_Phase__c> mapOfPhases = new Map<Id, ES_Phase__c>();
 
-        for (ES_Phase__c phaseRec: [SELECT Id, Name, Kickoff_formula__c, Duration__c, Project__c, Deadline_formula__c, Health_Icon__c, Project__r.Id FROM ES_Phase__c WHERE Project__c IN: lstOfProjIds limit: limits.getLimitQueryRows()]) {
+        for (ES_Phase__c phaseRec: [SELECT Id, Name, Kickoff_formula__c, Duration__c, Inspection__c, Deadline_formula__c, Health_Icon__c, Inspection__r.Id FROM ES_Phase__c WHERE Inspection__c IN: lstOfProjIds limit: limits.getLimitQueryRows()]) {
             mapOfPhases.put(phaseRec.Id, phaseRec);
         }
 
@@ -372,7 +372,7 @@ public with sharing class ES_GanttCtrl {
     private static Map<Id, ES_Task__c> getTasks(Set<Id> setOfPhaseIds) {
         Map<Id, ES_Task__c> mapOftasks = new Map<Id, ES_Task__c>();
 
-        for (ES_Task__c taskRec: [SELECT Id, Name, Start_Date__c, Duration__c, Phase__c, Due_Date__c, Status_Icon__c, Phase__r.Project__r.Id, Assigned_To1__c, Phase__r.Id, Is_Milestone__c FROM ES_Task__c WHERE Phase__c IN: setOfPhaseIds limit: limits.getLimitQueryRows()]) {
+        for (ES_Task__c taskRec: [SELECT Id, Name, Start_Date__c, Duration__c, Phase__c, Due_Date__c, Status_Icon__c, Phase__r.Inspection__r.Id, Assigned_To1__c, Phase__r.Id, Is_Milestone__c FROM ES_Task__c WHERE Phase__c IN: setOfPhaseIds limit: limits.getLimitQueryRows()]) {
             mapOftasks.put(taskRec.Id, taskRec);
         }
 
@@ -382,25 +382,25 @@ public with sharing class ES_GanttCtrl {
     /**********************************************************************
      * Method Name: getFollowIds
      * Description: It sets default search options
-     * Parameter : List of ES projects
+     * Parameter : List of ES Inspections
      * Returns : Set of follow up Id's
      **********************************************************************/
-    private static Set<Id> getFollowIds(List < Inspection__c > projects) {
+    private static Set<Id> getFollowIds(List < Inspection__c > Inspections) {
         Set<Id> proIds = new Set<Id>();
 
-        for (Inspection__c p: projects) {
+        for (Inspection__c p: Inspections) {
             proIds.add(p.Id);
         }
 
-        Set<Id> followProjectId = new Set<Id>();
+        Set<Id> followInspectionId = new Set<Id>();
 
         List<EntitySubscription> eList = [SELECT Id, ParentId, SubscriberId FROM EntitySubscription WHERE ParentId IN: proIds AND SubscriberId =: UserInfo.getUserId() LIMIT 1000];
 
         for (EntitySubscription e: eList) {
-            followProjectId.add(e.ParentId);
+            followInspectionId.add(e.ParentId);
         }
 
-        return followProjectId;
+        return followInspectionId;
     }
 
     /**********************************************************************
@@ -409,16 +409,16 @@ public with sharing class ES_GanttCtrl {
      **********************************************************************/
     public class GanttFliterWrapper {
         @AuraEnabled
-        public List<Filter> prjhealth; // List of project health's available
+        public List<Filter> prjhealth; // List of Inspection health's available
         
         @AuraEnabled
-        public List<Filter> prjcategory; // List of project categories available
+        public List<Filter> prjcategory; // List of Inspection categories available
         
         @AuraEnabled
-        public List<Filter> sysimpacted; // List of values available for system's impacted on project
+        public List<Filter> sysimpacted; // List of values available for system's impacted on Inspection
         
         @AuraEnabled
-        public List<Filter> prjprogress; // List of project progress available
+        public List<Filter> prjprogress; // List of Inspection progress available
     }
 
     /***************************************************************************************
@@ -447,19 +447,19 @@ public with sharing class ES_GanttCtrl {
     @AuraEnabled(cacheable = true)
     public static GanttFliterWrapper getGanttFilters() {
         try {
-            List<String> lstOfprojectFields = new List<String> {'Project_Health__c', 'Project_Category__c', 'SystemsImpacted__c', 'Project_Status__c'};
+            List<String> lstOfInspectionFields = new List<String> {'Inspection_Health__c', 'Inspection_Category__c', 'SystemsImpacted__c', 'Inspection_Status__c'};
                         
-            if (ES_Utility.validateCRUD('Inspection__c', lstOfprojectFields, 'isAccessible')) {
+            if (ES_Utility.validateCRUD('Inspection__c', lstOfInspectionFields, 'isAccessible')) {
 
                 List<Filter> prjhealth = new List<Filter>();
-                Map<String, String> mapOfHealthValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Health__c');
+                Map<String, String> mapOfHealthValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Health__c');
 
                 for (String key: mapOfHealthValues.keySet()) {
                     prjhealth.add(new Filter(key, mapOfHealthValues.get(key)));
                 }
 
                 List<Filter> prjcategory = new List<Filter>();
-                Map<String, String> mapOfCategoryValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Category__c');
+                Map<String, String> mapOfCategoryValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Category__c');
 
                 for (String key: mapOfCategoryValues.keySet()) {
                     prjcategory.add(new Filter(key, mapOfCategoryValues.get(key)));
@@ -473,7 +473,7 @@ public with sharing class ES_GanttCtrl {
                 }
 
                 List<Filter> prjprogress = new List<Filter>();
-                Map<String, String> mapOfProgressValues = ES_Utility.getPicklistValues('Inspection__c', 'Project_Status__c');
+                Map<String, String> mapOfProgressValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Status__c');
 
                 for (String key: mapOfProgressValues.keySet()) {
                     prjprogress.add(new Filter(key, mapOfProgressValues.get(key)));
@@ -487,7 +487,7 @@ public with sharing class ES_GanttCtrl {
 
                 return filter;
             } else {
-                throw new AuraHandledException('You don\'t have access to ES Project filters. Please contact system administartor.');
+                throw new AuraHandledException('You don\'t have access to ES Inspection filters. Please contact system administartor.');
             }
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());

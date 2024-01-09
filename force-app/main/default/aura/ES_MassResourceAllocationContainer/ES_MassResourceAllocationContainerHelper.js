@@ -5,7 +5,7 @@
         //Server call to get the data
         var action = component.get("c.getResourceDetailsWrapper");
         action.setParams({
-            project : component.get("v.projectRecord")
+            inspection : component.get("v.inspectionRecord")
         });
         action.setCallback(this,function(response){
             if(response.getState() ==='SUCCESS'){
@@ -28,7 +28,7 @@
         var availabilities;
         //Set Resource Availabilties
         component.set("v.fiscalYearOffset", responseVal.fiscalYearOffset);
-        component.set("v.years", helper.getMonthsForProject(component, helper));
+        component.set("v.years", helper.getMonthsForInspection(component, helper));
         component.set("v.roles", responseVal.roles);
         
         //Transform : User, month+year, availabilities  
@@ -124,12 +124,12 @@
         }
         //else : newly added record and not save to database
     },
-    getMonthsForProject : function(component, helper){
+    getMonthsForInspection : function(component, helper){
         //Year wise months
-        var Start = new Date(component.get("v.projectRecord").Kickoff_formula__c);
-        var End = new Date(component.get("v.projectRecord").Deadline_formula__c);
-        var StartFiscal = parseInt(component.get("v.projectRecord").Start_Fiscal_Year__c.substring(2));
-        var EndFiscal = parseInt(component.get("v.projectRecord").End_Fiscal_Year__c.substring(2));
+        var Start = new Date(component.get("v.inspectionRecord").Kickoff_formula__c);
+        var End = new Date(component.get("v.inspectionRecord").Deadline_formula__c);
+        var StartFiscal = parseInt(component.get("v.inspectionRecord").Start_Fiscal_Year__c.substring(2));
+        var EndFiscal = parseInt(component.get("v.inspectionRecord").End_Fiscal_Year__c.substring(2));
         var difference = EndFiscal-StartFiscal;
         var years = [];
         var year, startMonth, endMonth;
@@ -210,12 +210,12 @@
         for(var i=0;i<fiscalStartMonth-1;i++){
             fiscalMonths.push(monthNames[i]); 
         }
-        var monthsFromProject = [];
+        var monthsFromInspection = [];
         for(var k=startMonth;k<=endMonth;k++)
         {
-            monthsFromProject.push(fiscalMonths[k%12]);
+            monthsFromInspection.push(fiscalMonths[k%12]);
         }
-        return monthsFromProject;
+        return monthsFromInspection;
     },
     saveAllocations: function(component, helper){
         //Save the changes including new allocations and old to delete (upsert + delete)
@@ -226,14 +226,14 @@
         
         //Action server call
         if(component.get("v.duplicatesFound")){
-            confirmation = confirm('Same resource has been allocated more than once to this project. Do you want to continue?');
+            confirmation = confirm('Same resource has been allocated more than once to this Inspection. Do you want to continue?');
         }
         if(confirmation){
             var action = component.get("c.upsertDeleteAllocation");
             action.setParams({
                 'allocationsToSave' : allocationsToSave,
                 'allocationsToDelete' : component.get("v.resourceAllocationToDelete"),
-                'project' : component.get("v.projectRecord")
+                'inspection' : component.get("v.inspectionRecord")
             });
             action.setCallback(this,function(response){
                 if(response.getState() ==='SUCCESS'){
@@ -284,7 +284,7 @@
                     component.set("v.duplicatesFound",false)
                     //END: ToDO
                     
-                    allocationRecord = {'sobjectType':'ES_Resource_Allocation__c','Id':allocations[i].Id,'Resource_Availability__c':allocations[i].Availability.Id,'Role__c':allocations[i].Role,'Project__c':component.get("v.recordId")};
+                    allocationRecord = {'sobjectType':'ES_Resource_Allocation__c','Id':allocations[i].Id,'Resource_Availability__c':allocations[i].Availability.Id,'Role__c':allocations[i].Role,'Inspection__c':component.get("v.recordId")};
                     months = allocations[i].months;
                     //month loop
                     //Year => Allocation => Monthly allocation

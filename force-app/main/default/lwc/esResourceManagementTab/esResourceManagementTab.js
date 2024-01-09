@@ -38,7 +38,7 @@ const MONTHS = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', '
 
 //Summary table headers
 const TOTAL_AVAIL_CONST = 'Total Resources Availability';
-const TOTAL_ALLOCATION_CONST = 'Total Project Allocations';
+const TOTAL_ALLOCATION_CONST = 'Total Inspection Allocations';
 const OVERALL_REMAIN_AVAIL_CONST = 'Consilidated Remaining Capacity';
 const REMAIN_AVAIL_CONST = 'Remaining Capacity';
 
@@ -50,7 +50,7 @@ const DEPT_PICKLIST = "ESDept";
 const FISCAL_YEAR_PICKLIST = "FiscalYear";
 const MANAGER_LOOKUP = "Manager";
 const USER_LOOKUP = "User";
-const PROJECT_LOOKUP = "Project";
+const Inspection_LOOKUP = "Inspection";
 
 
 export default class ESResourceManagementTab extends LightningElement {
@@ -82,7 +82,7 @@ export default class ESResourceManagementTab extends LightningElement {
     fiscalYearInputName = FISCAL_YEAR_PICKLIST;
     managerInputName = MANAGER_LOOKUP;
     userInputName = USER_LOOKUP;
-    projectInputName = PROJECT_LOOKUP;
+    InspectionInputName = Inspection_LOOKUP;
 
     //Selected Filters
     selectedDept;
@@ -90,7 +90,7 @@ export default class ESResourceManagementTab extends LightningElement {
     //Selected Filters with Default values
     selectedManager = BLANK_STRING;
     selectedUser = BLANK_STRING;
-    selectedProject= BLANK_STRING;
+    selectedInspection= BLANK_STRING;
 
     //fiscalYear offset
     isEditable = false;
@@ -176,10 +176,10 @@ export default class ESResourceManagementTab extends LightningElement {
                     }
                 },
                 {
-                    label: 'Project', initialWidth: TEXT_COL_WIDTH, fieldName: 'projectURL', type: 'url', editable: false, sortable: true,
+                    label: 'Inspection', initialWidth: TEXT_COL_WIDTH, fieldName: 'InspectionURL', type: 'url', editable: false, sortable: true,
                     typeAttributes: {
                         label: {
-                            fieldName: 'Project_Name__c'
+                            fieldName: 'Inspection_Name__c'
                         }, target: '_self'
                     }
                 }
@@ -255,7 +255,7 @@ export default class ESResourceManagementTab extends LightningElement {
     }
 
     /********************************** Data changes ******************************************** */
-    @wire(getData, { fiscalYear: '$selectedFiscalYear', selectedDept: '$selectedDept', selectedManagerId: '$selectedManager',selectedUserId : '$selectedUser', selectedProjectId: '$selectedProject'})
+    @wire(getData, { fiscalYear: '$selectedFiscalYear', selectedDept: '$selectedDept', selectedManagerId: '$selectedManager',selectedUserId : '$selectedUser', selectedInspectionId: '$selectedInspection'})
     processData(result) {
         //Show spinner
         this.isLoading = true;
@@ -268,10 +268,10 @@ export default class ESResourceManagementTab extends LightningElement {
 
         if (result.data) {
             var allocations = [];
-            //Process allocations to generate the links to the project and availability record
+            //Process allocations to generate the links to the Inspection and availability record
             result.data.resourceAllocations.forEach(allocation => {
                 var cloneObj = { ...allocation };
-                cloneObj.projectURL = '/' + cloneObj[ 'Project__c'];
+                cloneObj.InspectionURL = '/' + cloneObj[ 'Inspection__c'];
                 cloneObj.availabilityURL = '/' + cloneObj[ 'Resource_Availability__c'];
                 allocations.push(cloneObj);
                 //Data found : Remove no data flag
@@ -368,8 +368,8 @@ export default class ESResourceManagementTab extends LightningElement {
             case USER_LOOKUP:
                 this.selectedUser = value;
                 break;
-            case PROJECT_LOOKUP:
-                this.selectedProject = value;
+            case Inspection_LOOKUP:
+                this.selectedInspection = value;
                 break;
             default:
                 console.log('Invalid Field');

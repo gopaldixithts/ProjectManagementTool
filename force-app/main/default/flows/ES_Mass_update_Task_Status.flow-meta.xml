@@ -17,7 +17,7 @@
             <targetReference>Update_Tasks_with_status_selected</targetReference>
         </connector>
     </assignments>
-    <description>Flow on Project to update ES Task status in Task Datatable component due to limitations on component picklist field edit.</description>
+    <description>Flow on Inspection to update ES Task status in Task Datatable component due to limitations on component picklist field edit.</description>
     <dynamicChoiceSets>
         <name>ESTaskStatusValues</name>
         <dataType>Picklist</dataType>
