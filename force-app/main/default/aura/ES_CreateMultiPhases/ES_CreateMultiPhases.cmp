@@ -5,7 +5,7 @@
     <aura:attribute name="errorMessage" type="string" description="Error message text attribute"/>
     <aura:attribute name="isCreated" type="boolean" default="false" description="Confirm message loading attribute"/>
     
-    <aura:attribute name="recordId" type="Id" description="Record Id for project" />
+    <aura:attribute name="recordId" type="Id" description="Record Id for Inspection" />
     <aura:attribute name="phaseList" type="ES_Phase__c[]" description="Define Phase List attribute for Mass creation"/>
     
     <!--Define Attributes for Picklist values -->

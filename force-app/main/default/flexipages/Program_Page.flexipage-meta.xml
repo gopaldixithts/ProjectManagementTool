@@ -65,7 +65,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Program Related Projects&lt;/span&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Program Related Inspections&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText</identifier>
@@ -79,7 +79,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>Projects__r</value>
+                    <value>Inspections__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>

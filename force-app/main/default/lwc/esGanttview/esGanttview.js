@@ -12,7 +12,7 @@ const ALL_CONST = 'All';
 export default class ESGanttView extends LightningElement {
     @api height; // design attribute to specify height for chart
     @api withfilters; //design attribute to identify filters are applied or not
-    @api recordId; //design attribute to store project record id
+    @api recordId; //design attribute to store Inspection record id
 
     //Set default values for filters
     healthSelected = ALL_CONST;
@@ -26,7 +26,7 @@ export default class ESGanttView extends LightningElement {
     categoryoptions = [];
     systemoptions = [];
     progressoptions = [];
-    searchProjects = false;
+    searchInspections = false;
     error;
 
     connectedCallback() {
@@ -91,7 +91,7 @@ export default class ESGanttView extends LightningElement {
 
     //Set selected filter values to variables
     handleChange(event) {
-        this.searchProjects = false;
+        this.searchInspections = false;
         switch (event.target.name) {
             case 'projhealth':
                 this.healthSelected = event.detail.value;
@@ -110,14 +110,14 @@ export default class ESGanttView extends LightningElement {
 
     //function to condidionally render child components when filters are being changed
     handleSearch() {
-        this.searchProjects = true;
+        this.searchInspections = true;
     }
 
     //handler on selection of program to get its Id
     handleProgramSelection(event) {
         var value = event.detail.value.length > 0 ? event.detail.value[0] : ALL_CONST;
         this.programSelected = value;
-        this.searchProjects = false;
+        this.searchInspections = false;
     }
 
     //show toast message on component

@@ -4,7 +4,7 @@
         <headerColor>#0070D2</headerColor>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
-    <description>Project Management tool console app. To work on multiple projects at once.</description>
+    <description>Inspection Management tool console app. To work on multiple Inspections at once.</description>
     <formFactors>Small</formFactors>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
@@ -12,7 +12,7 @@
     <label>ES Console</label>
     <navType>Console</navType>
     <tabs>Inspection_Home</tabs> 
-    <tabs>ES_Project__c</tabs>
+    <tabs>Inspection__c</tabs>
     <tabs>ES_Program__c</tabs>
     <tabs>standard-Case</tabs>
     <tabs>ES_Phase__c</tabs>
@@ -39,14 +39,14 @@
             <tab>Inspection_Home</tab>
         </mappings>
         <mappings>
-            <fieldName>Project__c</fieldName>
+            <fieldName>Inspection__c</fieldName>
             <tab>ES_Phase__c</tab>
         </mappings>
         <mappings>
             <tab>ES_Program__c</tab>
         </mappings>
         <mappings>
-            <tab>ES_Project__c</tab>
+            <tab>Inspection__c</tab>
         </mappings>
         <mappings>
             <fieldName>Resource_Availability__c</fieldName>

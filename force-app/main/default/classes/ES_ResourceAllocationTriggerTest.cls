@@ -20,13 +20,13 @@ public class ES_ResourceAllocationTriggerTest {
             PermissionSet ps = [SELECT Id FROM PermissionSet WHERE Name = 'ES_Global_Admin'];
             INSERT new PermissionSetAssignment(AssigneeId = usr.id, PermissionSetId = ps.Id);            
             
-            //Project record
-            ES_Project__c project = new ES_Project__c(Name='Single Project Controller Test', 
+            //Inspection record
+            Inspection__c Inspection = new Inspection__c(Name='Single Inspection Controller Test', 
                                                         Portfolio__c='R2R',
                                                         Initial_End_Date__c=System.today()+30,
                                                         Initial_Start_Date__c=System.today(),
                                                        Level_of_Effort__c = 'Small');
-            INSERT project;
+            INSERT Inspection;
             
             //Availability record
             ES_Resource_Availability__c resAvail = new ES_Resource_Availability__c( User__c = UserInfo.getUserId(),
@@ -41,22 +41,22 @@ public class ES_ResourceAllocationTriggerTest {
         }
     }
     
-    static testmethod void projectSharingTestCase(){        
+    static testmethod void InspectionSharingTestCase(){        
         System.runAs(new User(Id = Userinfo.getUserId())) {  
             User usr = [SELECT Id FROM User WHERE Email='ESuser@testorg.com'];
-            ES_Project__c project = [SELECT Id FROM ES_Project__c LIMIT 1];
+            Inspection__c Inspection = [SELECT Id FROM Inspection__c LIMIT 1];
             ES_Resource_Availability__c resAvail = [SELECT Id FROM ES_Resource_Availability__c LIMIT 1];
             System.runAs(usr) {
                 Test.startTest();
                 //Allocation records
-                ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Project__c = project.Id,
+                ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Inspection__c = Inspection.Id,
                                                                                           Resource_Availability__c = resAvail.Id,
                                                                                           Role__c = 'SME' );                                                                                        
                 INSERT resAllocation;
                 
-                List<ES_Project__Share> ls = [select Id from ES_Project__Share where ParentId =: project.Id and UserOrGroupId =: UserInfo.getUserId()];
+                List<Inspection__Share> ls = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: UserInfo.getUserId()];
                 
-                System.assertNotEquals(null, ls, 'Project sharing done');
+                System.assertNotEquals(null, ls, 'Inspection sharing done');
                 Test.stopTest();
             }
         }
@@ -65,10 +65,10 @@ public class ES_ResourceAllocationTriggerTest {
     static testmethod void allocationWOTaskDeletionTestCase(){        
         System.runAs(new User(Id = Userinfo.getUserId())) {  
             User usr = [SELECT Id FROM User WHERE Email='ESuser@testorg.com'];
-            ES_Project__c project = [SELECT Id FROM ES_Project__c LIMIT 1];
+            Inspection__c Inspection = [SELECT Id FROM Inspection__c LIMIT 1];
             ES_Resource_Availability__c resAvail = [SELECT Id FROM ES_Resource_Availability__c LIMIT 1];
             //Allocation records
-             ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Project__c = project.Id,
+             ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Inspection__c = Inspection.Id,
                                                                                           Resource_Availability__c = resAvail.Id,
                                                                                           Role__c = 'SME' ); 
             INSERT resAllocation;
@@ -76,7 +76,7 @@ public class ES_ResourceAllocationTriggerTest {
             System.runAs(usr) {
                 Test.startTest();
                     DELETE resAllocation;
-                    List<ES_Project__Share> ls = [select Id from ES_Project__Share where ParentId =: project.Id and UserOrGroupId =: UserInfo.getUserId()];                
+                    List<Inspection__Share> ls = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: UserInfo.getUserId()];                
                     System.assertNotEquals(null, ls, 'Record founding for deletion');
                 Test.stopTest();
             }
@@ -86,9 +86,9 @@ public class ES_ResourceAllocationTriggerTest {
      static testmethod void allocationWithTaskDeletionTestCase(){        
         System.runAs(new User(Id = Userinfo.getUserId())) {  
             User usr = [SELECT Id FROM User WHERE Email='ESuser@testorg.com'];
-            ES_Project__c project = [SELECT Id FROM ES_Project__c LIMIT 1];
+            Inspection__c Inspection = [SELECT Id FROM Inspection__c LIMIT 1];
             
-            ES_Phase__c phase = new ES_Phase__c(Name='Develop', Project__c = project.Id);
+            ES_Phase__c phase = new ES_Phase__c(Name='Develop', Inspection__c = Inspection.Id);
             INSERT phase;
             
             ES_Task__c task = new ES_Task__c(Phase__c = phase.Id, Assigned_To1__c = UserInfo.getUserId(), Start_Date__c = System.today(), Due_Date__c= System.today()+10);
@@ -96,7 +96,7 @@ public class ES_ResourceAllocationTriggerTest {
             
             ES_Resource_Availability__c resAvail = [SELECT Id FROM ES_Resource_Availability__c LIMIT 1];
             //Allocation records
-             ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Project__c = project.Id,
+             ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Inspection__c = Inspection.Id,
                                                                                           Resource_Availability__c = resAvail.Id,
                                                                                           Role__c = 'SME' ); 
             INSERT resAllocation;
@@ -105,7 +105,7 @@ public class ES_ResourceAllocationTriggerTest {
                 Test.startTest();
                 try{
                     DELETE resAllocation;
-                    List<ES_Project__Share> ls = [select Id from ES_Project__Share where ParentId =: project.Id and UserOrGroupId =: UserInfo.getUserId()];                
+                    List<Inspection__Share> ls = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: UserInfo.getUserId()];                
                 }catch(Exception e){
                   System.assertNotEquals(null, e.getMessage(),'error should be returned for negative test');  
                 }
@@ -115,7 +115,7 @@ public class ES_ResourceAllocationTriggerTest {
         }
     }
     
-    static testmethod void projectUpdateTestCase(){        
+    static testmethod void InspectionUpdateTestCase(){        
         System.runAs(new User(Id = Userinfo.getUserId())) {  
             Integer resourceAvailability = Integer.valueOf(ES_Utility.getESSettings('Default').Default_Availability_for_Scheduler__c);
             
@@ -141,10 +141,10 @@ public class ES_ResourceAllocationTriggerTest {
                                                                             
             INSERT resAvailNew;
             
-            ES_Project__c project = [SELECT Id FROM ES_Project__c LIMIT 1];
+            Inspection__c Inspection = [SELECT Id FROM Inspection__c LIMIT 1];
             ES_Resource_Availability__c resAvail = [SELECT Id FROM ES_Resource_Availability__c LIMIT 1];
             //Allocation records
-             ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Project__c = project.Id,
+             ES_Resource_Allocation__c resAllocation = new ES_Resource_Allocation__c(Inspection__c = Inspection.Id,
                                                                                           Resource_Availability__c = resAvail.Id,
                                                                                           Role__c = 'SME' ); 
             
@@ -156,11 +156,11 @@ public class ES_ResourceAllocationTriggerTest {
                     resAllocation.Resource_Availability__c = resAvailNew.Id;
                     UPDATE resAllocation;
                 
-                List<ES_Project__Share> lsNew = [select Id from ES_Project__Share where ParentId =: project.Id and UserOrGroupId =: ESTempUser.Id];
-                List<ES_Project__Share> lsOld = [select Id from ES_Project__Share where ParentId =: project.Id and UserOrGroupId =: usr.Id];
+                List<Inspection__Share> lsNew = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: ESTempUser.Id];
+                List<Inspection__Share> lsOld = [select Id from Inspection__Share where ParentId =: Inspection.Id and UserOrGroupId =: usr.Id];
                 
-                System.assertNotEquals(null, lsNew, 'Project sharing done for new resource');
-                System.assertNotEquals(null, lsOld, 'Project sharing revoked for old resource');
+                System.assertNotEquals(null, lsNew, 'Inspection sharing done for new resource');
+                System.assertNotEquals(null, lsOld, 'Inspection sharing revoked for old resource');
                 
                 Test.stopTest();
             }

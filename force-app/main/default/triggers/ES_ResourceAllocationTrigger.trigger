@@ -1,6 +1,6 @@
 /******************************************************************************
  @ Trigger Name : ES_ResourceAllocationTrigger
- @ Description : Trigger to revoke and give access to ES project for resources
+ @ Description : Trigger to revoke and give access to ES Inspection for resources
  @ Test Class : ES_ResourceAllocationTriggerTest (84%)	
  * ***************************************************************************/
  
@@ -21,18 +21,18 @@ trigger ES_ResourceAllocationTrigger on ES_Resource_Allocation__c (after insert,
         {
             //restrict Deletion If Task Is Assigned to resource
                 ES_ResourceAllocationTriggerHelper.restrictDeletionIfTaskIsAssigned(trigger.old);
-            //Share project with project members
-                ES_ResourceAllocationTriggerHelper.revokeProjectAccess(trigger.old);            
+            //Share Inspection with Inspection members
+                ES_ResourceAllocationTriggerHelper.revokeInspectionAccess(trigger.old);            
         }
         if(trigger.isafter && trigger.isInsert)
         {
-            //Share project with project members
-                ES_ResourceAllocationTriggerHelper.shareProjectWithEditAccess(trigger.new);        
+            //Share Inspection with Inspection members
+                ES_ResourceAllocationTriggerHelper.shareInspectionWithEditAccess(trigger.new);        
         }
         
         if(trigger.isafter && trigger.isUpdate) 
         {
-            //If project members get changed update sharing for them 
+            //If Inspection members get changed update sharing for them 
                 ES_ResourceAllocationTriggerHelper.updateSharingOnResourceChange(trigger.oldMap, trigger.newMap);        
         }
     }

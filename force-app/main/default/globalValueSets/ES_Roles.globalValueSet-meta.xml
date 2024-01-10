@@ -6,9 +6,9 @@
         <label>Sponsor</label>
     </customValue>
     <customValue>
-        <fullName>Project Owner</fullName>
+        <fullName>Inspection Owner</fullName>
         <default>false</default>
-        <label>Project Owner</label>
+        <label>Inspection Owner</label>
     </customValue>
     <customValue>
         <fullName>PMO</fullName>
@@ -46,9 +46,9 @@
         <label>Stakeholder</label>
     </customValue>
     <customValue>
-        <fullName>Project Manager</fullName>
+        <fullName>Inspection Manager</fullName>
         <default>false</default>
-        <label>Project Manager</label>
+        <label>Inspection Manager</label>
     </customValue>
     <customValue>
         <fullName>Business Analyst</fullName>

@@ -149,7 +149,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>FY20_Q1</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Phases are significant events in the life-cycle of a Project. Phases can have tasks associated with them.</description>
+    <description>Phases are significant events in the life-cycle of a Inspection. Phases can have tasks associated with them.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
@@ -170,10 +170,10 @@
     </nameField>
     <pluralLabel>ES Phases</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>Project__c</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>Project__c</lookupDialogsAdditionalFields>
-        <searchFilterFields>Project__c</searchFilterFields>
-        <searchResultsAdditionalFields>Project__c</searchResultsAdditionalFields>
+        <customTabListAdditionalFields>Inspection__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Inspection__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>Inspection__c</searchFilterFields>
+        <searchResultsAdditionalFields>Inspection__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Health_Icon__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Phase_Health__c</searchResultsAdditionalFields>
     </searchLayouts>

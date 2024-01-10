@@ -22,19 +22,19 @@ public with Sharing class ES_TaskandPhaseManagementCtrl{
     
     /************************************************
 * Method Name: getTaskWrapper 
-* Description: Get tasks for the current project
+* Description: Get tasks for the current Inspection
 * Component(s): ES_CreateMultiTasks.cmp
-* Parameters : project id
+* Parameters : Inspection id
 * Return Values:  CreateTasksWrapper instance
 * ***********************************************/    
     @AuraEnabled
-    public static CreateTasksWrapper getTaskWrapper(Id projectId)
+    public static CreateTasksWrapper getTaskWrapper(Id InspectionId)
     {
         CreateTasksWrapper taskWrapper = new CreateTasksWrapper();
         //Calling util method to check CRUD
-        List<String> lstPhaseFields = new List<String>{'Name', 'Project__c'};
+        List<String> lstPhaseFields = new List<String>{'Name', 'Inspection__c'};
         if(ES_Utility.validateCRUD('ES_Phase__c', lstPhaseFields , 'isAccessible')) {
-            taskWrapper.phasesList = getPhasesList(projectId);
+            taskWrapper.phasesList = getPhasesList(InspectionId);
         }else{
             throw new AuraHandledException('You don\'t have access to ES phases. Please contact system administartor.');
         }
@@ -42,7 +42,7 @@ public with Sharing class ES_TaskandPhaseManagementCtrl{
         //Calling util method to check CRUD
         List<String> lstAllocationFields = new List<String>{'Allocated_Resource_Id__c', 'Resource_Name__c'};
         if(ES_Utility.validateCRUD('ES_Resource_Allocation__c', lstAllocationFields, 'isAccessible')) {
-            taskWrapper.memberList = getMemberList(projectId);
+            taskWrapper.memberList = getMemberList(InspectionId);
         }else{
             throw new AuraHandledException('You don\'t have access to ES Resource allocations. Please contact system administartor.');
         }
@@ -52,14 +52,14 @@ public with Sharing class ES_TaskandPhaseManagementCtrl{
     
     /*************************************************
 * Method Name: getPhasesList
-* Description: Get list of Project related Phases
+* Description: Get list of Inspection related Phases
 * Component(s): ES_CreateMultiTasks.cmp
-* Parameters : projectId
+* Parameters : InspectionId
 * Return Values: items
 * ***********************************************/  
-    private static List<Map<String, String>> getPhasesList(ID projectId) {    
+    private static List<Map<String, String>> getPhasesList(ID InspectionId) {    
         List<Map<String, String>> items = new List<Map<String, String>>();        
-        for (ES_Phase__c ph : [SELECT id, Name FROM ES_Phase__c WHERE Project__c =:projectId limit :limits.getLimitQueryRows()]){
+        for (ES_Phase__c ph : [SELECT id, Name FROM ES_Phase__c WHERE Inspection__c =:InspectionId limit :limits.getLimitQueryRows()]){
             items.add(new Map<String, String>{'value' => ph.Id, 'label'=> ph.Name});
         }
         
@@ -68,15 +68,15 @@ public with Sharing class ES_TaskandPhaseManagementCtrl{
     
     /*************************************************
 * Method Name: getMemberList
-* Description: Get list of Project Members
+* Description: Get list of Inspection Members
 * Component(s): ES_CreateMultiTasks.cmp
-* Parameters : projectId
+* Parameters : InspectionId
 * Return Values: items
 * ***********************************************/    
-    private static List<Map<String, String>> getMemberList(ID projectId) {    
+    private static List<Map<String, String>> getMemberList(ID InspectionId) {    
         List<Map<String, String>> items = new List<Map<String, String>>();  
         Set<Id> uniqueUserIds = new Set<Id>();
-        for (ES_Resource_Allocation__c mb : [SELECT id, Allocated_Resource_Id__c, Resource_Name__c FROM ES_Resource_Allocation__c WHERE Project__c =:projectId and Resource_IsActive__c = true limit :limits.getLimitQueryRows()]){
+        for (ES_Resource_Allocation__c mb : [SELECT id, Allocated_Resource_Id__c, Resource_Name__c FROM ES_Resource_Allocation__c WHERE Inspection__c =:InspectionId and Resource_IsActive__c = true limit :limits.getLimitQueryRows()]){
             if(uniqueUserIds.add(mb.Allocated_Resource_Id__c)){
                 items.add(new Map<String, String>{'value' => mb.Allocated_Resource_Id__c, 'label'=> mb.Resource_Name__c});
             }
@@ -87,14 +87,14 @@ public with Sharing class ES_TaskandPhaseManagementCtrl{
     
     
     /************************************************
-* Method Name: getTasksForProject 
-* Description: Get tasks for the current project
+* Method Name: getTasksForInspection 
+* Description: Get tasks for the current Inspection
 * Component(s): ES_TaskTableEditor.cmp
-*Parameters : project id
+*Parameters : Inspection id
 * Return Values: list of Task
 * ***********************************************/    
     @AuraEnabled
-    public static List<ES_Task__c> getTasksForProject(Id projectId)
+    public static List<ES_Task__c> getTasksForInspection(Id InspectionId)
     {
         List<String> lstTaskFields = new List<String>{'Id','Name','Status__c','Assigned_To1__c','Percentage_Completion__c','Start_Date__c','Due_Date__c','Description__c','On_Hold_Reason__c','Sign_off_status__c','Is_Milestone__c','Phase__c','Status_Icon__c','Status_Icon_Name__c'};
              
@@ -106,7 +106,7 @@ public with Sharing class ES_TaskandPhaseManagementCtrl{
         if(ES_Utility.validateCRUD('ES_Task__c', lstTaskFields, 'isAccessible') && ES_Utility.validateCRUD('User', lstUserFields, 'isAccessible') && ES_Utility.validateCRUD('ES_Phase__c', lstPhaseFields, 'isAccessible')){
             
             return [SELECT id,Name,Status__c,Assigned_To1__c,Percentage_Completion__c,Assigned_To1__r.Name,Start_Date__c,Due_Date__c,Description__c,On_Hold_Reason__c,Sign_off_status__c,Is_Milestone__c,Phase__c,Status_Icon__c,Status_Icon_Name__c,Phase__r.Name,
-                    Phase__r.Id FROM ES_Task__c WHERE Project_Id__c=:projectId order by Start_Date__c ASC limit: limits.getLimitQueryRows()];                     
+                    Phase__r.Id FROM ES_Task__c WHERE Inspection_Id__c=:InspectionId order by Start_Date__c ASC limit: limits.getLimitQueryRows()];                     
                     
                     
         }else{
@@ -304,7 +304,7 @@ public with Sharing class ES_TaskandPhaseManagementCtrl{
     
     /*************************************************
 * Method Name: getTasksList
-* Description: Get list of Project tasks from Ids
+* Description: Get list of Inspection tasks from Ids
 * Component(s): ES_TaskTableEditor.cmp
 * Parameters : taskIds
 * Return Values: tasks list

@@ -1,6 +1,6 @@
 /******************************************************************************
 @ ClassName : ES_ResourceAllocationTriggerHelper
-@ Description : Its a helper class for ES_ResourceAllocationTrigger. It contains methods to revoke and give access to ES project for resources
+@ Description : Its a helper class for ES_ResourceAllocationTrigger. It contains methods to revoke and give access to ES Inspection for resources
 @ Test Class : ES_ResourceAllocationTriggerTest (90%)
 * ***************************************************************************/
 public with sharing class ES_ResourceAllocationTriggerHelper{
@@ -14,22 +14,22 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
     public static void restrictDeletionIfTaskIsAssigned(List<ES_Resource_Allocation__c> recs)
     {
         List<ID>userid=new list<id>();
-        List<ID>projectid=new list<id>();
+        List<ID>Inspectionid=new list<id>();
         try {
             for(ES_Resource_Allocation__c rec : recs)
             {
                 userid.add(rec.Allocated_Resource_Id__c);
-                projectid.add(rec.Project__c);
+                Inspectionid.add(rec.Inspection__c);
             }
             //Calling util method to check CRUD
-            List<String> lstOfTaskFields = new List<String>{'Assigned_To1__c', 'Name','Id', 'Project_Id__c'};
+            List<String> lstOfTaskFields = new List<String>{'Assigned_To1__c', 'Name','Id', 'Inspection_Id__c'};
                 if(ES_Utility.validateCRUD('ES_Task__c', lstOfTaskFields, 'isAccessible')){
-                    List<ES_Task__c> tasklist=[SELECT id,name,Assigned_To1__c,Phase__r.Project__c FROM ES_Task__c WHERE Assigned_To1__c IN :userid AND Project_Id__c IN :projectid limit :Limits.getLimitQueries()];
+                    List<ES_Task__c> tasklist=[SELECT id,name,Assigned_To1__c,Phase__r.ES_Inspection__c FROM ES_Task__c WHERE Assigned_To1__c IN :userid AND Inspection_Id__c IN :Inspectionid limit :Limits.getLimitQueries()];
                     for(ES_Resource_Allocation__c rec : recs)
                     {
                         for(ES_Task__c taskRec : tasklist)
                         {
-                            if(!String.isEmpty(rec.Allocated_Resource_Id__c) && rec.Allocated_Resource_Id__c == taskRec.Assigned_To1__c && rec.Project__c == taskRec.Phase__r.Project__c){
+                            if(!String.isEmpty(rec.Allocated_Resource_Id__c) && rec.Allocated_Resource_Id__c == taskRec.Assigned_To1__c && rec.ES_Inspection__c == taskRec.Phase__r.Inspection__c){
                                 rec.addError('Resource can not be deleted, as resource is assigned to a task');
                             }               
                         }
@@ -60,39 +60,39 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
         }
         
         if(!lstOfResourcesToRemoveAccess.isEmpty()){
-            revokeProjectAccess(lstOfResourcesToRemoveAccess);
+            revokeInspectionAccess(lstOfResourcesToRemoveAccess);
         }
         
         if(!lstOfResourcesToGiveAccess.isEmpty()){
-            shareProjectWithEditAccess(lstOfResourcesToGiveAccess);
+            shareInspectionWithEditAccess(lstOfResourcesToGiveAccess);
         }
     }
     
     /***********************************************************************************************
-* Method Name:revokeProjectAccess
+* Method Name:revokeInspectionAccess
 * Params : List of resource allocations
-* @description : Revoke project access from old resources
+* @description : Revoke Inspection access from old resources
 * Returns : void
 * *********************************************************************************************/
-    public static void revokeProjectAccess(List<ES_Resource_Allocation__c> lstOfResourcesToRemoveAccess){
+    public static void revokeInspectionAccess(List<ES_Resource_Allocation__c> lstOfResourcesToRemoveAccess){
         Map<Id,Id> mapOfResAllAndResAvail = new Map<Id,Id>();
-        Map<Id,Id> mapOfResAllAndProject = new Map<Id,Id>();
+        Map<Id,Id> mapOfResAllAndInspection = new Map<Id,Id>();
         Map<Id,Id> mapOfResourceAvailAndUser = new Map<Id,Id>();
-        List<ES_Project__Share> lstOfShareRecToBeDeleted = new List<ES_Project__Share>();
+        List<Inspection__Share> lstOfShareRecToBeDeleted = new List<Inspection__Share>();
         List<ES_Error_Log__c> lstOfErrorLogs = new List<ES_Error_Log__c>();
         try {
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
                 mapOfResAllAndResAvail.put(allocationRec.Id, String.escapeSingleQuotes(allocationRec.Resource_Availability__c));
-                mapOfResAllAndProject.put(allocationRec.Id, String.escapeSingleQuotes(allocationRec.Project__c));
+                mapOfResAllAndInspection.put(allocationRec.Id, String.escapeSingleQuotes(allocationRec.ES_Inspection__c));
             }
             
             for(ES_Resource_Availability__c availabilityRec : [SELECT Id, User__c FROM ES_Resource_Availability__c WHERE Id IN: mapOfResAllAndResAvail.values() limit :Limits.getLimitQueries()]){
                 mapOfResourceAvailAndUser.put(availabilityRec.Id, availabilityRec.User__c);
             }
             
-            for(ES_Project__Share shareRec : [Select ParentId, UserOrGroupId from ES_Project__Share where ParentId IN: mapOfResAllAndProject.values() and UserOrGroupId IN: mapOfResourceAvailAndUser.values() limit :Limits.getLimitQueries()]){
+            for(Inspection__Share shareRec : [Select ParentId, UserOrGroupId from Inspection__Share where ParentId IN: mapOfResAllAndInspection.values() and UserOrGroupId IN: mapOfResourceAvailAndUser.values() limit :Limits.getLimitQueries()]){
                 for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
-                    if(allocationRec.Project__c == shareRec.ParentId && mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id)) == shareRec.UserOrGroupId){
+                    if(allocationRec.ES_Inspection__c == shareRec.ParentId && mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id)) == shareRec.UserOrGroupId){
                         lstOfShareRecToBeDeleted.add(shareRec);
                     }
                 }
@@ -103,13 +103,13 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
                     if (!dr.isSuccess()){ 
                         // Operation failed, so get all errors                
                         for(Database.Error err : dr.getErrors()) {
-                            lstOfErrorLogs.add(new ES_Error_Log__c(Apex_Class__c='ES_ResourceAllocationTriggerHelper', Error_Message__c = err.getMessage() + 'and fields that affected this error:' + err.getFields(), Method_Name__c = 'revokeProjectAccess'));
+                            lstOfErrorLogs.add(new ES_Error_Log__c(Apex_Class__c='ES_ResourceAllocationTriggerHelper', Error_Message__c = err.getMessage() + 'and fields that affected this error:' + err.getFields(), Method_Name__c = 'revokeInspectionAccess'));
                         }
                     }
                 }
             }
         } catch(Exception e) {
-            lstOfErrorLogs.add(new ES_Error_Log__c(Apex_Class__c='ES_ResourceAllocationTriggerHelper', Error_Message__c = e.getMessage() , Method_Name__c = 'revokeProjectAccess'));
+            lstOfErrorLogs.add(new ES_Error_Log__c(Apex_Class__c='ES_ResourceAllocationTriggerHelper', Error_Message__c = e.getMessage() , Method_Name__c = 'revokeInspectionAccess'));
         }
         
         if(!lstOfErrorLogs.isEmpty()){
@@ -122,17 +122,17 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
     }
     
     /**********************************************************************************************
-* Method Name:shareProjectWithEditAccess
+* Method Name:shareInspectionWithEditAccess
 * Params : List of resource allocations
-* @description : Share project with new resources
+* @description : Share Inspection with new resources
 * Returns : void
 * *********************************************************************************************/
-    public static void shareProjectWithEditAccess(List<ES_Resource_Allocation__c> lstOfResourcesToRemoveAccess){
+    public static void shareInspectionWithEditAccess(List<ES_Resource_Allocation__c> lstOfResourcesToRemoveAccess){
         Map<Id,Id> mapOfResAllAndResAvail = new Map<Id,Id>();
         Map<Id,Id> mapOfResourceAvailAndUser = new Map<Id,Id>();
         List<ES_Error_Log__c> lstOfErrorLogs = new List<ES_Error_Log__c>();
         try {
-            List<ES_Project__Share> lsToInsert = new List<ES_Project__Share>();
+            List<Inspection__Share> lsToInsert = new List<Inspection__Share>();
             
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
                 mapOfResAllAndResAvail.put(allocationRec.Id, allocationRec.Resource_Availability__c);
@@ -143,11 +143,11 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
             }
             
             for(ES_Resource_Allocation__c allocationRec : lstOfResourcesToRemoveAccess){
-                ES_Project__Share projShareObj = new ES_Project__Share();
-                projShareObj.ParentId = allocationRec.Project__c;
+                Inspection__Share projShareObj = new Inspection__Share();
+                projShareObj.ParentId = allocationRec.ES_Inspection__c;
                 projShareObj.UserOrGroupId = mapOfResourceAvailAndUser.get(mapOfResAllAndResAvail.get(allocationRec.Id));               
                 projShareObj.AccessLevel = 'Edit';
-                projShareObj.RowCause = Schema.ES_Project__Share.RowCause.Project_Member__c;
+                projShareObj.RowCause = Schema.Inspection__Share.RowCause.Inspection_Member__c;
                 lsToInsert.add(projShareObj);
             }
             
@@ -157,13 +157,13 @@ public with sharing class ES_ResourceAllocationTriggerHelper{
                     if (!dr.isSuccess()){ 
                         // Operation failed, so get all errors                
                         for(Database.Error err : dr.getErrors()) {
-                            lstOfErrorLogs.add(new ES_Error_Log__c(Apex_Class__c='ES_ResourceAllocationTriggerHelper', Error_Message__c = err.getMessage() + 'and fields that affected this error:' + err.getFields(), Method_Name__c = 'shareProjectWithEditAccess'));
+                            lstOfErrorLogs.add(new ES_Error_Log__c(Apex_Class__c='ES_ResourceAllocationTriggerHelper', Error_Message__c = err.getMessage() + 'and fields that affected this error:' + err.getFields(), Method_Name__c = 'shareInspectionWithEditAccess'));
                         }
                     }
                 }
             }
         } catch(Exception e) {
-            lstOfErrorLogs.add(new ES_Error_Log__c(Apex_Class__c='ES_ResourceAllocationTriggerHelper', Error_Message__c = e.getMessage() , Method_Name__c = 'shareProjectWithEditAccess'));
+            lstOfErrorLogs.add(new ES_Error_Log__c(Apex_Class__c='ES_ResourceAllocationTriggerHelper', Error_Message__c = e.getMessage() , Method_Name__c = 'shareInspectionWithEditAccess'));
         }
         
         if(!lstOfErrorLogs.isEmpty()){

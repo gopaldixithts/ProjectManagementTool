@@ -148,7 +148,7 @@
     <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>Program_Compact_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Use in Project Management Tool to record Programs and related projects.</description>
+    <description>Use in Inspection Management Tool to record Programs and related Inspections.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>true</enableFeeds>

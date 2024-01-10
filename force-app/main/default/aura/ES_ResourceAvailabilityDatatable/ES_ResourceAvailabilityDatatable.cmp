@@ -20,7 +20,7 @@
     <!--Component initialization-->
     <aura:handler name="change" action="{!c.doInit}" value="{!v.fiscalYear}"/>
 
-    <!--START Project datatable-->
+    <!--START Inspection datatable-->
     <lightning:datatable aura:id="allocationList" 
                          columns="{! v.columns }"
                          data="{!v.allocation}"
@@ -37,6 +37,6 @@
                          />
     
     
-    <!--END Project datatable-->
+    <!--END Inspection datatable-->
     
 </aura:component>

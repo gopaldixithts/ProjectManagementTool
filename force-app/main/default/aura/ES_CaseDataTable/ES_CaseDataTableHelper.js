@@ -1,7 +1,7 @@
 ({
 	    
     getRecords : function(component, helper) {
-        var action = component.get("c.getCasesForProject");
+        var action = component.get("c.getCasesForInspection");
         action.setParams({
             recordId : component.get("v.recordId"),
         });        

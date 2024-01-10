@@ -41,7 +41,7 @@
         <isActive>false</isActive>
         <label>Complete</label>
     </customValue>
-    <description>ES Status list for Project</description>
+    <description>ES Status list for Inspection</description>
     <masterLabel>ES_Status</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

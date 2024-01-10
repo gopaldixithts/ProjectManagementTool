@@ -15,10 +15,10 @@
         <value>All</value>
     </labels>
     <labels>
-        <fullName>ES_DefaultProjectProgressSelected</fullName>
+        <fullName>ES_DefaultInspectionProgressSelected</fullName>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>ES_DefaultProjectProgressSelected</shortDescription>
+        <shortDescription>ES_DefaultInspectionProgressSelected</shortDescription>
         <value>Execute</value>
     </labels>
     <labels>
@@ -43,10 +43,10 @@
         <value>2</value>
     </labels>
     <labels>
-        <fullName>ES_Project_Record_Type_on_Case</fullName>
+        <fullName>ES_Inspection_Record_Type_on_Case</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>ES Project Record Type on Case</shortDescription>
-        <value>ES_Project</value>
+        <shortDescription>ES Inspection Record Type on Case</shortDescription>
+        <value>ES_Inspection</value>
     </labels>
 </CustomLabels>

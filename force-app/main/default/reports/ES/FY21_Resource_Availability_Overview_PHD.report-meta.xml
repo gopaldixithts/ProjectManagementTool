@@ -1,125 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.User_Department__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.User_Department__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.User__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.User__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Fiscal_Year__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Fiscal_Year__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c.Resource_Allocations__r$Role__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Role__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c$Project_Category__c</field>
+        <field>Inspection__c$Inspection_Category__c</field>
     </columns>
     <columns>
-        <field>ES_Project__c$Name</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Feb__c</field>
+        <field>Inspection__c$Name</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Mar__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Feb__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Apr__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Mar__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$May__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Apr__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Jun__c</field>
+        <field>Inspection__c.Resource_Allocations__r$May__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Jul__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Jun__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Aug__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Jul__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Sep__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Aug__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Oct__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Sep__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Nov__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Oct__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Dec__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Nov__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Jan__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Dec__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Feb_Allocation__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Jan__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Mar_Allocation__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Feb_Allocation__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Apr_Allocation__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Mar_Allocation__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.May_Allocation__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Apr_Allocation__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Jun_Allocation__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.May_Allocation__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Jul_Allocation__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Jun_Allocation__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Aug_Allocation__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Jul_Allocation__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Sep_Allocation__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Aug_Allocation__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Oct_Allocation__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Sep_Allocation__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Nov_Allocation__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Oct_Allocation__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Dec_Allocation__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Nov_Allocation__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Jan_Allocation__c</field>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Dec_Allocation__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Jan_Allocation__c</field>
     </columns>
     <filter>
         <criteriaItems>
-            <column>ES_Project__c$IsTemplate__c</column>
+            <column>Inspection__c$IsTemplate__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
@@ -132,13 +132,13 @@
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>ES_Project_Resource_Allocation_and_Availability__c</reportType>
+    <reportType>ES_Inspection_Resource_Allocation_and_Availability__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>ES_Project__c.Resource_Allocations__r$Resource_Availability__c.Start_Date__c</dateColumn>
+        <dateColumn>Inspection__c.Resource_Allocations__r$Resource_Availability__c.Start_Date__c</dateColumn>
         <interval>INTERVAL_CURFY</interval>
     </timeFrameFilter>
 </Report>

@@ -1,5 +1,5 @@
 <aura:component > 
-    <aura:attribute name="recordId" type="String" description="The record id of the project"/>
+    <aura:attribute name="recordId" type="String" description="The record id of the inspection"/>
     <aura:attribute name="resourceAvailability" type="Object" description="The resource availability without allocated for the requirement"/>
     <aura:attribute name="masterResourceAllocations" type="Object" description="All the resource allocations for all years"/>
     <aura:attribute name="resourceAllocation" type="Object" description="The resource allocation to be saved"/>

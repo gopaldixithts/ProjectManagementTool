@@ -29,7 +29,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ES_ProjectSummaryCtrl</apexClass>
+        <apexClass>ES_InspectionSummaryCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -100,7 +100,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.ES_Project__c</field>
+        <field>Case.Inspection__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -225,7 +225,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Phase__c.Project_Name__c</field>
+        <field>ES_Phase__c.Inspection_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -235,7 +235,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Phase__c.Start_date_from_child_project__c</field>
+        <field>ES_Phase__c.Start_date_from_child_Inspection__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -265,6 +265,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ES_Phase__c.Inspection__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ES_Program__c.Program_Health_Icon__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -275,287 +280,287 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Assumptions__c</field>
+        <field>Inspection__c.Assumptions__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Business_Case__c</field>
+        <field>Inspection__c.Business_Case__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Days_to_go__c</field>
+        <field>Inspection__c.Days_to_go__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Deadline__c</field>
+        <field>Inspection__c.Deadline__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Deadline_formula__c</field>
+        <field>Inspection__c.Deadline_formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Deadline_parent_phase__c</field>
+        <field>Inspection__c.Deadline_parent_phase__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Description__c</field>
+        <field>Inspection__c.Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Duration__c</field>
+        <field>Inspection__c.Duration__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.End_Fiscal_Year__c</field>
+        <field>Inspection__c.End_Fiscal_Year__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Fiscal_Year_Difference__c</field>
+        <field>Inspection__c.Fiscal_Year_Difference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Go_Live_Date__c</field>
+        <field>Inspection__c.Go_Live_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Goal_Statement__c</field>
+        <field>Inspection__c.Goal_Statement__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Health_Comment__c</field>
+        <field>Inspection__c.Health_Comment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Health_Icon__c</field>
+        <field>Inspection__c.Health_Icon__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.In_Scope__c</field>
+        <field>Inspection__c.In_Scope__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Initial_End_Date__c</field>
+        <field>Inspection__c.Initial_End_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Initial_Start_Date__c</field>
+        <field>Inspection__c.Initial_Start_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.IsTemplate__c</field>
+        <field>Inspection__c.IsTemplate__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Issues_Risk__c</field>
+        <field>Inspection__c.Issues_Risk__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Kickoff_formula__c</field>
+        <field>Inspection__c.Kickoff_formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Out_of_Scope__c</field>
+        <field>Inspection__c.Out_of_Scope__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Owner_s_Department__c</field>
+        <field>Inspection__c.Owner_s_Department__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.PMO_Contact__c</field>
+        <field>Inspection__c.PMO_Contact__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Path_to_Green__c</field>
+        <field>Inspection__c.Path_to_Green__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Percentage_Completion__c</field>
+        <field>Inspection__c.Percentage_Completion__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Portfolio__c</field>
+        <field>Inspection__c.Portfolio__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Problem_Statement__c</field>
+        <field>Inspection__c.Problem_Statement__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Processes_Impacted__c</field>
+        <field>Inspection__c.Processes_Impacted__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Program_Text__c</field>
+        <field>Inspection__c.Program_Text__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Program__c</field>
+        <field>Inspection__c.Program__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Project_Category__c</field>
+        <field>Inspection__c.Inspection_Category__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Project_Completion_Image__c</field>
+        <field>Inspection__c.Inspection_Completion_Image__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Project_End_Month__c</field>
+        <field>Inspection__c.Inspection_End_Month__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Project_Health__c</field>
+        <field>Inspection__c.Inspection_Health__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Project_Initiator__c</field>
+        <field>Inspection__c.Inspection_Initiator__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Project_Lead__c</field>
+        <field>Inspection__c.Inspection_Lead__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Project_Owner__c</field>
+        <field>Inspection__c.Inspection_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Project_Size__c</field>
+        <field>Inspection__c.Inspection_Size__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Project_Start_Month__c</field>
+        <field>Inspection__c.Inspection_Start_Month__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Project_Status__c</field>
+        <field>Inspection__c.Inspection_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Qtr_of_Completion__c</field>
+        <field>Inspection__c.Qtr_of_Completion__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Release_Changes__c</field>
+        <field>Inspection__c.Release_Changes__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Release_Date__c</field>
+        <field>Inspection__c.Release_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Release_Qtr__c</field>
+        <field>Inspection__c.Release_Qtr__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Roadmap_Status__c</field>
+        <field>Inspection__c.Roadmap_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.SOX_Comment__c</field>
+        <field>Inspection__c.SOX_Comment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.SOX_Impact__c</field>
+        <field>Inspection__c.SOX_Impact__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.Sponsor__c</field>
+        <field>Inspection__c.Sponsor__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Start_Date_Rollup__c</field>
+        <field>Inspection__c.Start_Date_Rollup__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Start_Date_from_parent_phase__c</field>
+        <field>Inspection__c.Start_Date_from_parent_phase__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Start_Fiscal_Year__c</field>
+        <field>Inspection__c.Start_Fiscal_Year__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Sum_Wheigted_perc__c</field>
+        <field>Inspection__c.Sum_Wheigted_perc__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Sum_of_Task_Duration__c</field>
+        <field>Inspection__c.Sum_of_Task_Duration__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Sum_of_sum_of_percentage_completion__c</field>
+        <field>Inspection__c.Sum_of_sum_of_percentage_completion__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Sum_of_task_count_child_project__c</field>
+        <field>Inspection__c.Sum_of_task_count_child_Inspection__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Project__c.Sum_of_tasks_count__c</field>
+        <field>Inspection__c.Sum_of_tasks_count__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ES_Project__c.SystemsImpacted__c</field>
+        <field>Inspection__c.SystemsImpacted__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -690,12 +695,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Resource_Allocation__c.Project_Name__c</field>
+        <field>ES_Resource_Allocation__c.Inspection_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Resource_Allocation__c.Project_Owner__c</field>
+        <field>ES_Resource_Allocation__c.Inspection_Owner__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1040,12 +1045,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Task__c.Project_Id__c</field>
+        <field>ES_Task__c.Inspection_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ES_Task__c.Project_Name__c</field>
+        <field>ES_Task__c.Inspection_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1157,7 +1162,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>ES_Project__c</object>
+        <object>Inspection__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -1188,7 +1193,7 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <recordTypeVisibilities>
-        <recordType>Case.ES_Project</recordType>
+        <recordType>Case.Inspection</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <tabSettings>
@@ -1212,7 +1217,7 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>ES_Project__c</tab>
+        <tab>Inspection__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

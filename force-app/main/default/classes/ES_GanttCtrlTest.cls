@@ -29,60 +29,60 @@ public with sharing class ES_GanttCtrlTest {
         System.runAs(testUser) {
             List<ES_Task__c> lstOfTask = new List<ES_Task__c>();
 
-            //Project 1 setup
+            //Inspection 1 setup
             ES_Program__c pg1 = new ES_Program__c();
             pg1.Name = 'Test Program 1';
             pg1.Program_Health__c = 'On Track';
             INSERT pg1;
 
-            ES_Project__c prj1 = new ES_Project__c();
-            prj1.Name = 'New project 1';
+            Inspection__c prj1 = new Inspection__c();
+            prj1.Name = 'New Inspection 1';
             prj1.Program__c = pg1.Id;
-            prj1.Project_Status__c = 'Execute';
-            prj1.Project_Category__c = 'IT';
+            prj1.Inspection_Status__c = 'Execute';
+            prj1.Inspection_Category__c = 'IT';
             prj1.Level_of_Effort__c = 'Medium';
-            prj1.Project_Health__c = 'On Track';
+            prj1.Inspection_Health__c = 'On Track';
             INSERT prj1;
 
             ES_Phase__c ph1 = new ES_Phase__c();
             ph1.Name = 'test phase 1';
-            ph1.Project__c = prj1.Id;
+            ph1.ES_Inspection__c = prj1.Id;
             INSERT ph1;
 
             ES_Phase__c ph2 = new ES_Phase__c();
             ph2.Name = 'test phase 2';
-            ph2.Project__c = prj1.Id;
+            ph2.ES_Inspection__c = prj1.Id;
             INSERT ph2;
 
             ES_Task__c tsk1 = new ES_Task__c();
-            tsk1.Name = 'Task 01 for project 1';
+            tsk1.Name = 'Task 01 for Inspection 1';
             tsk1.Phase__c = ph1.Id;
             tsk1.Assigned_To1__c = UserInfo.getUserId();
             lstOfTask.add(tsk1);
 
-            //Project 2 setup
+            //Inspection 2 setup
             ES_Program__c pg2 = new ES_Program__c();
             pg2.Name = 'Test Program 2';
             pg2.Program_Health__c = 'On Track';
             INSERT pg2;
 
-            ES_Project__c prj2 = new ES_Project__c();
-            prj2.Name = 'New project 2';
+            Inspection__c prj2 = new Inspection__c();
+            prj2.Name = 'New Inspection 2';
             prj2.Program__c = pg2.Id;
             prj2.Path_to_Green__c = 'Test';
             prj2.Level_of_Effort__c = 'Medium';
-            prj2.Project_Status__c = 'Transition';
-            prj2.Project_Category__c = 'Non IT';
-            prj2.Project_Health__c = 'At Risk';
+            prj2.Inspection_Status__c = 'Transition';
+            prj2.Inspection_Category__c = 'Non IT';
+            prj2.Inspection_Health__c = 'At Risk';
             INSERT prj2;
 
             ES_Phase__c ph3 = new ES_Phase__c();
             ph3.Name = 'test phase 2';
-            ph3.Project__c = prj2.Id;
+            ph3.ES_Inspection__c = prj2.Id;
             INSERT ph3;
 
             ES_Task__c tsk2 = new ES_Task__c();
-            tsk2.Name = 'Task 02 for project 2';
+            tsk2.Name = 'Task 02 for Inspection 2';
             tsk2.Phase__c = ph3.Id;
             tsk2.Assigned_To1__c = UserInfo.getUserId();
             tsk2.Start_Date__c = System.Today();
@@ -131,14 +131,14 @@ public with sharing class ES_GanttCtrlTest {
     static testmethod void testUpdateTask() {
         User testUser = [SELECT Id FROM User WHERE UserName = 'standarduser@ESgantt.com'];
         System.runAs(testUser) {
-            ES_Task__c task = [SELECT Id FROM ES_Task__c WHERE Name = 'Task 01 for project 1'];
+            ES_Task__c task = [SELECT Id FROM ES_Task__c WHERE Name = 'Task 01 for Inspection 1'];
             Test.startTest();
 
             String result = ES_GanttCtrl.saveTask(task.Id, System.Today(), System.Today()+30);
             Date start_Date = System.Today();
             Date end_Date = start_Date + 4 - 1;
 
-            task = [SELECT Id, Start_Date__c, Due_Date__c FROM ES_Task__c WHERE Name = 'Task 01 for project 1'];
+            task = [SELECT Id, Start_Date__c, Due_Date__c FROM ES_Task__c WHERE Name = 'Task 01 for Inspection 1'];
             system.assertEquals(true, result == 'Task updated successfully.', 'Error updating Task');
             Test.stopTest();
         }
@@ -155,7 +155,7 @@ public with sharing class ES_GanttCtrlTest {
         insert testUser;
         System.runAs(testUser) {
             try {
-                ES_Task__c task = [SELECT Id FROM ES_Task__c WHERE Name = 'Task 01 for project 1'];
+                ES_Task__c task = [SELECT Id FROM ES_Task__c WHERE Name = 'Task 01 for Inspection 1'];
                 Test.startTest();
                 String result = ES_GanttCtrl.saveTask(task.Id, System.Today()+10, System.Today());
                 Test.stopTest();
@@ -164,10 +164,10 @@ public with sharing class ES_GanttCtrlTest {
     }
 
     static testmethod void testFilterValues() {
-        Map<String, String> mapOfHealthValues = ES_Utility.getPicklistValues('ES_Project__c', 'Project_Health__c');
-        Map<String, String> mapOfCategoryValues = ES_Utility.getPicklistValues('ES_Project__c', 'Project_Category__c');
-        Map<String, String> mapOfSystemValues = ES_Utility.getPicklistValues('ES_Project__c', 'SystemsImpacted__c');
-        Map<String, String> mapOfProgressValues = ES_Utility.getPicklistValues('ES_Project__c', 'Project_Status__c');
+        Map<String, String> mapOfHealthValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Health__c');
+        Map<String, String> mapOfCategoryValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Category__c');
+        Map<String, String> mapOfSystemValues = ES_Utility.getPicklistValues('Inspection__c', 'SystemsImpacted__c');
+        Map<String, String> mapOfProgressValues = ES_Utility.getPicklistValues('Inspection__c', 'Inspection_Status__c');
 
         User testUser = [SELECT Id FROM User WHERE UserName = 'standarduser@ESgantt.com'];
 
@@ -175,10 +175,10 @@ public with sharing class ES_GanttCtrlTest {
             Test.startTest();
             ES_GanttCtrl.GanttFliterWrapper result = ES_GanttCtrl.getGanttFilters();
 
-            system.assertEquals(true, result.prjhealth.size() == mapOfHealthValues.size(), 'All values of Project health must be fetched.');
-            system.assertEquals(true, result.prjcategory.size() == mapOfCategoryValues.size(), 'All values of Project category must be fetched.');
+            system.assertEquals(true, result.prjhealth.size() == mapOfHealthValues.size(), 'All values of Inspection health must be fetched.');
+            system.assertEquals(true, result.prjcategory.size() == mapOfCategoryValues.size(), 'All values of Inspection category must be fetched.');
             system.assertEquals(true, result.sysimpacted.size() == mapOfSystemValues.size(), 'All values of System impacted must be fetched.');
-            system.assertEquals(true, result.prjprogress.size() == mapOfProgressValues.size(), 'All values of Project status must be fetched.');
+            system.assertEquals(true, result.prjprogress.size() == mapOfProgressValues.size(), 'All values of Inspection status must be fetched.');
             Test.stopTest();
         }
     }

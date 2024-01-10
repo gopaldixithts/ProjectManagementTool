@@ -3,7 +3,7 @@
     <aura:attribute name="isLoading" type="Boolean" description="Flag if there is apex side call runnning" default="false"/>
     <aura:attribute name="resourceAllocation" type="Object" description="The resource allocation to be saved"/>
     <aura:attribute name="resourceAllocationToDelete" type="Object" description="The resource allocation to be deleted"/>
-    <aura:attribute name="years" type="Object" description="The fiscal years for the project"/>
+    <aura:attribute name="years" type="Object" description="The fiscal years for the Inspection"/>
     <aura:attribute name="isReadOnly" type="Boolean" default="true" description="Whether the component is in read more or read/write mode"/>
     <aura:attribute name="isEditable" type="Boolean" default="false" description="Whether the user has edit access or not"/>
     <aura:attribute name="duplicatesFound" type="Boolean" default="false" description="Whether the duplicate user allocations found in a year"/>
@@ -11,7 +11,7 @@
     <aura:attribute name="fiscalYearOffset" type="Integer" description="Fiscal year start month"/>
     
     <!--RecordData/LDS attributes-->   
-    <aura:attribute name="projectRecord" type="Object" description="The project record"/>
+    <aura:attribute name="inspectionRecord" type="Object" description="The inspection record"/>
     <aura:attribute name="recordLoadError" type="Object" description="Object to store the error"/>
     
     <aura:handler name="LineItemAction" event="c:ES_MassResourceAllocationLIEvent" action="{!c.handleLineItemEvent}"/>
@@ -20,7 +20,7 @@
     <force:recordData aura:id="recordLoader"
                       recordId="{!v.recordId}"
                       fields="Name,Kickoff_formula__c,Deadline_formula__c,Start_Fiscal_Year__c,End_Fiscal_Year__c"
-                      targetFields="{!v.projectRecord}"
+                      targetFields="{!v.InspectionRecord}"
                       targetError="{!v.recordLoadError}"
                       recordUpdated="{!c.doInit}"
                       />

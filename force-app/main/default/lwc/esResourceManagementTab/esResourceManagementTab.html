@@ -23,8 +23,8 @@
                         </c-ES-gen-lwc-custom-lookup>
                     </lightning-layout-item>
                     <lightning-layout-item flexibility="auto,grow" padding="around-small">
-                        <c-ES-gen-lwc-custom-lookup field-label={projectInputName} child-object-api-name='Case'
-                            target-field-api-name='ES_Project__c' onvalueselected={handleChangeInLookup}>
+                        <c-ES-gen-lwc-custom-lookup field-label={InspectionInputName} child-object-api-name='Case'
+                            target-field-api-name='Inspection__c' onvalueselected={handleChangeInLookup}>
                         </c-ES-gen-lwc-custom-lookup>
                     </lightning-layout-item>
                     <lightning-layout-item flexibility="auto,grow" padding="around-small">
@@ -51,7 +51,7 @@
                     </lightning-card>
                 </div>
             </lightning-tab>
-            <lightning-tab label="Project Allocations">
+            <lightning-tab label="Inspection Allocations">
                 <div if:false={noDataForAllocations}>
                     <c-ES-gen-lwc-datatable key-field="Id" columns={resourceAllocationsColumns}
                         table-data={resourceAllocations} onrefreshevent={refreshData} sorted-by="availabilityURL"></c-ES-gen-lwc-datatable>

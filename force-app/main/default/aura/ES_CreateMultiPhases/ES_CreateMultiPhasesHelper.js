@@ -8,7 +8,7 @@
         phaseList.push({
             'sobjectType': 'ES_Phase__c',
             'Name': '',
-            'Project__c':rid,
+            'Inspection__c':rid,
             'Phase_Health__c': 'Not Started',
             'Description__c': ''
         });

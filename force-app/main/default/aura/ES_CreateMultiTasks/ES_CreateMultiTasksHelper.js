@@ -14,7 +14,7 @@
             var action = component.get('c.getTaskWrapper');
         	var recordId = component.get("v.recordId");
         	action.setParams({
-            "projectId" : recordId,
+            "inspectionId" : recordId,
         	});
             // Set up the callback
             action.setCallback(this, $A.getCallback(function (response) {
@@ -48,7 +48,7 @@
         taskList.push({
             'sobjectType': 'ES_Task__c',
             'Name': '',
-            'Project__c':rid,
+            'Inspection__c':rid,
             'Status__c': 'Not Started',
             'Start_Date__c': '',
             'Due_Date__c': '',

@@ -44,10 +44,10 @@
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>Case.ES_Project__c</field>
+        <field>Case.Inspection__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Open Cases by Project</name>
+    <name>Open Cases by Inspection</name>
     <params>
         <name>units</name>
         <value>h</value>

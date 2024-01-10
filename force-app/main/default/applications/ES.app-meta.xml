@@ -3,20 +3,20 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override updated by Lightning App Builder during activation.</comment>
-        <content>ES_Project_Record_Page</content>
+        <content>Inspection_Record_Page</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
-        <pageOrSobjectType>ES_Project__c</pageOrSobjectType>
+        <pageOrSobjectType>Inspection__c</pageOrSobjectType>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override updated by Lightning App Builder during activation.</comment>
-        <content>ES_Project_Record_Page</content>
+        <content>Inspection_Record_Page</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
-        <pageOrSobjectType>ES_Project__c</pageOrSobjectType>
+        <pageOrSobjectType>Inspection__c</pageOrSobjectType>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
@@ -31,7 +31,7 @@
         <headerColor>#0070D2</headerColor>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
-    <description>Project Management Tool</description>
+    <description>Inspection Management Tool</description>
     <formFactors>Small</formFactors>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
@@ -40,7 +40,7 @@
     <navType>Standard</navType>
     <setupExperience>all</setupExperience>
     <tabs>Inspection_Home</tabs>
-    <tabs>ES_Project__c</tabs>
+    <tabs>Inspection__c</tabs>
     <tabs>ES_Program__c</tabs>
     <tabs>standard-Case</tabs>
     <tabs>ES_Phase__c</tabs>
